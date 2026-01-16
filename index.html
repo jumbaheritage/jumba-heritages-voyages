@@ -1,419 +1,235 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head><head>
+<head>
   <meta charset="UTF-8">
   <title>Jumba Heritage Voyages</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* AL<style>
-.cta {
-  background-color: #0b3d2e;
-  color: white;
-}
-
-header {
-  background-color: #2e3b2f;
-}
-</style>
-L CSS MUST BE INSIDE HERE */
-
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f3ef;
-      color: #2b2b2b;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f7f7f7;
+      color: #222;
     }
 
     header {
-      background-color: #2e3b2f;
-      color: #f5d48e;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    footer {
-      background-color: #2e3b2f;
-      color: #e8e1cf;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 14px;
-    }
-
-    .cta {
-      background-color: #0b3d2e;
+      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                  url("diani-beach.jpg") center/cover no-repeat;
       color: white;
-      text-align: center;
-      padding: 60px 20px;
-      margin: 40px 0;
-      border-radius: 16px;
-    }
-
-  </style>
-</head>
-
-  
-
-  <style><style>
-
-</style>
-.cta {
-  background-color: #0b3d2e;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  margin: 40px 0;
-  border-radius: 16px;
-}
-
-.cta h2 {
-  font-size: 32px;
-}
-
-.cta p {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 30px;
-  background-color: #25D366;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-}
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f3ef;
-      color: #2b2b2b;
-    }
-
-    header {
-      background-color: #2e3b2f;
-      color: #f5d48e;
-      padding: 60px 20px;
+      padding: 90px 20px;
       text-align: center;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 36px;
-      letter-spacing: 1px;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
     header p {
       font-size: 18px;
-      margin-top: 15px;
-      color: #e8e1cf;
+      max-width: 700px;
+      margin: auto;
     }
 
     section {
-      padding: 50px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1100px;
       margin: auto;
     }
 
     h2 {
-      color: #2e3b2f;
-      border-bottom: 2px solid #d4af37;
-      display: inline-block;
-      padding-bottom: 5px;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .destinations {
+    /* Destinations */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card p {
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Testimonials */
+    .testimonial {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .testimonial img {
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact p {
+      text-align: center;
+      font-size: 16px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 320px;
+      border: none;
+      border-radius: 12px;
       margin-top: 20px;
-      line-height: 1.8;
     }
 
     footer {
-      background-color: #2e3b2f;
-      color: #e8e1cf;
+      background: #111;
+      color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 25px;
       font-size: 14px;
     }
 
-    a {
-      color: #d4af37;
+    /* WhatsApp Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
       text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
     }
   </style>
 </head>
 
-<body><nav style="padding:15px; background:#0b3d2e; text-align:center;">
-  <a href="index.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">
-    Home
-  </a>
-
-  <a href="packages.html" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">
-    Packages
-  </a>
-
-  <a href="#contact" style="color:white; margin:0 15px; text-decoration:none; font-weight:bold;">
-    Contact
-  </a>
-</nav>
-
+<body>
 
 <header>
   <h1>Jumba Heritage Voyages</h1>
-  <p>Asili Travels — Luxury, Eco-Cultural & Heritage Journeys in Kenya</p>
+  <p>Rooted in Heritage. Refined for the World.  
+     Luxury Safaris • Cultural Experiences • Beach Holidays</p>
 </header>
-<section style="padding:0; max-width:100%;">
-
-  <img src="elephants-amboseli.jpg" 
-       alt="Elephants in Amboseli National Park"
-       style="width:100%; height:60vh; object-fit:cover;">
-
-</section>
 
 <section>
-  <h2>Signature Destinations</h2>
-
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:30px;">
-
-    <div>
-      <img src="lion-maasai-mara.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Maasai Mara</strong><br>World-class big cat safaris</p>
+  <h2>Top Destinations</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="diani-beach.jpg">
+      <p>Diani Beach</p>
     </div>
-
-    <div>
-      <img src="tsavo-national-park.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Tsavo National Park</strong><br>Vast landscapes & red elephants</p>
+    <div class="card">
+      <img src="elephants-amboseli.jpg">
+      <p>Amboseli Elephants</p>
     </div>
-
-    <div>
-      <img src="lions-amboseli.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Amboseli</strong><br>Iconic elephants & Mount Kilimanjaro</p>
+    <div class="card">
+      <img src="lion-maasai-mara.jpg">
+      <p>Maasai Mara Lions</p>
     </div>
-
-    <div>
-      <img src="diani-beach.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Diani Beach</strong><br>Luxury coastal & marine escapes</p>
+    <div class="card">
+      <img src="lions-amboseli.jpg">
+      <p>Lions of Amboseli</p>
     </div>
-
+    <div class="card">
+      <img src="tsavo-national-park.jpg">
+      <p>Tsavo National Park</p>
+    </div>
   </div>
 </section>
 
 <section>
-  <h2>About Us</h2>
-  <p>
-    Jumba Heritage Voyages | Asili Travels is a Kenya-based tour company offering
-    refined luxury, authentic cultural experiences, and sustainable travel for
-    both international and local explorers.
-  </p>
-</section>
-
-<section>
-
-</section>
-<section>
-  <h2 style="text-align:center;">Our Signature Destinations</h2>
-
-  <p style="text-align:center; max-width:700px; margin:auto;">
-    Handcrafted journeys across Kenya’s most iconic landscapes —
-    from world-class safaris to pristine coastal escapes.
-  </p>
-
-  <!-- IMAGE GRID STARTS HERE -->
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:30px;">
-
-    <div>
-      <img src="lion-maasai-mara.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Maasai Mara</strong><br>World-class big cat safaris</p>
+  <h2>What Our Guests Say</h2>
+  <div class="grid">
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=12">
+      <p>“Absolutely unforgettable safari experience.”</p>
+      <strong>Sarah M.</strong><br><small>UK</small>
     </div>
-
-    <div>
-      <img src="tsavo-national-park.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Tsavo National Park</strong><br>Vast landscapes & red elephants</p>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=32">
+      <p>“Professional, safe, and deeply cultural.”</p>
+      <strong>Daniel R.</strong><br><small>USA</small>
     </div>
-
-    <div>
-      <img src="lions-amboseli.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Amboseli</strong><br>Iconic elephants & Mount Kilimanjaro</p>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=45">
+      <p>“Kenya like I’ve never seen before.”</p>
+      <strong>Lucia G.</strong><br><small>Italy</small>
     </div>
-
-    <div>
-      <img src="diani-beach.jpg" style="width:100%; border-radius:8px;">
-      <p><strong>Diani Beach</strong><br>Luxury coastal & marine escapes</p>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=8">
+      <p>“Perfect family safari planning.”</p>
+      <strong>Fatima A.</strong><br><small>UAE</small>
     </div>
-
-  </div>
-  <!-- IMAGE GRID ENDS HERE -->
-
-</section>
-
-<section>
- <section class="cta">
-  <h2>Plan Your Dream Kenyan Safari Today</h2>
-  <p>
-    From luxury safaris to authentic cultural journeys,  
-    Jumba Heritage Voyages delivers unforgettable experiences.
-  </p>
-
-  <a href="https://wa.me/254789514678" class="cta-button">
-    💬 Chat With Us on WhatsApp
-  </a>
-<section>
-  <h2 style="text-align:center;">What Our Guests Say</h2>
-
-  <div style="max-width:1100px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:25px;">
-
-    <!-- Testimonial 1 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=12" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “Jumba Heritage Voyages delivered an exceptional Maasai Mara safari.
-        Every detail was handled professionally.”
-      </p>
-      <strong>Sarah M.</strong><br>
-      <small>United Kingdom</small>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=56">
+      <p>“Premium local experience done right.”</p>
+      <strong>James O.</strong><br><small>Nairobi</small>
     </div>
-
-    <!-- Testimonial 2 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=32" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “Seeing elephants in Amboseli with Mount Kilimanjaro was unforgettable.
-        Amazing guides and service.”
-      </p>
-      <strong>Daniel R.</strong><br>
-      <small>Canada</small>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=21">
+      <p>“Ethical, eco-conscious, and refined.”</p>
+      <strong>Anna K.</strong><br><small>Sweden</small>
     </div>
-
-    <!-- Testimonial 3 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=47" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “A perfect blend of luxury and authenticity.
-        The cultural experiences were deeply meaningful.”
-      </p>
-      <strong>Laura B.</strong><br>
-      <small>Italy</small>
+    <div class="testimonial">
+      <img src="https://i.pravatar.cc/80?img=68">
+      <p>“Exceptional guides and hospitality.”</p>
+      <strong>Markus H.</strong><br><small>Germany</small>
     </div>
-
-    <!-- Testimonial 4 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=14" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “From Tsavo to the coast, everything was seamless.
-        A truly personalized safari experience.”
-      </p>
-      <strong>Markus H.</strong><br>
-      <small>Germany</small>
-    </div>
-
-    <!-- Testimonial 5 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=8" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “Our family safari was safe, well-planned, and unforgettable.
-        Highly recommended!”
-      </p>
-      <strong>Fatima A.</strong><br>
-      <small>UAE</small>
-    </div>
-
-    <!-- Testimonial 6 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=56" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “As a Kenyan traveler, I loved the professionalism and attention to detail.
-        A premium local experience.”
-      </p>
-      <strong>James O.</strong><br>
-      <small>Nairobi</small>
-    </div>
-
-    <!-- Testimonial 7 -->
-    <div style="background:#ffffff; padding:22px; border-radius:14px; box-shadow:0 6px 15px rgba(0,0,0,0.1);">
-      <img src="https://i.pravatar.cc/80?img=21" style="border-radius:50%; margin-bottom:10px;">
-      <p>
-        “Ethical, eco-conscious, and professional.
-        Jumba Heritage Voyages truly stands out.”
-      </p>
-      <strong>Anna K.</strong><br>
-      <small>Sweden</small>
-    </div>
-
   </div>
 </section>
 
-</section>
-<section id="contact">
+<section class="contact" id="contact">
   <h2>Contact Us</h2>
-
- <h2>Contact Us</h2>
-    
   <p>
-  📧 Email:
-  <a href="mailto:jumbaheritagevoyages@gmail.com">
-    jumbaheritagevoyages@gmail.com
-  </a>
-    
-  <br><br>
+    Email:
+    <a href="mailto:jumbaheritagevoyages@gmail.com">
+      jumbaheritagevoyages@gmail.com
+    </a><br><br>
 
-  📞 Phone:
-  <a href="tel:+254789514678">
-    +254 789 514 678
-  </a>
-  <br><br>
+    Phone:
+    <a href="tel:+254789514678">
+      +254 789 514 678
+    </a><br><br>
 
-  📍 Location:<br>
-  Ngong Arcade Centre,<br>
-  Nairobi, Kenya
-</p>
+    📍 Ngong Arcade Centre<br>
+    Nairobi, Kenya
+  </p>
 
-  </p><iframe
-  src="https://www.google.com/maps?q=Ngong%20Arcade%20Centre%20Nairobi&output=embed"
-  width="100%"
-  height="300"
-  style="border:0; border-radius:10px; margin-top:15px;"
-  allowfullscreen=""
-  loading="lazy">
-</iframe>
-
-  
+  <iframe
+    src="https://www.google.com/maps?q=Ngong%20Arcade%20Centre%20Nairobi&output=embed"
+    loading="lazy">
+  </iframe>
 </section>
 
 <footer>
   © 2026 Jumba Heritage Voyages | Asili Travels<br>
   Rooted in Heritage. Refined for the World.
 </footer>
-<!-- WhatsApp Floating Button -->
-<a href="https://wa.me/254789514678"
-   target="_blank"
-   style="
-     position: fixed;
-     bottom: 20px;
-     right: 20px;
-     background-color: #25D366;
-     color: white;
-     padding: 14px 18px;
-     border-radius: 50px;
-     text-decoration: none;
-     font-weight: bold;
-     font-family: Arial, sans-serif;
-     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-     z-index: 1000;
-   ">
-   💬 Chat with us
-</a>
 
-<footer>
-  <p>
-    © 2026 Jumba Heritage Voyages | Asili Travels <br>
-    Luxury Safaris • Cultural Experiences • Beach Holidays <br>
-    Nairobi, Kenya
-  </p>
-</footer
+<a class="whatsapp"
+   href="https://wa.me/254789514678"
+   target="_blank">
+  💬 Chat with us
+</a>
 
 </body>
 </html>
-
