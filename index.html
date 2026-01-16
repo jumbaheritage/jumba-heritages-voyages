@@ -221,184 +221,161 @@ This ensures safety, transparency, and flexibility for all travelers.
 </p>
 </div>
 </section>
-<!-- ================= PART 2 : DESTINATIONS, GALLERY, TESTIMONIALS & SEO ================= -->
+<!-- ===================== PART TWO : EXPERIENCE, PAYMENTS & GALLERY ===================== -->
 
-<style>
-/* ---------- GENERAL ---------- */
-.section {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-.section h2 {
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 30px;
-  color: #1b4332;
-}
+<!-- DESTINATIONS -->
+<section id="destinations" class="section">
+  <h2>Top Destinations in Kenya</h2>
+  <div class="grid">
 
-/* ---------- DESTINATIONS GRID ---------- */
-.destinations {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-.destination-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-.destination-card:hover {
-  transform: translateY(-6px);
-}
-.destination-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.destination-card h3 {
-  padding: 15px;
-  margin: 0;
-  color: #2d6a4f;
-}
-
-/* ---------- TESTIMONIALS ---------- */
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-.testimonial {
-  background: #f8f9fa;
-  border-radius: 14px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-}
-.testimonial img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.testimonial p {
-  font-style: italic;
-}
-.testimonial h4 {
-  margin-top: 10px;
-  color: #1b4332;
-}
-
-/* ---------- SEO TEXT ---------- */
-.seo-text {
-  font-size: 1.05em;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* ---------- ANIMATION ---------- */
-.fade-in {
-  animation: fadeInUp 1.2s ease forwards;
-}
-@keyframes fadeInUp {
-  from {opacity:0; transform:translateY(30px);}
-  to {opacity:1; transform:translateY(0);}
-}
-</style>
-
-<!-- ===== DESTINATIONS ===== -->
-<section class="section fade-in">
-  <h2>Top Kenya Safari & Beach Destinations</h2>
-  <div class="destinations">
-
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174" alt="Maasai Mara Safari">
-      <h3>Maasai Mara National Reserve</h3>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="Maasai Mara National Reserve">
+      <h3>Maasai Mara</h3>
+      <p>Big Five safaris & world-famous wildebeest migration.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Amboseli Elephants">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" alt="Amboseli National Park">
       <h3>Amboseli National Park</h3>
+      <p>Elephants with Mount Kilimanjaro views.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642" alt="Tsavo East Park">
-      <h3>Tsavo East National Park</h3>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6" alt="Lake Nakuru National Park">
+      <h3>Lake Nakuru</h3>
+      <p>Flamingos, rhinos & spectacular birdlife.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f" alt="Tsavo West Park">
-      <h3>Tsavo West National Park</h3>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580654712603-eb43273aff33" alt="Samburu National Reserve">
+      <h3>Samburu</h3>
+      <p>Rare wildlife & rich Samburu culture.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1580674285054-bed31e145f59" alt="Lake Nakuru Flamingos">
-      <h3>Lake Nakuru National Park</h3>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1590502593747-42a996133562" alt="Tsavo East National Park">
+      <h3>Tsavo East</h3>
+      <p>Vast savannahs & iconic red elephants.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1551632811-561732d1e306" alt="Samburu Safari">
-      <h3>Samburu National Reserve</h3>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1541417904950-b855846fe074" alt="Tsavo West National Park">
+      <h3>Tsavo West</h3>
+      <p>Dramatic landscapes, springs & wildlife.</p>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Diani Beach">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd" alt="Diani Beach">
       <h3>Diani Beach</h3>
+      <p>Luxury white-sand beaches on the Indian Ocean.</p>
     </div>
 
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section fade-in">
-  <h2>What Our Travelers Say</h2>
-  <div class="testimonials">
+<!-- PACKAGES -->
+<section id="packages" class="section alt">
+  <h2>Safari & Holiday Packages</h2>
+  <div class="grid">
 
-    <div class="testimonial">
+    <div class="card">
+      <h3>Classic Kenya Safari</h3>
+      <p>Maasai Mara • Amboseli • Lake Nakuru</p>
+      <strong>From USD 1,200</strong>
+    </div>
+
+    <div class="card">
+      <h3>Luxury Honeymoon Safari</h3>
+      <p>Private lodges • Beach extension</p>
+      <strong>From USD 2,500</strong>
+    </div>
+
+    <div class="card">
+      <h3>Family Adventure</h3>
+      <p>Child-friendly lodges & activities</p>
+      <strong>From USD 1,800</strong>
+    </div>
+
+  </div>
+</section>
+
+<!-- PAYMENTS -->
+<section id="payments" class="section">
+  <h2>Secure & Flexible Payment Options</h2>
+
+  <div class="payment-box">
+    <ul>
+      <li>✔ M-PESA (Kenya)</li>
+      <li>✔ Airtel Money</li>
+      <li>✔ Local & International Bank Transfer (SWIFT)</li>
+      <li>✔ Cryptocurrency (USDT • BTC • ETH)</li>
+      <li>✔ Partial Deposit & Pay on Arrival</li>
+    </ul>
+
+    <p class="payment-note">
+      Payments are made after itinerary confirmation.  
+      Our team issues a professional invoice with clear payment instructions — ensuring transparency, flexibility, and security for all travelers.
+    </p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section alt">
+  <h2>What Our Guests Say</h2>
+
+  <div class="grid">
+
+    <div class="card testimonial">
       <img src="https://randomuser.me/api/portraits/women/45.jpg">
-      <p>"An unforgettable safari! Everything was perfectly organized."</p>
-      <h4>Sarah – UK</h4>
+      <p>“Absolutely unforgettable safari experience.”</p>
+      <strong>Sarah M. – UK</strong>
     </div>
 
-    <div class="testimonial">
+    <div class="card testimonial">
       <img src="https://randomuser.me/api/portraits/men/32.jpg">
-      <p>"Professional, friendly, and truly authentic Kenya experiences."</p>
-      <h4>Michael – Germany</h4>
+      <p>“Professional, safe, and deeply cultural.”</p>
+      <strong>Daniel R. – USA</strong>
     </div>
 
-    <div class="testimonial">
+    <div class="card testimonial">
       <img src="https://randomuser.me/api/portraits/women/68.jpg">
-      <p>"The beach + safari combo was amazing. Highly recommended!"</p>
-      <h4>Linda – Canada</h4>
-    </div>
-
-    <div class="testimonial">
-      <img src="https://randomuser.me/api/portraits/men/75.jpg">
-      <p>"Best safari company in Kenya. Very trustworthy."</p>
-      <h4>James – USA</h4>
+      <p>“Kenya like I’ve never seen before.”</p>
+      <strong>Lucia G. – Italy</strong>
     </div>
 
   </div>
 </section>
 
-<!-- ===== SEO SECTION ===== -->
-<section class="section seo-text fade-in">
-  <h2>Why Choose Jumba Heritage Voyages</h2>
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Kenya Safari Gallery</h2>
+  <div class="grid gallery">
+
+    <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174" alt="Kenya Safari">
+    <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7" alt="Elephants Kenya">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Maasai Culture">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Kenya Coast">
+
+  </div>
+</section>
+
+<!-- SEO & TRUST -->
+<section class="section alt">
+  <h2>Why Travel With Jumba Heritage Voyages</h2>
   <p>
-    Jumba Heritage Voyages is a trusted Kenya safari and beach tour company offering
-    unforgettable travel experiences across Maasai Mara, Amboseli, Tsavo East & West,
-    Lake Nakuru, Samburu, and the Kenyan Coast. We specialize in private safaris,
-    luxury tours, budget adventures, cultural experiences, and tailor-made itineraries
-    for international and local travelers.
-  </p>
-  <p>
-    Our professional guides, reliable transport, flexible payment options, and deep
-    local knowledge ensure safe, authentic, and memorable journeys across Kenya.
+    We are a Kenya-based safari company specializing in authentic wildlife safaris,
+    cultural experiences, and beach holidays. Our local expertise, ethical tourism values,
+    and personalized service make us a trusted choice for international and regional travelers.
   </p>
 </section>
 
-<!-- ================= END OF PART 2 ================= -->
+<!-- BOOKING CTA -->
+<section id="book" class="section cta">
+  <h2>Start Planning Your Kenya Safari</h2>
+  <p>Contact us today for a custom itinerary & free consultation.</p>
+  <a href="#contact" class="btn">Book Your Safari</a>
+</section>
+
+<!-- ===================== END PART TWO ===================== -->
+
 
