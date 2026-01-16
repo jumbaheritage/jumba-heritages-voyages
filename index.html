@@ -221,109 +221,66 @@ This ensures safety, transparency, and flexibility for all travelers.
 </p>
 </div>
 </section>
-<!-- DESTINATIONS (SEO BOOST) -->
-<section id="destinations">
-<h2>Top Safari & Beach Destinations in Kenya</h2>
+<!-- ================= PART 2 : DESTINATIONS, GALLERY, TESTIMONIALS & SEO ================= -->
 
-<div class="grid">
-<div class="card"><h3>Maasai Mara</h3><p>World-famous for the Great Migration, big cats, and luxury safaris.</p></div>
-<div class="card"><h3>Amboseli National Park</h3><p>Iconic elephants with Mount Kilimanjaro as the backdrop.</p></div>
-<div class="card"><h3>Tsavo East & West</h3><p>Vast landscapes, red elephants, and rugged wilderness.</p></div>
-<div class="card"><h3>Lake Nakuru</h3><p>Flamingos, rhinos, and scenic lake views.</p></div>
-<div class="card"><h3>Samburu</h3><p>Unique wildlife and authentic cultural experiences.</p></div>
-<div class="card"><h3>Diani Beach</h3><p>White sand beaches and luxury Indian Ocean resorts.</p></div>
-<div class="card"><h3>Watamu & Malindi</h3><p>Marine parks, snorkeling, and Swahili culture.</p></div>
-<div class="card"><h3>Mount Kenya</h3><p>Hiking, nature, and cool highland escapes.</p></div>
-</div>
-</section>
+<style>
+/* ---------- GENERAL ---------- */
+.section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.section h2 {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 30px;
+  color: #1b4332;
+}
 
-<!-- MASSIVE KENYA GALLERY -->
-<section id="gallery" class="light">
-<h2>Kenya Safari & Travel Gallery</h2>
-<p>Experience Kenya through our curated safari, beach, and cultural highlights.</p>
+/* ---------- DESTINATIONS GRID ---------- */
+.destinations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.destination-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.destination-card:hover {
+  transform: translateY(-6px);
+}
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.destination-card h3 {
+  padding: 15px;
+  margin: 0;
+  color: #2d6a4f;
+}
 
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Maasai Mara safari lions">
-<img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2" alt="Great Migration Maasai Mara">
-<img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b" alt="Amboseli elephants Mount Kilimanjaro">
-<img src="https://images.unsplash.com/photo-1558981001-c8e2e2e81b17" alt="Tsavo National Park elephants">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Lake Nakuru flamingos">
-<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da" alt="Samburu safari wildlife">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Diani Beach Kenya">
-<img src="https://images.unsplash.com/photo-1602081115720-72dbe3a4eeb1" alt="Maasai cultural experience">
-<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Luxury safari lodge Kenya">
-<img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f" alt="Hot air balloon safari Kenya">
-<img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="Watamu Marine Park">
-<img src="https://images.unsplash.com/photo-1581804928342-4e3405e39c91" alt="Nairobi National Park skyline">
-<img src="https://images.unsplash.com/photo-1544986581-efac024faf62" alt="Ol Pejeta Conservancy rhinos">
-<img src="https://images.unsplash.com/photo-1519682577862-22b62b24e493" alt="Mount Kenya landscape">
-<img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa" alt="Hell’s Gate National Park">
-<img src="https://images.unsplash.com/photo-1598514982205-f1c8d6e2b0a5" alt="Luxury safari vehicle Kenya">
-</div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-<h2>What Our Guests Say</h2>
-
-<div class="grid">
-<div class="card">⭐⭐⭐⭐⭐<p>“A once-in-a-lifetime safari. Perfect planning and incredible guides.”</p><strong>— Sarah, UK</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Luxury, safety, and unforgettable wildlife experiences.”</p><strong>— Daniel, USA</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Professional from start to finish. Highly recommended.”</p><strong>— Lucia, Italy</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Our honeymoon safari was flawless.”</p><strong>— Ahmed, UAE</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Amazing cultural experiences and great communication.”</p><strong>— Claire, France</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Excellent value and premium service.”</p><strong>— Thomas, Germany</strong></div>
-<div class="card">⭐⭐⭐⭐⭐<p>“Best safari company we worked with in Kenya.”</p><strong>— Naomi, Canada</strong></div>
-</div>
-</section>
-
-<!-- PAYMENTS -->
-<section id="payments" class="light">
-<h2>Flexible Payment Options</h2>
-<p>We offer secure and convenient payment methods for both local and international clients.</p>
-
-<div class="grid">
-<div class="card">📱 M-PESA (Kenya)</div>
-<div class="card">📲 Airtel Money</div>
-<div class="card">🏦 Bank Transfer</div>
-<div class="card">💱 Crypto (USDT / BTC)</div>
-</div>
-</section>
-
-<!-- SEO BLOG -->
-<section id="blog">
-<h2>Kenya Travel Insights</h2>
-
-<div class="grid">
-<div class="card"><h3>Best Time to Visit Kenya</h3><p>Learn when to visit for safaris, beaches, and the Great Migration.</p></div>
-<div class="card"><h3>Top Safari Parks in Kenya</h3><p>A guide to Maasai Mara, Amboseli, Tsavo, Samburu, and more.</p></div>
-<div class="card"><h3>Luxury vs Budget Safaris</h3><p>Choose the perfect safari style for your travel goals.</p></div>
-</div>
-</section>
-
-<!-- BOOKING -->
-<section id="book" class="light">
-<h2>Plan Your Safari</h2>
-
-<form action="https://formsubmit.co/jumbaheritagevoyages@gmail.com" method="POST">
-<input type="hidden" name="_captcha" value="false">
-<input type="text" name="name" placeholder="Full Name" required>
-<input type="email" name="email" placeholder="Email Address" required>
-<input type="text" name="dates" placeholder="Travel Dates">
-<input type="number" name="guests" placeholder="Number of Guests">
-<textarea name="message" placeholder="Tell us your dream safari"></textarea>
-<button type="submit">Send Inquiry</button>
-</form>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<p>© 2026 Jumba Heritage Voyages | Asili Travels</p>
-<p>Kenya Safaris • Beach Holidays • Cultural Tours</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/254789514678" target="_blank">WhatsApp Us</a>
-
-</body>
-</html>
+/* ---------- TESTIMONIALS ---------- */
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+.testimonial {
+  background: #f8f9fa;
+  border-radius: 14px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
 
