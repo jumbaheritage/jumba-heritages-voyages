@@ -124,6 +124,60 @@
   gap: 24px;
   margin-top: 32px;
 }
+.booking-section, .payments-section, .trust-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.booking-form {
+  display: grid;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.payments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.payment-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.trust-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.trust-section li {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 .destination-card {
   position: relative;
@@ -529,6 +583,95 @@
   }, 5000);
 </script>
 
+<!-- PART 5: BOOKING & PAYMENTS -->
+<section class="booking-section">
+  <div class="container">
+    <h2>Book Your Safari Experience</h2>
+    <p>Reserve your luxury Kenyan journey with flexible and secure payment options.</p>
+
+    <!-- BOOKING FORM -->
+    <form class="booking-form">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone / WhatsApp Number" required>
+      <input type="text" placeholder="Country of Residence" required>
+
+      <select required>
+        <option value="">Preferred Destination</option>
+        <option>Diani Beach</option>
+        <option>Maasai Mara</option>
+        <option>Amboseli National Park</option>
+        <option>Custom Safari</option>
+      </select>
+
+      <input type="date" required>
+      <input type="number" placeholder="Number of Guests" required>
+
+      <textarea placeholder="Special Requests (optional)"></textarea>
+
+      <button type="submit" class="btn-primary">Submit Booking Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- PAYMENT METHODS -->
+<section class="payments-section">
+  <div class="container">
+    <h2>Secure Payment Options</h2>
+
+    <div class="payments-grid">
+      <!-- MPESA -->
+      <div class="payment-card">
+        <h3>M-PESA</h3>
+        <p>Pay easily via M-PESA</p>
+        <p><strong>PayBill:</strong> 123456</p>
+        <p><strong>Account:</strong> Your Full Name</p>
+      </div>
+
+      <!-- AIRTEL -->
+      <div class="payment-card">
+        <h3>Airtel Money</h3>
+        <p><strong>Number:</strong> +254 7XX XXX XXX</p>
+        <p>Account Name: Jumba Heritage Voyages</p>
+      </div>
+
+      <!-- BANK -->
+      <div class="payment-card">
+        <h3>Bank Transfer</h3>
+        <p><strong>Bank:</strong> Example Bank Kenya</p>
+        <p><strong>Account Name:</strong> Jumba Heritage Voyages</p>
+        <p><strong>SWIFT:</strong> EXAMPKE</p>
+      </div>
+
+      <!-- CRYPTO -->
+      <div class="payment-card">
+        <h3>Crypto Payments</h3>
+        <p><strong>Bitcoin (BTC)</strong></p>
+        <p><strong>USDT (TRC20)</strong></p>
+        <p><strong>Ethereum (ETH)</strong></p>
+        <small>Wallet details shared upon request</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="trust-section">
+  <div class="container">
+    <h2>Why Book With Jumba Heritage Voyages?</h2>
+    <ul>
+      <li>✔ Locally owned & operated in Kenya</li>
+      <li>✔ Eco-conscious & sustainable tourism</li>
+      <li>✔ Tailor-made luxury safaris</li>
+      <li>✔ Trusted by global travelers</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WHATSAPP CTA -->
+<a href="https://wa.me/254700000000" class="whatsapp-float" target="_blank">
+  WhatsApp Us
+</a>
 </body>
 </html>
 
