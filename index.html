@@ -128,6 +128,47 @@
   padding: 80px 20px;
   background: #f9f9f9;
 }
+.trust-grid, .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.trust-card, blockquote {
+  background: #111;
+  padding: 24px;
+  border-radius: 16px;
+  color: #eee;
+}
+
+blockquote span {
+  display: block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #caa24d;
+}
+
+.payment-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.payment-list li {
+  margin-bottom: 12px;
+}
+
+.payment-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.cta-final {
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
 
 .booking-form {
   display: grid;
@@ -561,6 +602,80 @@
   </div>
 </section>
 
+<!-- ===== PART 6: TRUST, PAYMENTS & COMMUNICATION ===== -->
+
+<section class="trust-section">
+  <div class="container">
+    <h2>Why Travel With Jumba Heritage Voyages</h2>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <h3>🌍 Local Experts</h3>
+        <p>Kenyan-owned, guided by locals with deep cultural and wildlife knowledge.</p>
+      </div>
+      <div class="trust-card">
+        <h3>🛡 Secure Booking</h3>
+        <p>Transparent pricing, flexible payments, and direct communication.</p>
+      </div>
+      <div class="trust-card">
+        <h3>🌱 Eco-Friendly</h3>
+        <p>Responsible tourism that supports conservation and communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="payment-info">
+  <div class="container">
+    <h2>Payment Options</h2>
+    <p>Select your preferred method after booking confirmation.</p>
+
+    <ul class="payment-list">
+      <li><strong>M-Pesa:</strong> Paybill / Till provided after inquiry</li>
+      <li><strong>Airtel Money:</strong> Details shared via WhatsApp or Email</li>
+      <li><strong>Bank Transfer:</strong> Local & international supported</li>
+      <li><strong>Crypto:</strong> USDT / BTC / ETH (on request)</li>
+    </ul>
+
+    <p class="payment-note">
+      🔒 Payments are confirmed manually to ensure accuracy and security.
+    </p>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <h2>What Our Guests Say</h2>
+
+    <div class="testimonial-grid">
+      <blockquote>
+        “An unforgettable safari! Everything was perfectly organized.”
+        <span>— Sarah M, UK</span>
+      </blockquote>
+
+      <blockquote>
+        “Professional, warm, and deeply knowledgeable guides.”
+        <span>— James K, Nairobi</span>
+      </blockquote>
+
+      <blockquote>
+        “The best cultural experience I’ve had in Kenya.”
+        <span>— Lina R, Germany</span>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="container">
+    <h2>Ready to Begin Your Journey?</h2>
+    <p>Speak directly with our team and plan your perfect safari.</p>
+
+    <a href="https://wa.me/254789514678" class="btn-primary">
+      Chat on WhatsApp
+    </a>
+  </div>
+</section>
 <!-- ===== PART 5: BOOKING & PAYMENTS ===== -->
 <section class="booking-section" id="booking">
   <div class="container">
