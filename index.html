@@ -194,7 +194,245 @@
    <img src="elephants-amboseli.jpg" alt="Elephants in Amboseli National Park">
 
   </div>
+</section><!-- ================================ -->
+<!-- PART 2–4: DESTINATIONS + PACKAGES + TRUST + CTA -->
+<!-- ================================ -->
+
+<style>
+/* GLOBAL SECTION STYLES */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1f3d2b;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+  color: #555;
+}
+
+/* DESTINATIONS */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.destination-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.destination-card:hover img {
+  transform: scale(1.1);
+}
+
+.destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.destination-overlay h3 {
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* PACKAGES */
+.packages {
+  background: #f7f7f4;
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.package-card h3 {
+  margin-bottom: 0.5rem;
+  color: #1f3d2b;
+}
+
+.package-card span {
+  display: block;
+  font-weight: bold;
+  margin: 1rem 0;
+  color: #c9a24d;
+}
+
+.package-card p {
+  color: #555;
+}
+
+.package-card a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #1f3d2b;
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+/* WHY US */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.why-box {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.why-box h4 {
+  margin-bottom: 0.5rem;
+  color: #1f3d2b;
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(to right, #1f3d2b, #2e5d3b);
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1.5rem;
+  border-radius: 24px;
+}
+
+.cta h2 {
+  color: #fff;
+}
+
+.cta a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  background: #c9a24d;
+  color: #000;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+
+<!-- DESTINATIONS -->
+<section class="section">
+  <h2>Featured Destinations</h2>
+  <p class="section-intro">
+    Kenya’s most iconic landscapes — curated with luxury, sustainability and heritage.
+  </p>
+
+  <div class="destinations-grid">
+    <div class="destination-card">
+      <img src="maasai-mara.jpg" alt="Maasai Mara safari" loading="lazy">
+      <div class="destination-overlay"><h3>Maasai Mara</h3></div>
+    </div>
+
+    <div class="destination-card">
+      <img src="elephants-amboseli.jpg" alt="Amboseli elephants" loading="lazy">
+      <div class="destination-overlay"><h3>Amboseli</h3></div>
+    </div>
+
+    <div class="destination-card">
+      <img src="diani-beach.jpg" alt="Diani Beach" loading="lazy">
+      <div class="destination-overlay"><h3>Diani Beach</h3></div>
+    </div>
+
+    <div class="destination-card">
+      <img src="tsavo-national-park.jpg" alt="Tsavo National Park" loading="lazy">
+      <div class="destination-overlay"><h3>Tsavo</h3></div>
+    </div>
+  </div>
 </section>
+
+<!-- PACKAGES -->
+<section class="section packages">
+  <h2>Safari Packages</h2>
+
+  <div class="packages-grid">
+    <div class="package-card">
+      <h3>Classic Safari</h3>
+      <span>From $1,200</span>
+      <p>Perfect introduction to Kenya’s wildlife and landscapes.</p>
+      <a href="#contact">Enquire</a>
+    </div>
+
+    <div class="package-card">
+      <h3>Luxury Escape</h3>
+      <span>From $2,800</span>
+      <p>Private guides, luxury lodges and tailored experiences.</p>
+      <a href="#contact">Enquire</a>
+    </div>
+
+    <div class="package-card">
+      <h3>Heritage Journey</h3>
+      <span>From $2,000</span>
+      <p>Culture, conservation and authentic community experiences.</p>
+      <a href="#contact">Enquire</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section">
+  <h2>Why Choose Jumba Heritage Voyages</h2>
+
+  <div class="why-grid">
+    <div class="why-box">
+      <h4>Authentic Experiences</h4>
+      <p>Deep cultural connections and local expertise.</p>
+    </div>
+
+    <div class="why-box">
+      <h4>Eco-Conscious Travel</h4>
+      <p>Sustainable tourism that protects nature.</p>
+    </div>
+
+    <div class="why-box">
+      <h4>Luxury with Purpose</h4>
+      <p>Comfort, elegance and responsible travel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Start Your Kenyan Journey</h2>
+  <p>Let us craft an unforgettable safari experience for you.</p>
+  <a href="#contact">Plan My Safari</a>
+</section>
+
 <section>
   <div class="container">
     <h2>Featured Destinations</h2>
