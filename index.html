@@ -169,6 +169,52 @@
   color: #a8ffcc;
   font-weight: bold;
 }
+/* === PART 9A: UX POLISH & ANIMATIONS === */
+
+/* Smooth transitions globally */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Buttons hover */
+button,
+.btn,
+a.button {
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover,
+a.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards hover (destinations, tours) */
+.card,
+.destination-card,
+.tour-card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card:hover,
+.destination-card:hover,
+.tour-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image zoom on hover */
+.card img,
+.destination-card img {
+  transition: transform 0.6s ease;
+}
+
+.card:hover img,
+.destination-card:hover img {
+  transform: scale(1.08);
+}
 
 .trust-card, blockquote {
   background: #111;
