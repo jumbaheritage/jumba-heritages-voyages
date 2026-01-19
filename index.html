@@ -15,7 +15,42 @@
 <meta property="og:description" content="Authentic Kenyan safaris & cultural journeys. Book securely online.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jumba-heritages-voyages.github.io/">
+<!-- === PART 10[1]: SEO & Metadata Enhancement === -->
 
+<meta name="description" content="Jumba Heritages Voyages offers authentic cultural tours, heritage safaris, and unforgettable travel experiences across Africa. Travel deeper. Travel meaningful.">
+<meta name="keywords" content="cultural tours, heritage safaris, African travel, Kenya tours, authentic travel experiences">
+<meta name="author" content="Jumba Heritages Voyages">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Jumba Heritage Voyages",
+  "url": "https://jumba-heritages-voyages.github.io/",
+  "logo": "https://jumba-heritages-voyages.github.io/logo.png",
+  "description": "Luxury eco-friendly safaris and authentic cultural journeys in Kenya.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "KE"
+  },
+  "sameAs": [
+    "https://www.instagram.com/",
+    "https://www.facebook.com/"
+  ]
+}
+</script>
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" content="Jumba Heritages Voyages | Authentic African Experiences">
+<meta property="og:description" content="Explore Africa through culture, heritage, and unforgettable journeys with Jumba Heritages Voyages.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jumbaheritage.github.io/jumba-heritages-voyages/">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jumba Heritages Voyages">
+<meta name="twitter:description" content="Authentic heritage and cultural tours across Africa.">
+10[2] now
+  
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -169,7 +204,77 @@
   color: #a8ffcc;
   font-weight: bold;
 }
-/* === PART 9A: UX POLISH & ANIMATIONS === */
+/* === PART 11[2]: WHY BOOK WITH US === */
+.why-book-us {
+  background: #f8fdfb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-book-us h2 {
+  color: #0b3d2e;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* === PART 11[3]: Trust Badges Animation & Hover === */
+
+.trust-badges span {
+  background: rgba(255,255,255,0.12);
+  padding: 10px 16px;
+  border-radius: 20px;
+  margin: 6px;
+  display: inline-block;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.trust-badges span:hover {
+  background: rgba(255,255,255,0.25);
+  transform: translateY(-4px);
+}
+
+.why-item {
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+/* === PART 11[3]: Why Book With Us – Cards === */
+
+.why-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.why-card h3 {
+  color: #0b3d2e;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+    /* === PART 9A: UX POLISH & ANIMATIONS === */
 
 /* Smooth transitions globally */
 * {
@@ -181,6 +286,30 @@
   background: linear-gradient(135deg, #f7fbf9, #ffffff);
   border-top: 1px solid #e6f0eb;
   border-bottom: 1px solid #e6f0eb;
+}
+/* === PART 9[3]: TRUST SECTION FINAL POLISH === */
+
+.trust-section ul li {
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.trust-section ul li:hover {
+  transform: translateX(6px);
+  color: #0b3d2e;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .trust-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .trust-section ul li {
+    font-size: 15px;
+  }
 }
 
 .trust-section h2 {
@@ -856,6 +985,18 @@ blockquote span {
     <p>© 2026 Jumba Heritage Voyages. Proudly Kenyan 🇰🇪</p>
   </div>
 </footer>
+<!-- === PART 11[1]: WHY BOOK WITH US === -->
+<section class="why-book-us">
+  <h2>Why Travel With Jumba Heritage Voyages?</h2>
+  <div class="why-grid">
+    <div class="why-item">🌿 Eco-Friendly & Responsible Tourism</div>
+    <div class="why-item">🦁 Authentic Kenyan Wildlife Experiences</div>
+    <div class="why-item">🏨 Hand-Picked Luxury & Mid-Range Lodges</div>
+    <div class="why-item">👨🏽‍✈️ Expert Local Guides</div>
+    <div class="why-item">💳 Secure & Flexible Payments</div>
+    <div class="why-item">📞 24/7 Local Support</div>
+  </div>
+</section>
 
 <a class="whatsapp" href="https://wa.me/254789514678" target="_blank">WhatsApp Us</a>
 
