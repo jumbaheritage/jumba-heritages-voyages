@@ -248,6 +248,36 @@
   box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
 }
 /* === PART 11[3]: Why Book With Us – Cards === */
+/* === PART 11[3]: WHY BOOK WITH US – HOVER EFFECTS === */
+
+.why-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+}
+
+.why-item i {
+  font-size: 34px;
+  color: #0b3d2e;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.why-item h3 {
+  margin-top: 12px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #0b3d2e;
+}
+
+.why-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
 
 .why-card {
   background: #ffffff;
@@ -272,6 +302,30 @@
   font-size: 0.95rem;
   line-height: 1.6;
   color: #444;
+}
+/* === PART 11[4]: WHY BOOK WITH US – FINAL SPACING & RESPONSIVENESS === */
+
+.why-grid {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-item i {
+    font-size: 30px;
+  }
+
+  .why-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .why-item p {
+    font-size: 0.9rem;
+  }
 }
 
     /* === PART 9A: UX POLISH & ANIMATIONS === */
