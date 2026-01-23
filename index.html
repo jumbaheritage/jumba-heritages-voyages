@@ -740,6 +740,24 @@ blockquote span {
   border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
+/* LANDSCAPE CARD FIX */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.destination-card {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.destination-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 }
 </style>
 
