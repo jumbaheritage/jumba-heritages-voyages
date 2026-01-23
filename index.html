@@ -775,6 +775,29 @@ blockquote span {
     object-fit: cover;
     display: block;
 }
+/* DESTINATIONS GRID */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* DESTINATION CARD */
+.destination-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  height: 260px;
+}
+
+/* IMAGE FIX */
+.destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
  
 </style>
 
@@ -784,6 +807,7 @@ blockquote span {
   <p class="section-intro">
     Kenya’s most iconic landscapes — curated with luxury, sustainability and heritage.
   </p>
+<div class="destinations-grid">
 
  <div class="destination-card">
   <img src="maasai-mara.jpg" alt="Maasai Mara safari" loading="lazy">
