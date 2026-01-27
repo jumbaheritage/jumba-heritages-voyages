@@ -876,9 +876,44 @@ blockquote span {
   transform: scale(1.08);
 }
 
-</style>
+/* PART 15 — FINAL VISUAL TIGHTENING */
+
+/* Section spacing */
+section {
+  padding: 4.5rem 1.5rem;
+}
+
+/* Headings consistency */
+section h2 {
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Paragraph readability */
+section p {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* Destination & package cards alignment */
+.destination-card,
+.package-card {
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Reduce excessive height on large screens */
+@media (min-width: 1200px) {
+  section {
+    padding: 4rem 2rem;
+  }
+}
 
 </style>
+
+  
 
 <!-- DESTINATIONS -->
 <section class="section">
