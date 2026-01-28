@@ -911,6 +911,54 @@ section p {
   }
 }
 
+/* ================= PART 18 : FINAL POLISH ================= */
+
+/* Better mobile spacing */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+  }
+
+  .booking-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-links li {
+    list-style: none;
+    margin: 8px 0;
+  }
+}
+
+/* Better buttons */
+button,
+.btn,
+a.button {
+  min-height: 48px;
+  padding: 12px 20px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 </style>
 <!-- ================= PART 16 : BOOKINGS & CONTACT ================= -->
 <section class="section booking-section" id="bookings">
