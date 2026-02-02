@@ -1,1526 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jumba Heritage Voyages | Asili Travels</title>
-  <meta name="description" content="Luxury eco-friendly safaris and authentic Kenyan travel experiences by Jumba Heritage Voyages | Asili Travels." />
-<!-- SEO META -->
-<meta name="description" content="Jumba Heritage Voyages offers premium Kenyan safaris, cultural tours, and secure online booking with M-Pesa, Airtel Money, crypto & bank transfers.">
-<meta name="keywords" content="Kenya safari, Maasai Mara tours, cultural tours Kenya, safari booking Kenya">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jumba Heritage Voyages | Authentic Kenyan Safaris</title>
+<meta name="description" content="Luxury eco-friendly safaris and authentic cultural journeys across Kenya.">
+<meta name="keywords" content="Kenya safari, Maasai Mara, Amboseli, luxury safari Kenya">
 <meta name="author" content="Jumba Heritage Voyages">
 
-<!-- Open Graph (WhatsApp / Facebook Preview) -->
-<meta property="og:title" content="Jumba Heritage Voyages">
-<meta property="og:description" content="Authentic Kenyan safaris & cultural journeys. Book securely online.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://jumba-heritages-voyages.github.io/">
-<!-- === PART 10[1]: SEO & Metadata Enhancement === -->
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<meta name="description" content="Jumba Heritages Voyages offers authentic cultural tours, heritage safaris, and unforgettable travel experiences across Africa. Travel deeper. Travel meaningful.">
-<meta name="keywords" content="cultural tours, heritage safaris, African travel, Kenya tours, authentic travel experiences">
-<meta name="author" content="Jumba Heritages Voyages">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "Jumba Heritage Voyages",
-  "url": "https://jumba-heritages-voyages.github.io/",
-  "logo": "https://jumba-heritages-voyages.github.io/logo.png",
-  "description": "Luxury eco-friendly safaris and authentic cultural journeys in Kenya.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "KE"
-  },
-  "sameAs": [
-    "https://www.instagram.com/",
-    "https://www.facebook.com/"
-  ]
-}
-</script>
-
-<!-- Open Graph (Social Sharing) -->
-<meta property="og:title" content="Jumba Heritages Voyages | Authentic African Experiences">
-<meta property="og:description" content="Explore Africa through culture, heritage, and unforgettable journeys with Jumba Heritages Voyages.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://jumbaheritage.github.io/jumba-heritages-voyages/">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jumba Heritages Voyages">
-<meta name="twitter:description" content="Authentic heritage and cultural tours across Africa.">
-10[2] now
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #1f3d2b;
-      --secondary: #c9a24d;
-      --dark: #0f1f17;
-      --light: #f5f5f2;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--light);
-      color: #222;
-      line-height: 1.6;
-    }
-
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    a { text-decoration: none; color: inherit; }
-
-    /* NAVBAR */
-    header {
-      position: fixed;
-      top: 0; width: 100%; z-index: 1000;
-      background: rgba(15, 31, 23, 0.85);
-      backdrop-filter: blur(6px);
-    }
-
-    .nav {
-      max-width: 1200px; margin: auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 1.5rem; color: #fff;
-    }
-
-    .nav ul { display: flex; gap: 1.5rem; list-style: none; }
-    .nav .cta { background: var(--secondary); padding: .6rem 1.2rem; border-radius: 30px; font-weight: 600; color: #000; }
-
-    /* HERO SLIDER */
-    .hero { height: 100vh; position: relative; overflow: hidden; }
-    .slides img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover;
-      opacity: 0; transition: opacity 1.5s ease;
-    }
-    .slides img.active { opacity: 1; }
-
-    .hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7)); z-index: 1;
-    }
-
-    .hero-content {
-      position: relative; z-index: 2; height: 100%;
-      display: flex; flex-direction: column; justify-content: center; align-items: center;
-      text-align: center; color: #fff; padding: 1rem;
-    }
-
-    .hero-content h1 { font-size: 3rem; margin-bottom: 1rem; }
-    .hero-content p { max-width: 700px; margin-bottom: 2rem; }
-
-    .btn-primary { background: var(--secondary); padding: .8rem 1.6rem; border-radius: 30px; font-weight: 600; color: #000; }
-    .btn-secondary { border: 1px solid #fff; padding: .8rem 1.6rem; border-radius: 30px; color: #fff; margin-left: .5rem; }
-
-    section { padding: 5rem 1.5rem; }
-    .container { max-width: 1200px; margin: auto; }
-
-    /* ABOUT */
-    .about { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem; align-items: center; }
-    .about img { width: 100%; border-radius: 12px; }
-
-    /* DESTINATIONS */
-    .destinations-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1.5rem; margin-top: 2rem; }
-    .destination-card { position: relative; height: 280px; overflow: hidden; border-radius: 12px; }
-    .destination-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-    .destination-card:hover img { transform: scale(1.1); }
-    .destination-card span {
-      position: absolute; bottom: 0; width: 100%; padding: 1rem;
-      background: linear-gradient(transparent, rgba(0,0,0,.85)); color: #fff; font-weight: 600;
-    }
-
-    /* WHY US */
-    .why { background: var(--primary); color: #fff; }
-    .why-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 2rem; margin-top: 2rem; }
-    .why-card { background: rgba(255,255,255,.08); padding: 2rem; border-radius: 12px; }
-
-    /* TESTIMONIALS */
-    .testimonials { background: #fff; }
-    .test-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 2rem; margin-top: 2rem; }
-    .test-card { background: var(--light); padding: 2rem; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,.08); }
-
-    /* BOOKING FORM */
-    .booking { background: #eef0eb; }
-    form { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 1rem; margin-top: 2rem; }
-    input, textarea, button { padding: .8rem; border-radius: 8px; border: 1px solid #ccc; font-family: inherit; }
-    button { background: var(--secondary); border: none; font-weight: 600; cursor: pointer; }
-
-    /* MAP */
-    .map iframe { width: 100%; height: 350px; border-radius: 12px; border: 0; }
-
-    /* FOOTER */
-    footer { background: var(--dark); color: #ccc; padding: 3rem 1.5rem; }
-    footer h3 { color: #fff; margin-bottom: 1rem; }
-
-    /* WHATSAPP */
-    .whatsapp { position: fixed; bottom: 20px; right: 20px; z-index: 2000; background: #25D366; color: #fff; padding: .8rem 1.2rem; border-radius: 50px; font-weight: 600; }
-
-    @media(max-width:768px){ .hero-content h1{font-size:2.2rem;} }
- /* === DESTINATIONS FIX === */
-
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-.booking-section, .payments-section, .trust-section {
-  padding: 80px 20px;
-  background: #f9f9f9;
-}
-.trust-grid, .testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-/* ================================
-   PART 8[3] – OPTIONAL TRUST BADGES
-   ================================ */
-
-.trust-badges {
-  background: #0b3d2e;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-weight: 600;
-  border-radius: 12px;
-  margin-top: 40px;
+<style>
+:root{
+--primary:#1f3d2b;
+--gold:#c9a24d;
+--dark:#0f1f17;
+--light:#f6f6f3;
 }
 
-.trust-badges span {
-  margin: 0 12px;
-  display: inline-block;
-  font-size: 15px;
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Inter,sans-serif;background:var(--light);color:#222;}
+
+h1,h2,h3{font-family:'Playfair Display',serif;}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+header{
+position:fixed;top:0;width:100%;z-index:1000;
+background:rgba(15,31,23,.9);
+}
+.nav{
+max-width:1200px;margin:auto;
+display:flex;justify-content:space-between;align-items:center;
+padding:1rem;color:#fff;
+}
+.nav ul{list-style:none;display:flex;gap:1.2rem;}
+.nav a{color:#fff;font-weight:500;}
+.nav .cta{background:var(--gold);padding:.5rem 1.2rem;border-radius:30px;color:#000;font-weight:600}
+
+/* HERO */
+.hero{height:100vh;position:relative}
+.slides img{
+position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+opacity:0;transition:opacity 1.5s;
+}
+.slides img.active{opacity:1}
+.hero::after{
+content:"";position:absolute;inset:0;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7));
+}
+.hero-content{
+position:relative;z-index:2;height:100%;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+text-align:center;color:#fff;padding:1rem;
+}
+.hero-content h1{font-size:3rem;margin-bottom:1rem}
+.hero-content p{max-width:650px;margin-bottom:2rem}
+.btn{padding:.8rem 1.6rem;border-radius:30px;font-weight:600}
+.btn-primary{background:var(--gold);color:#000}
+.btn-outline{border:1px solid #fff;color:#fff;margin-left:.5rem}
+
+/* SECTIONS */
+section{padding:5rem 1.5rem}
+.container{max-width:1200px;margin:auto}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;align-items:center}
+.about img{width:100%;border-radius:14px}
+
+/* DESTINATIONS */
+.destinations-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:1.5rem;margin-top:2rem
+}
+.destination-card{
+position:relative;height:260px;border-radius:16px;overflow:hidden
+}
+.destination-card img{
+width:100%;height:100%;object-fit:cover;transition:transform .6s
+}
+.destination-card:hover img{transform:scale(1.08)}
+.destination-card span{
+position:absolute;bottom:0;width:100%;
+background:linear-gradient(to top,rgba(0,0,0,.7),transparent);
+color:#fff;padding:1rem;font-weight:600
 }
 
-.trust-badges span::before {
-  content: "✔ ";
-  color: #a8ffcc;
-  font-weight: bold;
+/* WHY */
+.why{background:var(--primary);color:#fff}
+.why-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:1.5rem;margin-top:2rem
 }
-/* === PART 11[2]: WHY BOOK WITH US === */
-.why-book-us {
-  background: #f8fdfb;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.why-book-us h2 {
-  color: #0b3d2e;
-  font-size: 2.2rem;
-  margin-bottom: 40px;
+.why-card{
+background:rgba(255,255,255,.1);
+padding:2rem;border-radius:16px;text-align:center
 }
 
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+/* TESTIMONIALS */
+.test-grid{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:1.5rem;margin-top:2rem
 }
-/* === PART 11[3]: Trust Badges Animation & Hover === */
-
-.trust-badges span {
-  background: rgba(255,255,255,0.12);
-  padding: 10px 16px;
-  border-radius: 20px;
-  margin: 6px;
-  display: inline-block;
-  transition: transform 0.3s ease, background 0.3s ease;
+.test-card{
+background:#fff;padding:2rem;border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.1)
 }
 
-.trust-badges span:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-4px);
+/* BOOKING */
+.booking{background:#eef0eb}
+.booking-form{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:1rem;margin-top:2rem
 }
-
-.why-item {
-  background: #ffffff;
-  padding: 22px;
-  border-radius: 14px;
-  font-weight: 600;
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-}
-/* === PART 11[3]: Why Book With Us – Cards === */
-/* === PART 11[3]: WHY BOOK WITH US – HOVER EFFECTS === */
-
-.why-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.why-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
-}
-
-.why-item i {
-  font-size: 34px;
-  color: #0b3d2e;
-  margin-bottom: 14px;
-  display: block;
-}
-
-.why-item h3 {
-  margin-top: 12px;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #0b3d2e;
-}
-
-.why-item p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-.why-card {
-  background: #ffffff;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.why-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-}
-
-.why-card h3 {
-  color: #0b3d2e;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.why-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-/* === PART 11[4]: WHY BOOK WITH US – FINAL SPACING & RESPONSIVENESS === */
-
-.why-grid {
-  margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .why-item i {
-    font-size: 30px;
-  }
-
-  .why-item h3 {
-    font-size: 1.1rem;
-  }
-
-  .why-item p {
-    font-size: 0.9rem;
-  }
-}
-
-    /* === PART 9A: UX POLISH & ANIMATIONS === */
-
-/* Smooth transitions globally */
-* {
-  transition: all 0.3s ease;
-}
-/* === PART 9[2]: Trust Section Visual Enhancement === */
-
-.trust-section {
-  background: linear-gradient(135deg, #f7fbf9, #ffffff);
-  border-top: 1px solid #e6f0eb;
-  border-bottom: 1px solid #e6f0eb;
-}
-/* === PART 9[3]: TRUST SECTION FINAL POLISH === */
-
-.trust-section ul li {
-  padding: 10px 0;
-  font-size: 16px;
-  line-height: 1.6;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.trust-section ul li:hover {
-  transform: translateX(6px);
-  color: #0b3d2e;
-}
-
-/* Mobile refinement */
-@media (max-width: 768px) {
-  .trust-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .trust-section ul li {
-    font-size: 15px;
-  }
-}
-
-.trust-section h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  color: #0b3d2e;
-}
-
-.trust-section ul {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-}
-
-.trust-section ul li {
-  background: #ffffff;
-  margin-bottom: 14px;
-  padding: 14px 18px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-}
-
-.trust-section ul li::before {
-  content: "✓";
-  color: #1fa97a;
-  font-weight: bold;
-  margin-right: 12px;
-}
-
-/* Buttons hover */
-button,
-.btn,
-a.button {
-  cursor: pointer;
-}
-
-button:hover,
-.btn:hover,
-a.button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Cards hover (destinations, tours) */
-.card,
-.destination-card,
-.tour-card {
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-.card:hover,
-.destination-card:hover,
-.tour-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
-}
-
-/* Image zoom on hover */
-.card img,
-.destination-card img {
-  transition: transform 0.6s ease;
-}
-
-.card:hover img,
-.destination-card:hover img {
-  transform: scale(1.08);
-}
-
-.trust-card, blockquote {
-  background: #111;
-  padding: 24px;
-  border-radius: 16px;
-  color: #eee;
-}
-
-blockquote span {
-  display: block;
-  margin-top: 12px;
-  font-weight: bold;
-  color: #caa24d;
-}
-
-.payment-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 24px;
-}
-
-.payment-list li {
-  margin-bottom: 12px;
-}
-
-.payment-note {
-  margin-top: 16px;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.cta-final {
-  text-align: center;
-  padding: 4rem 1.5rem;
-}
-
-.booking-form {
-  display: grid;
-  gap: 15px;
-  max-width: 600px;
-  margin: auto;
-}
-
 .booking-form input,
-.booking-form select,
-.booking-form textarea {
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.booking-form textarea,
+.booking-form button{
+padding:.8rem;border-radius:8px;border:1px solid #ccc;font-family:inherit
+}
+.booking-form button{
+grid-column:1/-1;background:var(--gold);
+border:none;font-weight:600;cursor:pointer
 }
 
-.payments-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+/* FOOTER */
+footer{background:var(--dark);color:#ccc;padding:3rem 1.5rem}
+.footer-grid{
+max-width:1200px;margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:2rem
+}
+footer h3,footer h4{color:#fff}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;right:20px;bottom:20px;
+background:#25D366;color:#fff;
+padding:.8rem 1.2rem;border-radius:50px;
+font-weight:600;z-index:2000
 }
 
-.payment-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+@media(max-width:768px){
+.hero-content h1{font-size:2.2rem}
 }
-
-.trust-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.trust-section li {
-  margin: 10px 0;
-  font-weight: 500;
-}
-
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 14px 18px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.destination-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-}
-
-.destination-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Destination name overlay */
-.destination-card span {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
-  color: #fff;
-  padding: 14px;
-
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-
-  z-index: 2;
-}
- </style>
+</style>
 </head>
-<body>
+
+<body id="home">
 
 <header>
-  <div class="nav">
-    <strong>Jumba Heritage Voyages</strong>
-    <ul>
-      <li>Home</li><li>Destinations</li><li>Safaris</li><li>About</li><li>Contact</li>
-    </ul>
-    <a class="cta">Book Now</a>
-  </div>
+<div class="nav">
+<strong>Jumba Heritage Voyages</strong>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#destinations">Destinations</a></li>
+<li><a href="#safaris">Safaris</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<a href="#contact" class="cta">Book Now</a>
+</div>
 </header>
 
 <section class="hero">
-  <div class="slides">
-    <img src="lion-maasai-mara.jpg" class="active">
-    <img src="elephants-amboseli.jpg">
-    <img src="diani-beach.jpg">
-  </div>
-  <div class="hero-content">
-    <h1>Discover Kenya, Authentically</h1>
-    <p>Luxury eco-friendly safaris and heritage journeys across Kenya.</p>
-    <div>
-      <a class="btn-primary">Explore Destinations</a>
-      <a class="btn-secondary">Plan Your Safari</a>
-    </div>
-  </div>
+<div class="slides">
+<img src="lion-maasai-mara.jpg" class="active">
+<img src="elephants-amboseli.jpg">
+<img src="diani-beach.jpg">
+</div>
+<div class="hero-content">
+<h1>Discover Kenya, Authentically</h1>
+<p>Luxury eco-friendly safaris and cultural journeys curated by local experts.</p>
+<div>
+<a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+<a href="#contact" class="btn btn-outline">Plan My Safari</a>
+</div>
+</div>
 </section>
 
-<section>
-  <div class="container about">
-    <div>
-      <h2>Rooted in Heritage. Guided by Nature.</h2>
-      <p>We curate authentic Kenyan journeys that celebrate wildlife, culture and conservation — blending luxury with sustainability.</p>
-    </div>
-   <img src="elephants-amboseli.jpg" alt="Elephants in Amboseli National Park">
-
-  </div>
-</section><!-- ================================ -->
-<!-- PART 2–4: DESTINATIONS + PACKAGES + TRUST + CTA -->
-<!-- ================================ -->
-
-<style>
-/* GLOBAL SECTION STYLES */
-.section {
-  padding: 5rem 1.5rem;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #1f3d2b;
-}
-
-.section-intro {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 3rem;
-  color: #555;
-}
-
-/* DESTINATIONS */
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.destination-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 18px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-.destination-card img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.destination-card:hover img {
-  transform: scale(1.1);
-}
-
-.destination-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15));
-  display: flex;
-  align-items: flex-end;
-  padding: 1.5rem;
-}
-
-.destination-overlay h3 {
-  color: #fff;
-  font-size: 1.4rem;
-}
-
-/* PACKAGES */
-.packages {
-  background: #f7f7f4;
-}
-
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.package-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.package-card h3 {
-  margin-bottom: 0.5rem;
-  color: #1f3d2b;
-}
-
-.package-card span {
-  display: block;
-  font-weight: bold;
-  margin: 1rem 0;
-  color: #c9a24d;
-}
-
-.package-card p {
-  color: #555;
-}
-
-.package-card a {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background: #1f3d2b;
-  color: #fff;
-  padding: 0.6rem 1.4rem;
-  border-radius: 30px;
-  text-decoration: none;
-}
-
-/* WHY US */
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.why-box {
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-.why-box h4 {
-  margin-bottom: 0.5rem;
-  color: #1f3d2b;
-}
-
-/* CTA */
-.cta {
-  background: linear-gradient(to right, #1f3d2b, #2e5d3b);
-  color: #fff;
-  text-align: center;
-  padding: 4rem 1.5rem;
-  border-radius: 24px;
-}
-
-.cta h2 {
-  color: #fff;
-}
-
-.cta a {
-  display: inline-block;
-  margin-top: 1.5rem;
-  background: #c9a24d;
-  color: #000;
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-/* LANDSCAPE CARD FIX */
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.destination-card {
-  max-width: 360px;
-  margin: 0 auto;
-}
-
-.destination-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-}
- /* ===== DESTINATION LANDSCAPE CARD FIX ===== */
-
-.destination-card,
-.destination-item {
-    height: 280px;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.destination-card img,
-.destination-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-/* DESTINATIONS GRID */
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/* DESTINATION CARD */
-.destination-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  height: 260px;
-}
-
-/* IMAGE FIX */
-.destination-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* DESTINATION CARDS – FORCE LANDSCAPE SIZE */
-.destination-card {
-  width: 100%;
-  max-width: 420px;
-  height: 260px;
-  border-radius: 18px;
-  overflow: hidden;
-  position: relative;
-}
-
-.destination-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* PART 13 — DESTINATION GRID CONTROL */
-.destinations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-  .destinations-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .destinations-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* PART 14 — DESTINATION HOVER EFFECTS */
-.destination-card {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-}
-
-.destination-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.05)
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.destination-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-}
-
-.destination-card:hover::after {
-  opacity: 1;
-}
-
-.destination-card img {
-  transition: transform 0.6s ease;
-}
-
-.destination-card:hover img {
-  transform: scale(1.08);
-}
-
-/* PART 15 — FINAL VISUAL TIGHTENING */
-
-/* Section spacing */
-section {
-  padding: 4.5rem 1.5rem;
-}
-
-/* Headings consistency */
-section h2 {
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-/* Paragraph readability */
-section p {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.7;
-}
-
-/* Destination & package cards alignment */
-.destination-card,
-.package-card {
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-/* Reduce excessive height on large screens */
-@media (min-width: 1200px) {
-  section {
-    padding: 4rem 2rem;
-  }
-}
-
-/* ================= PART 18 : FINAL POLISH ================= */
-
-/* Better mobile spacing */
-@media (max-width: 768px) {
-  .section {
-    padding: 60px 20px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-
-  .section-subtitle {
-    font-size: 16px;
-  }
-
-  .booking-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-links ul {
-    padding: 0;
-  }
-
-  .footer-links li {
-    list-style: none;
-    margin: 8px 0;
-  }
-}
-
-/* Better buttons */
-button,
-.btn,
-a.button {
-  min-height: 48px;
-  padding: 12px 20px;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-</style>
-<!-- ================= PART 16 : BOOKINGS & CONTACT ================= -->
-<section class="section booking-section" id="bookings">
-  <div class="container">
-
-    <h2 class="section-title">Book Your Safari Adventure</h2>
-    <p class="section-subtitle">
-      Plan your unforgettable Kenyan safari with Jumba Voyages.  
-      Fill in the form below and our team will get back to you within 24 hours.
-    </p>
-
-    <div class="booking-grid">
-
-      <!-- BOOKING FORM -->
-      <form class="booking-form" action="#" method="post">
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Full Name" required>
-        </div>
-
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Email Address" required>
-        </div>
-
-        <div class="form-group">
-          <input type="tel" name="phone" placeholder="Phone / WhatsApp Number" required>
-        </div>
-
-        <div class="form-group">
-          <select name="destination" required>
-            <option value="">Select Destination</option>
-            <option>Maasai Mara</option>
-            <option>Amboseli National Park</option>
-            <option>Tsavo East & West</option>
-            <option>Lake Nakuru</option>
-            <option>Samburu</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <input type="date" name="travel_date" required>
-        </div>
-
-        <div class="form-group">
-          <textarea name="message" rows="4" placeholder="Tell us your travel plans..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn-primary">Send Booking Request</button>
-      </form>
-
-      <!-- CONTACT & PAYMENT INFO -->
-      <div class="contact-info-box">
-
-        <h3>Contact Information</h3>
-        <p><strong>Email:</strong> jumbaheritagevoyages@gmail.com</p>
-<p><strong>Phone:</strong> +254789514678</p>
-<p><strong>Location:</strong> Nairobi, Kenya</p>
-
-
-        <a 
-          href="https://wa.me/254XXXXXXXXX" 
-          target="_blank" 
-          class="whatsapp-btn">
-          Chat with us on WhatsApp
-        </a>
-
-        <hr>
-
-        <h3>Accepted Payment Methods</h3>
-        <ul class="payment-list">
-          <li>✔ M-Pesa</li>
-          <li>✔ Airtel Money</li>
-          <li>✔ Bank Transfer</li>
-          <li>✔ Crypto (USDT / BTC)</li>
-        </ul>
-
-        <p class="payment-note">
-          Secure and flexible payment options available for local and international clients.
-        </p>
-
-      </div>
-
-    </div>
-  </div>
+<section id="about">
+<div class="container about">
+<div>
+<h2>Rooted in Heritage</h2>
+<p>
+We design authentic Kenyan travel experiences that respect culture,
+celebrate wildlife, and support local communities.
+</p>
+</div>
+<img src="elephants-amboseli.jpg" alt="Amboseli elephants">
+</div>
 </section>
-<!-- ================= END PART 16 ================= -->
-<!-- ================= PART 17 : FOOTER ================= -->
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <div class="footer-brand">
-      <h3>Jumba Heritage Voyages</h3>
-      <p>
-        Curated luxury safaris across Kenya’s most iconic landscapes.
-        Travel with purpose, comfort, and heritage.
-      </p>
-    </div>
 
-    <div class="footer-contact">
-      <h4>Contact Us</h4>
-      <p>
-        📧 Email:
-        <a href="mailto:info@jumbaheritagevoyages.com">
-          info@jumbaheritagevoyages.com
-        </a>
-      </p>
-      <p>
-        📞 Phone:
-        <a href="tel:+254789514678">
-          +254 789 514 678
-        </a>
-      </p>
-    </div>
-
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#safaris">Safaris</a></li>
-        <li><a href="#bookings">Book Now</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>
-      © 2026 Jumba Heritage Voyages. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-  
-
-<!-- DESTINATIONS -->
-<section class="section">
-  <h2>Featured Destinations</h2>
-  <p class="section-intro">
-    Kenya’s most iconic landscapes — curated with luxury, sustainability and heritage.
-  </p>
+<section id="destinations">
+<div class="container">
+<h2>Featured Destinations</h2>
 <div class="destinations-grid">
-
- <div class="destination-card">
-  <img src="maasai-mara.jpg" alt="Maasai Mara safari" loading="lazy">
-  <div class="destination-overlay">
-    <h3>Maasai Mara</h3>
-  </div>
+<div class="destination-card"><img src="maasai-mara.jpg"><span>Maasai Mara</span></div>
+<div class="destination-card"><img src="elephants-amboseli.jpg"><span>Amboseli</span></div>
+<div class="destination-card"><img src="diani-beach.jpg"><span>Diani Beach</span></div>
+<div class="destination-card"><img src="tsavo-national-park.jpg"><span>Tsavo</span></div>
 </div>
-
-
-    </div>
-
-    <div class="destination-card">
-      <img src="elephants-amboseli.jpg" alt="Amboseli elephants" loading="lazy">
-      <div class="destination-overlay"><h3>Amboseli</h3></div>
-    </div>
-
-    <div class="destination-card">
-      <img src="diani-beach.jpg" alt="Diani Beach" loading="lazy">
-      <div class="destination-overlay"><h3>Diani Beach</h3></div>
-    </div>
-
-    <div class="destination-card">
-      <img src="tsavo-national-park.jpg" alt="Tsavo National Park" loading="lazy">
-      <div class="destination-overlay"><h3>Tsavo</h3></div>
-    </div>
-  </div>
+</div>
 </section>
 
-<!-- PACKAGES -->
-<section class="section packages">
-  <h2>Safari Packages</h2>
-
-  <div class="packages-grid">
-    <div class="package-card">
-      <h3>Classic Safari</h3>
-      <span>From $1,200</span>
-      <p>Perfect introduction to Kenya’s wildlife and landscapes.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-
-    <div class="package-card">
-      <h3>Luxury Escape</h3>
-      <span>From $2,800</span>
-      <p>Private guides, luxury lodges and tailored experiences.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-
-    <div class="package-card">
-      <h3>Heritage Journey</h3>
-      <span>From $2,000</span>
-      <p>Culture, conservation and authentic community experiences.</p>
-      <a href="#contact">Enquire</a>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section class="section">
-  <h2>Why Choose Jumba Heritage Voyages</h2>
-
-  <div class="why-grid">
-    <div class="why-box">
-      <h4>Authentic Experiences</h4>
-      <p>Deep cultural connections and local expertise.</p>
-    </div>
-
-    <div class="why-box">
-      <h4>Eco-Conscious Travel</h4>
-      <p>Sustainable tourism that protects nature.</p>
-    </div>
-
-    <div class="why-box">
-      <h4>Luxury with Purpose</h4>
-      <p>Comfort, elegance and responsible travel.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <h2>Start Your Kenyan Journey</h2>
-  <p>Let us craft an unforgettable safari experience for you.</p>
-  <a href="#contact">Plan My Safari</a>
+<section id="safaris" class="why">
+<div class="container">
+<h2>Why Travel With Us</h2>
+<div class="why-grid">
+<div class="why-card">🌿 Eco-Friendly Safaris</div>
+<div class="why-card">🦁 Expert Local Guides</div>
+<div class="why-card">🏕️ Luxury Camps & Lodges</div>
+<div class="why-card">🤝 Community Impact</div>
+</div>
+</div>
 </section>
 
 <section>
-  <div class="container">
-    <h2>Featured Destinations</h2>
-
-    <div class="destinations-grid">
-      <div class="destination-card">
-        <img src="lion-maasai-mara.jpg" alt="Maasai Mara">
-        <span>Maasai Mara</span>
-      </div>
-
-      <div class="destination-card">
-        <img src="elephants-amboseli.jpg" alt="Amboseli National Park">
-        <span>Amboseli</span>
-      </div>
-
-      <div class="destination-card">
-        <img src="diani-beach.jpg" alt="Diani Beach">
-        <span>Diani Beach</span>
-      </div>
-
-      <div class="destination-card">
-        <img src="tsavo-national-park.jpg" alt="Tsavo National Park">
-        <span>Tsavo National Park</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-
-<section class="why">
-  <div class="container">
-    <h2>Why Travel With Us</h2>
-    <div class="why-grid">
-      <div class="why-card">🌿 Eco-Friendly Safaris</div>
-      <div class="why-card">🦁 Expert Local Guides</div>
-      <div class="why-card">🏕️ Luxury Camps & Lodges</div>
-      <div class="why-card">🤝 Community Impact</div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials">
-  <div class="container">
-    <h2>Guest Experiences</h2>
-    <div class="test-grid">
-      <div class="test-card">“An unforgettable safari — authentic, luxurious and deeply meaningful.”</div>
-      <div class="test-card">“Exceptional guides and stunning wildlife encounters. Highly recommended.”</div>
-      <div class="test-card">“A perfect balance of comfort, culture and conservation.”</div>
-    </div>
-  </div>
-</section>
-
-<section class="booking">
-  <div class="container">
-    <h2>Plan Your Journey</h2>
-    <form>
-      <input placeholder="Full Name">
-      <input placeholder="Email Address">
-      <input placeholder="Phone Number">
-      <textarea rows="4" placeholder="Tell us about your ideal safari"></textarea>
-      <button>Submit Inquiry</button>
-    </form>
-  </div>
-</section>
-
-<section class="map">
-  <div class="container">
-    <h2>Our Location</h2>
-    <iframe src="https://www.google.com/maps?q=Ngong%20Arcade%20Plaza%20Ngong%20Town&output=embed"></iframe>
-  </div>
-</section>
-<!-- TRUST BADGES -->
-<div class="trust-badges">
-  <span>🇰🇪 Kenyan Owned & Operated</span>
-  <span>🔒 Secure Payments</span>
-  <span>🌿 Eco-Friendly Safaris</span>
-  <span>🦁 Local Expert Guides</span>
+<div class="container">
+<h2>Guest Experiences</h2>
+<div class="test-grid">
+<div class="test-card">“An unforgettable safari — authentic and luxurious.”</div>
+<div class="test-card">“Professional guides and stunning wildlife.”</div>
+<div class="test-card">“The perfect balance of comfort and culture.”</div>
 </div>
-
-<!-- ===== PART 6: TRUST, PAYMENTS & COMMUNICATION ===== -->
-
-<section class="trust-section">
-  <div class="container">
-    <h2>Why Travel With Jumba Heritage Voyages</h2>
-
-    <div class="trust-grid">
-      <div class="trust-card">
-        <h3>🌍 Local Experts</h3>
-        <p>Kenyan-owned, guided by locals with deep cultural and wildlife knowledge.</p>
-      </div>
-      <div class="trust-card">
-        <h3>🛡 Secure Booking</h3>
-        <p>Transparent pricing, flexible payments, and direct communication.</p>
-      </div>
-      <div class="trust-card">
-        <h3>🌱 Eco-Friendly</h3>
-        <p>Responsible tourism that supports conservation and communities.</p>
-      </div>
-   <section class="trust-badges">
-  <div class="container">
-    <p>🔒 Secure Payments • 🇰🇪 Kenyan Owned • ⭐ Trusted Local Guides</p>
-  </div>
-</section>
- </div>
-  </div>
+</div>
 </section>
 
-<section class="payment-info">
-  <div class="container">
-    <h2>Payment Options</h2>
-    <p>Select your preferred method after booking confirmation.</p>
+<section id="contact" class="booking">
+<div class="container">
+<h2>Plan Your Safari</h2>
 
-    <ul class="payment-list">
-      <li><strong>M-Pesa:</strong> Paybill / Till provided after inquiry</li>
-      <li><strong>Airtel Money:</strong> Details shared via WhatsApp or Email</li>
-      <li><strong>Bank Transfer:</strong> Local & international supported</li>
-      <li><strong>Crypto:</strong> USDT / BTC / ETH (on request)</li>
-    </ul>
+<form class="booking-form"
+action="mailto:jumbaheritagevoyages@gmail.com"
+method="POST"
+enctype="text/plain">
 
-    <p class="payment-note">
-      🔒 Payments are confirmed manually to ensure accuracy and security.
-    </p>
-  </div>
+<input type="text" name="Name" placeholder="Full Name" required>
+<input type="email" name="Email" placeholder="Email Address" required>
+<input type="tel" name="Phone" placeholder="Phone / WhatsApp" required>
+
+<textarea name="Message" rows="4" placeholder="Tell us about your ideal safari" required></textarea>
+
+<button type="submit">Send Inquiry</button>
+</form>
+</div>
 </section>
 
-<section class="testimonials">
-  <div class="container">
-    <h2>What Our Guests Say</h2>
-
-    <div class="testimonial-grid">
-      <blockquote>
-        “An unforgettable safari! Everything was perfectly organized.”
-        <span>— Sarah M, UK</span>
-      </blockquote>
-
-      <blockquote>
-        “Professional, warm, and deeply knowledgeable guides.”
-        <span>— James K, Nairobi</span>
-      </blockquote>
-
-      <blockquote>
-        “The best cultural experience I’ve had in Kenya.”
-        <span>— Lina R, Germany</span>
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="cta-final">
-  <div class="container">
-    <h2>Ready to Begin Your Journey?</h2>
-    <p>Speak directly with our team and plan your perfect safari.</p>
-
-    <a href="https://wa.me/254789514678" class="btn-primary">
-      Chat on WhatsApp
-    </a>
-  </div>
-</section>
-<!-- ===== PART 5: BOOKING & PAYMENTS ===== -->
-<section class="booking-section" id="booking">
-  <div class="container">
-    <h2>Book Your Safari</h2>
-    <p>Reserve your journey with flexible and secure payment options.</p>
-
-    <form class="booking-form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number" required>
-
-      <select required>
-        <option value="">Select Destination</option>
-        <option>Maasai Mara</option>
-        <option>Amboseli National Park</option>
-        <option>Diani Beach</option>
-        <option>Samburu</option>
-      </select>
-
-      <select required>
-        <option value="">Select Payment Method</option>
-        <option>Mpesa</option>
-        <option>Airtel Money</option>
-        <option>Bank Transfer</option>
-        <option>Crypto (USDT / BTC)</option>
-      </select>
-
-      <textarea rows="4" placeholder="Additional Notes"></textarea>
-
-      <button class="btn-primary" type="submit">Proceed to Payment</button>
-    </form>
-
-    <div class="payments">
-      <div class="payment-card">📱 Mpesa</div>
-      <div class="payment-card">📶 Airtel Money</div>
-      <div class="payment-card">🏦 Bank Transfer</div>
-      <div class="payment-card">💱 Crypto</div>
-    </div>
-  </div>
-</section>
 <footer>
-  <div class="container">
-    <h3>Jumba Heritage Voyages | Asili Travels</h3>
-    <p>📍 Ngong Arcade Plaza, Ngong Town, Nairobi, Kenya</p>
-    <p>📞 0789 514 678</p>
-    <p>✉️ jumbaheritagevoyages@gmail.com</p>
-    <p>© 2026 Jumba Heritage Voyages. Proudly Kenyan 🇰🇪</p>
-  </div>
+<div class="footer-grid">
+<div>
+<h3>Jumba Heritage Voyages</h3>
+<p>Authentic Kenyan safaris crafted with care and heritage.</p>
+</div>
+<div>
+<h4>Contact</h4>
+<p>Email: jumbaheritagevoyages@gmail.com</p>
+<p>Phone: +254 789 514 678</p>
+</div>
+</div>
+<p style="text-align:center;margin-top:2rem;">
+© 2026 Jumba Heritage Voyages
+</p>
 </footer>
-<!-- === PART 11[1]: WHY BOOK WITH US === -->
-<section class="why-book-us">
-  <h2>Why Travel With Jumba Heritage Voyages?</h2>
-  <div class="why-grid">
-    <div class="why-item">🌿 Eco-Friendly & Responsible Tourism</div>
-    <div class="why-item">🦁 Authentic Kenyan Wildlife Experiences</div>
-    <div class="why-item">🏨 Hand-Picked Luxury & Mid-Range Lodges</div>
-    <div class="why-item">👨🏽‍✈️ Expert Local Guides</div>
-    <div class="why-item">💳 Secure & Flexible Payments</div>
-    <div class="why-item">📞 24/7 Local Support</div>
-  </div>
-</section>
 
-<a class="whatsapp" href="https://wa.me/254789514678" target="_blank">WhatsApp Us</a>
+<a class="whatsapp" href="https://wa.me/254789514678" target="_blank">
+WhatsApp Us
+</a>
 
 <script>
-  const slides = document.querySelectorAll('.slides img');
-  let index = 0;
-  setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }, 5000);
+const slides=document.querySelectorAll('.slides img');
+let i=0;
+setInterval(()=>{
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},5000);
 </script>
 
-<!-- PART 5: BOOKING & PAYMENTS -->
-<section class="booking-section">
-  <div class="container">
-    <h2>Book Your Safari Experience</h2>
-    <p>Reserve your luxury Kenyan journey with flexible and secure payment options.</p>
-
-    <!-- BOOKING FORM -->
-    <form class="booking-form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone / WhatsApp Number" required>
-      <input type="text" placeholder="Country of Residence" required>
-
-      <select required>
-        <option value="">Preferred Destination</option>
-        <option>Diani Beach</option>
-        <option>Maasai Mara</option>
-        <option>Amboseli National Park</option>
-        <option>Custom Safari</option>
-      </select>
-
-      <input type="date" required>
-      <input type="number" placeholder="Number of Guests" required>
-
-      <textarea placeholder="Special Requests (optional)"></textarea>
-
-      <button type="submit" class="btn-primary">Submit Booking Request</button>
-    </form>
-  </div>
-</section>
-
-<!-- PAYMENT METHODS -->
-<section class="payments-section">
-  <div class="container">
-    <h2>Secure Payment Options</h2>
-
-    <div class="payments-grid">
-      <!-- MPESA -->
-      <div class="payment-card">
-        <h3>M-PESA</h3>
-        <p>Pay easily via M-PESA</p>
-        <p><strong>PayBill:</strong> 123456</p>
-        <p><strong>Account:</strong> Your Full Name</p>
-      </div>
-
-      <!-- AIRTEL -->
-      <div class="payment-card">
-        <h3>Airtel Money</h3>
-        <p><strong>Number:</strong> +254 7XX XXX XXX</p>
-        <p>Account Name: Jumba Heritage Voyages</p>
-      </div>
-
-      <!-- BANK -->
-      <div class="payment-card">
-        <h3>Bank Transfer</h3>
-        <p><strong>Bank:</strong> Example Bank Kenya</p>
-        <p><strong>Account Name:</strong> Jumba Heritage Voyages</p>
-        <p><strong>SWIFT:</strong> EXAMPKE</p>
-      </div>
-
-      <!-- CRYPTO -->
-      <div class="payment-card">
-        <h3>Crypto Payments</h3>
-        <p><strong>Bitcoin (BTC)</strong></p>
-        <p><strong>USDT (TRC20)</strong></p>
-        <p><strong>Ethereum (ETH)</strong></p>
-        <small>Wallet details shared upon request</small>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST SECTION -->
-<section class="trust-section">
-  <div class="container">
-    <h2>Why Book With Jumba Heritage Voyages?</h2>
-    <ul>
-      <li>✔ Locally owned & operated in Kenya</li>
-      <li>✔ Eco-conscious & sustainable tourism</li>
-      <li>✔ Tailor-made luxury safaris</li>
-      <li>✔ Trusted by global travelers</li>
-    </ul>
-  </div>
-</section>
-</section>
-
-<!-- 🔽 PASTE PART 9[2] CODE HERE 🔽 -->
-
-<div class="sticky-booking-bar">
-  <span>Ready to explore Kenya with us?</span>
-  <a href="#booking" class="sticky-btn">Book Now</a>
-</div>
-
-<!-- WHATSAPP CTA -->
-<a href="https://wa.me/254700000000" class="whatsapp-float">
-  WhatsApp Us
-</a>
-
-<!-- WHATSAPP CTA -->
-<a href="https://wa.me/254700000000" class="whatsapp-float" target="_blank">
-  WhatsApp Us
-</a>
 </body>
 </html>
-
