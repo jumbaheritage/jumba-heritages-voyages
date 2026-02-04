@@ -1,182 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jumba Herita Voyages | Authentic Kenya Safaris & Tours</title>
+  <!-- =========================
+       BASIC META
+  ========================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumba Heritage Voyages | Authentic Kenyan Safaris</title>
+  <meta name="description" content="Luxury eco-friendly safaris and authentic cultural journeys across Kenya. Book trusted, locally guided safari experiences with Jumba Heritage Voyages.">
+  <meta name="author" content="Jumba Heritage Voyages">
 
-  <!-- SEO -->
-  <meta name="description" content="Jumba Herita Voyages offers authentic Kenya safaris, wildlife adventures, cultural tours, and unforgettable travel experiences guided by local experts." />
-  <meta name="keywords" content="Kenya safaris, Maasai Mara, Amboseli, Kenya tours, safari company Kenya" />
+  <!-- =========================
+       SEO & SOCIAL
+  ========================== -->
+  <meta property="og:title" content="Jumba Heritage Voyages | Authentic Kenyan Safaris">
+  <meta property="og:description" content="Discover Kenya through luxury safaris, cultural tours, and eco-friendly travel experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jumba-heritages-voyages.github.io/">
+  <meta property="og:image" content="og-image.jpg">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Jumba Herita Voyages | Authentic Kenya Safaris" />
-  <meta property="og:description" content="Discover Kenya with trusted local safari experts. Wildlife, culture, and unforgettable journeys." />
-  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jumba Heritage Voyages">
+  <meta name="twitter:description" content="Luxury Kenyan safaris guided by local experts.">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- =========================
+       STRUCTURED DATA
+  ========================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Jumba Heritage Voyages",
+    "url": "https://jumba-heritages-voyages.github.io/",
+    "description": "Luxury eco-friendly safaris and authentic Kenyan cultural journeys.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "KE"
+    }
+  }
+  </script>
 
+  <!-- =========================
+       FONTS
+  ========================== -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- =========================
+       STYLES
+  ========================== -->
   <style>
     :root {
       --primary:#1f3d2b;
       --accent:#c9a24d;
-      --dark:#0e1a14;
-      --light:#f8f7f3;
+      --dark:#0f1f17;
+      --light:#f6f6f3;
     }
 
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
     body {
-      font-family:'Inter', sans-serif;
-      background:linear-gradient(180deg,#f8f7f3,#ffffff);
+      font-family:'Inter',sans-serif;
+      background:var(--light);
       color:#222;
       line-height:1.6;
     }
 
-    h1,h2,h3 {
-      font-family:'Playfair Display', serif;
-      color:var(--dark);
-    }
+    h1,h2,h3 { font-family:'Playfair Display',serif; }
+    a { text-decoration:none; color:inherit; }
 
-    section { padding:80px 8%; }
-
-    .btn {
-      background:var(--accent);
-      color:#000;
-      padding:14px 28px;
-      border-radius:40px;
-      text-decoration:none;
-      font-weight:600;
-      display:inline-block;
-      transition:.3s;
-    }
-    .btn:hover { transform:translateY(-2px); }
-
+    /* =========================
+       HEADER / NAV
+    ========================== */
     header {
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-        url("assets/images/hero.jpg") center/cover no-repeat;
-      color:#fff;
+      position:fixed;
+      top:0; left:0; width:100%;
+      background:rgba(15,31,23,.9);
+      backdrop-filter:blur(6px);
+      z-index:1000;
+    }
+    .nav {
+      max-width:1200px;
+      margin:auto;
+      padding:1rem 1.5rem;
       display:flex;
+      justify-content:space-between;
+      align-items:center;
+      color:#fff;
+    }
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:1.5rem;
+    }
+    .nav a.cta {
+      background:var(--accent);
+      padding:.5rem 1.2rem;
+      border-radius:30px;
+      font-weight:600;
+      color:#000;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+    .hero {
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+    }
+    .slides img {
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transition:opacity 1.2s ease;
+    }
+    .slides img.active { opacity:1; }
+    .hero::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75));
+    }
+    .hero-content {
+      position:relative;
+      z-index:2;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:#fff;
+      padding:1rem;
+    }
+    .hero h1 { font-size:3rem; margin-bottom:1rem; }
+    .hero p { max-width:680px; margin-bottom:2rem; }
+    .btn-primary {
+      background:var(--accent);
+      padding:.8rem 1.8rem;
+      border-radius:30px;
+      font-weight:600;
+      color:#000;
+      margin-right:.5rem;
+    }
+    .btn-outline {
+      border:1px solid #fff;
+      padding:.8rem 1.8rem;
+      border-radius:30px;
+      color:#fff;
+    }
+
+    section { padding:5rem 1.5rem; }
+    .container { max-width:1200px; margin:auto; }
+
+    /* =========================
+       ABOUT
+    ========================== */
+    .about {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:2rem;
       align-items:center;
     }
-
-    header .content {
-      max-width:650px;
+    .about img {
+      width:100%;
+      border-radius:14px;
     }
 
-    header h1 { font-size:3.2rem; margin-bottom:20px; }
-    header p { font-size:1.1rem; margin-bottom:30px; }
-
-    .trust {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:30px;
-      margin-top:40px;
-    }
-
-    .trust div {
-      background:#fff;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 10px 30px rgba(0,0,0,.05);
-      text-align:center;
-    }
-
-    .destinations, .experiences {
+    /* =========================
+       DESTINATIONS
+    ========================== */
+    .destinations-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+      gap:1.5rem;
+      margin-top:2rem;
     }
-
-    .card {
-      background:#fff;
-      border-radius:25px;
+    .destination-card {
+      position:relative;
+      height:260px;
+      border-radius:16px;
       overflow:hidden;
-      box-shadow:0 12px 35px rgba(0,0,0,.06);
-      transition:.4s;
+      transition:transform .3s ease, box-shadow .3s ease;
     }
-    .card:hover { transform:translateY(-6px); }
-
-    .card img {
+    .destination-card img {
       width:100%;
-      height:220px;
+      height:100%;
       object-fit:cover;
     }
-    .card div { padding:25px; }
+    .destination-card span {
+      position:absolute;
+      bottom:0; left:0; right:0;
+      padding:1rem;
+      background:linear-gradient(to top,rgba(0,0,0,.75),transparent);
+      color:#fff;
+      font-weight:600;
+    }
+    .destination-card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 18px 40px rgba(0,0,0,.25);
+    }
 
-    .how {
+    /* =========================
+       WHY US
+    ========================== */
+    .why {
+      background:var(--primary);
+      color:#fff;
+    }
+    .why-grid {
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:30px;
+      gap:1.5rem;
+      margin-top:2rem;
+    }
+    .why-card {
+      background:rgba(255,255,255,.08);
+      padding:2rem;
+      border-radius:14px;
       text-align:center;
     }
 
-    .testimonials {
+    /* =========================
+       TESTIMONIALS
+    ========================== */
+    .test-grid {
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+      margin-top:2rem;
     }
-
-    .testimonial {
+    blockquote {
       background:#fff;
-      padding:30px;
-      border-radius:25px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
+      padding:2rem;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+    blockquote span {
+      display:block;
+      margin-top:1rem;
+      font-weight:600;
+      color:var(--accent);
     }
 
+    /* =========================
+       BOOKING
+    ========================== */
+    .booking { background:#eef0eb; }
     form {
       max-width:600px;
-      margin:auto;
+      margin:2rem auto 0;
       display:grid;
-      gap:20px;
+      gap:1rem;
     }
-
-    input, textarea {
-      padding:14px;
-      border-radius:12px;
-      border:1px solid #ddd;
-      font-size:1rem;
+    label { font-size:.9rem; font-weight:500; }
+    input,select,textarea,button {
+      padding:.8rem;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-family:inherit;
     }
-
-    iframe {
-      width:100%;
-      height:380px;
+    button {
+      background:var(--accent);
       border:none;
-      border-radius:25px;
+      font-weight:600;
+      cursor:pointer;
     }
 
+    /* =========================
+       FOOTER
+    ========================== */
     footer {
       background:var(--dark);
-      color:#fff;
-      padding:50px 8%;
-      text-align:center;
+      color:#ccc;
+      padding:3rem 1.5rem;
     }
+    footer h3 { color:#fff; margin-bottom:1rem; }
 
-    /* Mobile Booking Bar */
+    /* =========================
+       STICKY CTA
+    ========================== */
+    .whatsapp {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25d366;
+      color:#fff;
+      padding:.8rem 1.2rem;
+      border-radius:50px;
+      font-weight:600;
+      z-index:2000;
+    }
     .mobile-bar {
-      display:none;
       position:fixed;
       bottom:0;
       left:0;
-      right:0;
-      background:#fff;
-      padding:12px;
-      box-shadow:0 -5px 20px rgba(0,0,0,.1);
-      z-index:999;
-      justify-content:space-around;
+      width:100%;
+      background:#1f3d2b;
+      color:#fff;
+      padding:.8rem;
+      display:none;
+      justify-content:center;
+      z-index:1500;
     }
-
     .mobile-bar a {
-      text-decoration:none;
+      background:var(--accent);
+      padding:.6rem 1.5rem;
+      border-radius:30px;
       font-weight:600;
-      color:var(--primary);
+      color:#000;
     }
 
     @media(max-width:768px){
-      header h1{font-size:2.3rem;}
-      .mobile-bar{display:flex;}
+      .hero h1 { font-size:2.2rem; }
+      .mobile-bar { display:flex; }
     }
   </style>
 </head>
@@ -184,93 +324,126 @@
 <body>
 
 <header>
-  <div class="content">
-    <h1>Experience Kenya the Authentic Way</h1>
-    <p>Wildlife safaris, cultural journeys, and handcrafted adventures led by trusted local experts.</p>
-    <a href="#booking" class="btn">Plan Your Safari</a>
-
-    <div class="trust">
-      <div>🦁 Local Safari Experts</div>
-      <div>🛡 Transparent Pricing</div>
-      <div>💳 Secure Payments</div>
-    </div>
+  <div class="nav">
+    <strong>Jumba Heritage Voyages</strong>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#booking">Book</a></li>
+    </ul>
+    <a href="#booking" class="cta">Book Now</a>
   </div>
 </header>
 
-<section>
-  <h2>Top Destinations</h2>
-  <div class="destinations">
-    <div class="card">
-      <img src="assets/images/maasai.jpg">
-      <div><h3>Maasai Mara</h3><p>Big Five & Great Migration.</p></div>
-    </div>
-    <div class="card">
-      <img src="assets/images/amboseli.jpg">
-      <div><h3>Amboseli</h3><p>Elephants with Mount Kilimanjaro.</p></div>
-    </div>
-    <div class="card">
-      <img src="assets/images/diani.jpg">
-      <div><h3>Diani Beach</h3><p>Relaxation after safari.</p></div>
+<section class="hero" id="home">
+  <div class="slides">
+    <img src="lion-maasai-mara.jpg" class="active" alt="">
+    <img src="elephants-amboseli.jpg" alt="">
+    <img src="diani-beach.jpg" alt="">
+  </div>
+  <div class="hero-content">
+    <h1>Discover Kenya, Authentically</h1>
+    <p>Luxury eco-friendly safaris and cultural journeys guided by local experts.</p>
+    <div>
+      <a href="#destinations" class="btn-primary">Explore Destinations</a>
+      <a href="#booking" class="btn-outline">Plan Your Safari</a>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>How It Works</h2>
-  <div class="how">
-    <div>📩 Send Inquiry</div>
-    <div>📝 Custom Itinerary</div>
-    <div>💳 Secure Payment</div>
-    <div>🦓 Enjoy Safari</div>
+<section id="about">
+  <div class="container about">
+    <div>
+      <h2>Rooted in Heritage. Guided by Nature.</h2>
+      <p>We curate meaningful Kenyan journeys blending wildlife, culture and conservation — without compromise.</p>
+    </div>
+    <img src="elephants-amboseli.jpg" alt="Elephants in Amboseli">
   </div>
 </section>
 
-<section>
-  <h2>Secure Payments</h2>
-  <p>
-    M-Pesa: <strong>0710 731 785</strong><br>
-    Airtel Money: <strong>0789 514 678</strong><br>
-    Card & Bank Deposit: <em>Available on request</em><br><br>
-    A deposit secures your booking, balance before departure.
-  </p>
-</section>
-
-<section>
-  <h2>Traveler Stories</h2>
-  <div class="testimonials">
-    <div class="testimonial">
-      “An unforgettable experience.”<br><strong>— Sarah, UK</strong>
-    </div>
-    <div class="testimonial">
-      “Professional, warm, and well organized.”<br><strong>— Daniel, Germany</strong>
+<section id="destinations">
+  <div class="container">
+    <h2>Featured Destinations</h2>
+    <div class="destinations-grid">
+      <div class="destination-card"><img src="maasai-mara.jpg" alt=""><span>Maasai Mara</span></div>
+      <div class="destination-card"><img src="elephants-amboseli.jpg" alt=""><span>Amboseli</span></div>
+      <div class="destination-card"><img src="diani-beach.jpg" alt=""><span>Diani Beach</span></div>
+      <div class="destination-card"><img src="tsavo-national-park.jpg" alt=""><span>Tsavo</span></div>
     </div>
   </div>
 </section>
 
-<section id="booking">
-  <h2>Book Your Safari</h2>
-  <form name="booking" method="POST" data-netlify="true">
-    <input type="text" name="name" placeholder="Full Name" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" rows="4" placeholder="Tell us your dream safari"></textarea>
-    <button class="btn">Send Inquiry</button>
-  </form>
+<section class="why">
+  <div class="container">
+    <h2>Why Travel With Us</h2>
+    <div class="why-grid">
+      <div class="why-card">🌿 Eco-Friendly Safaris</div>
+      <div class="why-card">🦁 Expert Local Guides</div>
+      <div class="why-card">🏕️ Luxury Camps & Lodges</div>
+      <div class="why-card">🤝 Community Impact</div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Find Us</h2>
-  <iframe src="https://www.google.com/maps?q=Ngong+Business+Arcade+Ngong&output=embed"></iframe>
-  <p style="text-align:center;margin-top:10px;">Visits by appointment only.</p>
+<section class="testimonials">
+  <div class="container">
+    <h2>Guest Experiences</h2>
+    <div class="test-grid">
+      <blockquote>“An unforgettable safari experience.”<span>— Sarah, UK</span></blockquote>
+      <blockquote>“Professional, warm and authentic.”<span>— James, Kenya</span></blockquote>
+      <blockquote>“The perfect balance of comfort and culture.”<span>— Lina, Germany</span></blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="container">
+    <h2>Plan Your Safari</h2>
+    <form>
+      <label>Full Name<input type="text" required></label>
+      <label>Email Address<input type="email" required></label>
+      <label>Phone / WhatsApp<input type="tel" required></label>
+      <label>Preferred Destination
+        <select required>
+          <option value="">Select</option>
+          <option>Maasai Mara</option>
+          <option>Amboseli</option>
+          <option>Diani Beach</option>
+        </select>
+      </label>
+      <label>Travel Date<input type="date" required></label>
+      <label>Your Message<textarea rows="4"></textarea></label>
+      <button type="submit">Send Booking Request</button>
+      <p style="font-size:.9rem;text-align:center;">We respond within 24 hours via email or WhatsApp.</p>
+    </form>
+  </div>
 </section>
 
 <footer>
-  <p>© 2026 Jumba Herita Voyages — Ngong, Kenya</p>
+  <div class="container">
+    <h3>Jumba Heritage Voyages</h3>
+    <p>Nairobi, Kenya</p>
+    <p>Email: jumbaheritagevoyages@gmail.com</p>
+    <p>Phone: +254 789 514 678</p>
+    <p>© 2026 Jumba Heritage Voyages</p>
+  </div>
 </footer>
 
+<a href="https://wa.me/254789514678" class="whatsapp" target="_blank">WhatsApp Us</a>
+
 <div class="mobile-bar">
-  <a href="https://wa.me/254710731785?text=Hello%20I%20would%20like%20to%20book%20a%20safari%20with%20Jumba%20Herita%20Voyages">WhatsApp</a>
-  <a href="#booking">Book Safari</a>
+  <a href="#booking">Plan Your Safari</a>
 </div>
+
+<script>
+  const slides = document.querySelectorAll('.slides img');
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 5000);
+</script>
 
 </body>
 </html>
