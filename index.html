@@ -334,107 +334,263 @@ color:var(--primary);
     </div>
   </div>
 </section>
-<!-- ======================= PREMIUM PART 3 ======================= -->
+<!-- ================= EXTRA LUXURY MASTER PART 3 ================= -->
 
-<!-- Booking Form Section -->
-<section id="booking" style="background: linear-gradient(to right, #ffecd2, #fcb69f); padding:60px 20px; max-width:900px; margin:30px auto; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2); text-align:center; transition:all 0.5s ease;">
-
-  <h2 style="color:#ff4d00; font-size:2.5em; margin-bottom:15px;">Book Your Tour Now</h2>
-  <p style="color:#333; font-size:1.1em; margin-bottom:30px;">Fill the form below or click WhatsApp to book directly.</p>
-  
-  <form id="bookingForm" style="max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
-    <input type="text" id="name" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;">
-    <input type="email" id="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;">
-    <textarea id="message" placeholder="Your Message" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;"></textarea>
-    
-    <button type="submit" style="padding:15px; background:#ff4d00; color:#fff; border:none; border-radius:50px; cursor:pointer; font-weight:bold; font-size:1.1em; transition:0.3s;">
-      Submit Booking
-    </button>
-    
-    <a href="https://wa.me/254XXXXXXXXX" target="_blank" style="margin-top:10px; display:inline-block; color:#fff; background:#25D366; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:1.1em; transition:0.3s;">
-      Book via WhatsApp
-    </a>
-  </form>
-</section>
-
-<!-- ======================= Footer Section ======================= -->
-<footer style="background:#111; color:#fff; padding:50px 20px; text-align:center;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-around; max-width:1000px; margin:0 auto; text-align:left; gap:20px;">
-    
-    <!-- About Column -->
-    <div style="flex:1; min-width:200px;">
-      <h3 style="color:#ff4d00;">Jumba Herita Voyages</h3>
-      <p>Experience Kenya Like Never Before</p>
-    </div>
-    
-    <!-- Contact Column -->
-    <div style="flex:1; min-width:200px;">
-      <p>Email: <a href="mailto:info@jumbaheritavoyages.com" style="color:#fff; text-decoration:underline;">info@jumbaheritavoyages.com</a></p>
-      <p>Phone: <a href="https://wa.me/254XXXXXXXXX" target="_blank" style="color:#fff; text-decoration:underline;">+254 XXX XXX XXX</a></p>
-    </div>
-    
-    <!-- Social Column -->
-    <div style="flex:1; min-width:200px;">
-      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:20px; vertical-align:middle;"> Facebook
-      </a>
-      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram
-      </a>
-      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" style="width:20px; vertical-align:middle;"> Twitter
-      </a>
-    </div>
-
-  </div>
-
-  <p style="margin-top:30px; font-size:14px; text-align:center;">© 2026 Jumba Herita Voyages. All Rights Reserved.</p>
-</footer>
-
-<!-- ======================= Floating WhatsApp Button ======================= -->
-<a href="https://wa.me/254XXXXXXXXX" target="_blank" style="position:fixed; bottom:25px; right:25px; background:#25D366; color:#fff; padding:18px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 6px 12px rgba(0,0,0,0.3); display:flex; align-items:center; gap:10px; animation:pulse 2s infinite;">
-  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:22px;"> WhatsApp
-</a>
-
-<!-- ======================= JS for Booking Form ======================= -->
-<script>
-document.getElementById('bookingForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
-  const whatsappMessage = `Hello! Booking request from ${name}, Email: ${email}, Message: ${message}`;
-  const whatsappURL = "https://wa.me/254XXXXXXXXX?text=" + encodeURIComponent(whatsappMessage);
-  window.open(whatsappURL, '_blank');
-});
-</script>
-
-<!-- ======================= Styles / Animations ======================= -->
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.luxury-bg {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.luxury-card {
+  background: white;
+  color: #333;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.2);
+}
+
+.btn-luxury {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background: #ff7b00;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.btn-luxury:hover {
+  background: #ff9500;
+  transform: scale(1.05);
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+  padding: 15px 10%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.sticky-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.sticky-nav a:hover {
+  color: #ff7b00;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
-  0% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.3);}
-  50% { transform: scale(1.1); box-shadow: 0 8px 16px rgba(0,0,0,0.4);}
-  100% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.3);}
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
 }
 
-button:hover {
-  background:#ff661a;
-  box-shadow:0 6px 15px rgba(0,0,0,0.3);
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-a:hover {
-  opacity:0.8;
-  transform:translateY(-2px);
-  transition:0.3s;
-}
-
-/* Input focus glow */
-input:focus, textarea:focus {
-  outline:none;
-  border-color:#ff4d00;
-  box-shadow:0 0 8px rgba(255,77,0,0.5);
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 
-</body>
-</html>
+<!-- Sticky Navigation -->
+<div class="sticky-nav">
+  <a href="#about">About</a>
+  <a href="#whyus">Why Us</a>
+  <a href="#experiences">Experiences</a>
+  <a href="#safaris">Explore Safaris</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#faq">FAQ</a>
+  <a href="#booking">Plan My Journey</a>
+</div>
+
+<!-- About Section -->
+<section id="about" class="fade-in">
+<h2>About Jumba Heritage Voyages</h2>
+<p style="text-align:center; max-width:800px; margin:auto;">
+Jumba Heritage Voyages is a premier Kenyan safari and adventure company delivering world-class travel experiences. 
+We specialize in curated safari journeys across Kenya’s most iconic destinations, offering personalized service, professional guides, and unforgettable wildlife encounters. 
+Our mission is to redefine luxury exploration with authenticity, safety, and excellence.
+</p>
+</section>
+
+<!-- Why Us -->
+<section id="whyus" class="luxury-bg fade-in">
+<h2>Why Choose Us</h2>
+<div class="card-grid">
+  <div class="luxury-card">
+    <h3>Expert Safari Guides</h3>
+    <p>Highly trained and experienced professionals ensuring safety and unforgettable wildlife moments.</p>
+  </div>
+  <div class="luxury-card">
+    <h3>Tailored Experiences</h3>
+    <p>Every journey is customized to your preferences for a truly personal adventure.</p>
+  </div>
+  <div class="luxury-card">
+    <h3>Premium Service</h3>
+    <p>We prioritize comfort, reliability, and seamless travel planning.</p>
+  </div>
+</div>
+</section>
+
+<!-- Experiences -->
+<section id="experiences" class="fade-in">
+<h2>Luxury Experiences</h2>
+<div class="card-grid">
+  <div class="luxury-card">
+    <h3>Maasai Mara Safari</h3>
+    <p>Witness the Great Migration and Big Five.</p>
+    <a href="https://wa.me/254789514678" class="btn-luxury">Book via WhatsApp</a>
+  </div>
+  <div class="luxury-card">
+    <h3>Amboseli Adventure</h3>
+    <p>Elephants with Mount Kilimanjaro views.</p>
+    <a href="https://wa.me/254789514678" class="btn-luxury">Book via WhatsApp</a>
+  </div>
+</div>
+</section>
+
+<!-- Safaris & Pricing -->
+<section id="safaris" class="luxury-bg fade-in">
+<h2>Safari Destinations & Prices (USD)</h2>
+<div class="card-grid">
+  <div class="luxury-card">
+    <h3>Maasai Mara (Full Day)</h3>
+    <p>$180 per person</p>
+  </div>
+  <div class="luxury-card">
+    <h3>Amboseli (Full Day)</h3>
+    <p>$160 per person</p>
+  </div>
+  <div class="luxury-card">
+    <h3>Lake Naivasha</h3>
+    <p>$140 per person</p>
+  </div>
+</div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews" class="fade-in">
+<h2>Client Reviews</h2>
+<div class="card-grid">
+  <div class="luxury-card">
+    ⭐⭐⭐⭐⭐
+    <p>“An unforgettable safari experience!”</p>
+  </div>
+  <div class="luxury-card">
+    ⭐⭐⭐⭐⭐
+    <p>“Professional guides and luxury service.”</p>
+  </div>
+</div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery" class="luxury-bg fade-in">
+<h2>Safari Gallery</h2>
+<p style="text-align:center;">Wildlife and adventure highlights coming soon.</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="fade-in">
+<h2>Frequently Asked Questions</h2>
+<div class="luxury-card">
+  <h3>Do prices include accommodation?</h3>
+  <p>No. Prices cover tour and safari experience only.</p>
+</div>
+<div class="luxury-card">
+  <h3>How do I book?</h3>
+  <p>Click Plan My Journey or contact us via WhatsApp.</p>
+</div>
+</section>
+
+<!-- Booking -->
+<section id="booking" class="luxury-bg fade-in">
+<h2>Plan Your Journey</h2>
+<div style="text-align:center;">
+  <a href="https://wa.me/254789514678" class="btn-luxury">Chat on WhatsApp</a>
+  <p>Email: jumbaheritagevoyages@gmail.com</p>
+  <p>Phone: +254789514678</p>
+</div>
+</section>
+
+<!-- Footer -->
+<footer style="background:#111; color:white; padding:40px 10%; text-align:center;">
+<p>© 2026 Jumba Heritage Voyages</p>
+<p>Email: jumbaheritagevoyages@gmail.com | Phone: +254789514678</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/254789514678" class="floating-whatsapp">WhatsApp Us</a>
+
+<script>
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2 };
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+</script>
+
+<!-- ================= END MASTER PART 3 ================= -->
