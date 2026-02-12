@@ -334,50 +334,69 @@ color:var(--primary);
     </div>
   </div>
 </section>
- <!-- Part 3: Booking Form + Footer + Floating WhatsApp -->
-<section id="booking" style="background:linear-gradient(to right, #ffecd2, #fcb69f); padding:60px 20px; text-align:center; border-radius:15px; margin:30px auto; max-width:900px; box-shadow:0 8px 20px rgba(0,0,0,0.2);">
+<!-- ======================= PREMIUM PART 3 ======================= -->
+
+<!-- Booking Form Section -->
+<section id="booking" style="background: linear-gradient(to right, #ffecd2, #fcb69f); padding:60px 20px; max-width:900px; margin:30px auto; border-radius:15px; box-shadow:0 10px 25px rgba(0,0,0,0.2); text-align:center; transition:all 0.5s ease;">
+
   <h2 style="color:#ff4d00; font-size:2.5em; margin-bottom:15px;">Book Your Tour Now</h2>
   <p style="color:#333; font-size:1.1em; margin-bottom:30px;">Fill the form below or click WhatsApp to book directly.</p>
   
   <form id="bookingForm" style="max-width:500px; margin:0 auto; display:flex; flex-direction:column; gap:15px;">
-    <input type="text" id="name" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em;">
-    <input type="email" id="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em;">
-    <textarea id="message" placeholder="Your Message" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em;"></textarea>
-    <button type="submit" style="padding:15px; background:#ff4d00; color:#fff; border:none; border-radius:50px; cursor:pointer; font-weight:bold; transition:0.3s;">
+    <input type="text" id="name" placeholder="Your Name" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;">
+    <input type="email" id="email" placeholder="Your Email" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;">
+    <textarea id="message" placeholder="Your Message" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1em; transition:0.3s;"></textarea>
+    
+    <button type="submit" style="padding:15px; background:#ff4d00; color:#fff; border:none; border-radius:50px; cursor:pointer; font-weight:bold; font-size:1.1em; transition:0.3s;">
       Submit Booking
     </button>
-    <a href="https://wa.me/254XXXXXXXXX" target="_blank" style="margin-top:10px; display:inline-block; color:#fff; background:#25D366; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:bold; transition:0.3s;">
+    
+    <a href="https://wa.me/254XXXXXXXXX" target="_blank" style="margin-top:10px; display:inline-block; color:#fff; background:#25D366; padding:12px 20px; border-radius:50px; text-decoration:none; font-weight:bold; font-size:1.1em; transition:0.3s;">
       Book via WhatsApp
     </a>
   </form>
 </section>
 
-<!-- Footer -->
+<!-- ======================= Footer Section ======================= -->
 <footer style="background:#111; color:#fff; padding:50px 20px; text-align:center;">
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-around; max-width:1000px; margin:0 auto;">
-    <div style="margin:15px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-around; max-width:1000px; margin:0 auto; text-align:left; gap:20px;">
+    
+    <!-- About Column -->
+    <div style="flex:1; min-width:200px;">
       <h3 style="color:#ff4d00;">Jumba Herita Voyages</h3>
       <p>Experience Kenya Like Never Before</p>
     </div>
-    <div style="margin:15px;">
+    
+    <!-- Contact Column -->
+    <div style="flex:1; min-width:200px;">
       <p>Email: <a href="mailto:info@jumbaheritavoyages.com" style="color:#fff; text-decoration:underline;">info@jumbaheritavoyages.com</a></p>
       <p>Phone: <a href="https://wa.me/254XXXXXXXXX" target="_blank" style="color:#fff; text-decoration:underline;">+254 XXX XXX XXX</a></p>
     </div>
-    <div style="margin:15px;">
-      <a href="#" style="color:#fff; margin:0 10px; transition:0.3s;">Facebook</a>
-      <a href="#" style="color:#fff; margin:0 10px; transition:0.3s;">Instagram</a>
-      <a href="#" style="color:#fff; margin:0 10px; transition:0.3s;">Twitter</a>
+    
+    <!-- Social Column -->
+    <div style="flex:1; min-width:200px;">
+      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" style="width:20px; vertical-align:middle;"> Facebook
+      </a>
+      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:20px; vertical-align:middle;"> Instagram
+      </a>
+      <a href="#" style="color:#fff; margin-right:10px; transition:0.3s;">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" style="width:20px; vertical-align:middle;"> Twitter
+      </a>
     </div>
+
   </div>
-  <p style="margin-top:30px; font-size:14px;">© 2026 Jumba Herita Voyages. All Rights Reserved.</p>
+
+  <p style="margin-top:30px; font-size:14px; text-align:center;">© 2026 Jumba Herita Voyages. All Rights Reserved.</p>
 </footer>
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/254XXXXXXXXX" target="_blank" style="position:fixed; bottom:25px; right:25px; background:#25D366; color:#fff; padding:18px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 6px 12px rgba(0,0,0,0.3); animation: pulse 2s infinite;">
-  WhatsApp
+<!-- ======================= Floating WhatsApp Button ======================= -->
+<a href="https://wa.me/254XXXXXXXXX" target="_blank" style="position:fixed; bottom:25px; right:25px; background:#25D366; color:#fff; padding:18px; border-radius:50px; text-decoration:none; font-weight:bold; box-shadow:0 6px 12px rgba(0,0,0,0.3); display:flex; align-items:center; gap:10px; animation:pulse 2s infinite;">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:22px;"> WhatsApp
 </a>
 
-<!-- Simple JS to handle booking form -->
+<!-- ======================= JS for Booking Form ======================= -->
 <script>
 document.getElementById('bookingForm').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -390,20 +409,32 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
 });
 </script>
 
-<!-- Animation for floating WhatsApp -->
+<!-- ======================= Styles / Animations ======================= -->
 <style>
 @keyframes pulse {
   0% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.3);}
   50% { transform: scale(1.1); box-shadow: 0 8px 16px rgba(0,0,0,0.4);}
   100% { transform: scale(1); box-shadow: 0 6px 12px rgba(0,0,0,0.3);}
 }
+
 button:hover {
   background:#ff661a;
+  box-shadow:0 6px 15px rgba(0,0,0,0.3);
 }
+
 a:hover {
   opacity:0.8;
+  transform:translateY(-2px);
+  transition:0.3s;
+}
+
+/* Input focus glow */
+input:focus, textarea:focus {
+  outline:none;
+  border-color:#ff4d00;
+  box-shadow:0 0 8px rgba(255,77,0,0.5);
 }
 </style>
 
 </body>
-</html>  
+</html>
