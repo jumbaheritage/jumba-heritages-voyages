@@ -686,6 +686,64 @@
       font-size: 0.9rem;
     }
 
+    /* ===== FAQ SECTION ===== */
+    .faq-section {
+      background: var(--cream);
+    }
+
+    .faq-grid {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 25px 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .faq-item:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .faq-question i {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      margin-top: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 20px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
     /* ===== BOOKING SECTION ===== */
     .booking-section {
       background: linear-gradient(135deg, var(--primary) 0%, #1A4A30 100%);
@@ -797,6 +855,46 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    /* ===== TERMS & PRIVACY SECTIONS ===== */
+    .terms-section, .privacy-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+
+    .terms-content, .privacy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--cream);
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .terms-content h3, .privacy-content h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin: 40px 0 20px;
+    }
+
+    .terms-content h3:first-child, .privacy-content h3:first-child {
+      margin-top: 0;
+    }
+
+    .terms-content p, .privacy-content p {
+      margin-bottom: 20px;
+      color: var(--charcoal);
+      line-height: 1.8;
+    }
+
+    .terms-content ul, .privacy-content ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .terms-content li, .privacy-content li {
+      margin-bottom: 10px;
     }
 
     /* ===== FOOTER ===== */
@@ -911,7 +1009,7 @@
       <li><a href="#destinations">Destinations</a></li>
       <li><a href="#experiences">Experiences</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#booking" class="nav-cta">Book Safari</a></li>
     </ul>
@@ -943,7 +1041,7 @@
     </div>
     
     <div class="destinations-grid">
-      <!-- Maasai Mara -->
+      <!-- Maasai Mara - NEW PRICE $1000 -->
       <div class="destination-card" data-aos="fade-up">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maasai Mara Safari">
@@ -956,30 +1054,30 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Witness the Great Migration, Big Cats, and golden savannahs from exclusive private conservancies.</p>
-          <div class="price">$2,450 <span>per person</span></div>
+          <div class="price">$1,000 <span>per person ($250/day)</span></div>
           <button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button>
         </div>
       </div>
 
-      <!-- Amboseli -->
+      <!-- Amboseli - NEW PHOTO (Maasai Moran) and NEW PRICE $800 -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Amboseli Elephants">
+          <img src="https://images.pexels.com/photos/14041815/pexels-photo-14041815.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Amboseli with Maasai Moran">
           <div class="card-overlay">Kilimanjaro View</div>
         </div>
         <div class="card-content">
           <h3>Amboseli National Park</h3>
           <div class="card-details">
-            <span><i class="far fa-clock"></i> 3 Days</span>
+            <span><i class="far fa-clock"></i> 4 Days</span>
             <span><i class="fas fa-user-friends"></i> Max 8 guests</span>
           </div>
-          <p>Iconic elephants roaming beneath Africa's highest peak. Private photography hideaways.</p>
-          <div class="price">$1,890 <span>per person</span></div>
+          <p>Iconic elephants roaming beneath Africa's highest peak. Experience authentic Maasai culture and bush dinners.</p>
+          <div class="price">$800 <span>per person ($200/day)</span></div>
           <button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button>
         </div>
       </div>
 
-      <!-- Diani Beach -->
+      <!-- Diani Beach - NEW PRICE $900 -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach">
@@ -992,15 +1090,15 @@
             <span><i class="fas fa-user-friends"></i> Private</span>
           </div>
           <p>Crystal waters, white sands, and luxury beachfront villas. Combine with safari for ultimate escape.</p>
-          <div class="price">$2,100 <span>per person</span></div>
+          <div class="price">$900 <span>per person ($180/day)</span></div>
           <button class="btn-card" onclick="bookNow('Diani')">Inquire Now</button>
         </div>
       </div>
 
-      <!-- Tsavo -->
+      <!-- Tsavo - NEW PHOTO (Kenyan registered vehicle) and NEW PRICE $800 -->
       <div class="destination-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tsavo National Park">
+          <img src="https://images.pexels.com/photos/3785703/pexels-photo-3785703.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle in Tsavo">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1009,13 +1107,13 @@
             <span><i class="far fa-clock"></i> 4 Days</span>
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
-          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos.</p>
-          <div class="price">$1,650 <span>per person</span></div>
+          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos. Explore in our custom safari vehicles.</p>
+          <div class="price">$800 <span>per person ($200/day)</span></div>
           <button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button>
         </div>
       </div>
 
-      <!-- Laikipia -->
+      <!-- Laikipia - NEW PRICE $1000 -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laikipia Safari">
@@ -1028,12 +1126,12 @@
             <span><i class="fas fa-user-friends"></i> Exclusive</span>
           </div>
           <p>Exclusive private ranches, wild dog packs, and walking safaris with Samburu warriors.</p>
-          <div class="price">$3,200 <span>per person</span></div>
+          <div class="price">$1,000 <span>per person ($250/day)</span></div>
           <button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button>
         </div>
       </div>
 
-      <!-- Samburu -->
+      <!-- Samburu - NEW PRICE $600 -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Samburu">
@@ -1046,7 +1144,7 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Unique northern species: Grevy's zebra, reticulated giraffe, and Somali ostrich.</p>
-          <div class="price">$1,780 <span>per person</span></div>
+          <div class="price">$600 <span>per person ($200/day)</span></div>
           <button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button>
         </div>
       </div>
@@ -1068,7 +1166,7 @@
           <i class="fas fa-car"></i>
         </div>
         <h3>Elite Safari Fleet</h3>
-        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments. Expert drivers trained in luxury service.</p>
+        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments. All vehicles are Kenyan registered (K plates) with expert drivers trained in luxury service.</p>
       </div>
       
       <div class="feature" data-aos="fade-up" data-aos-delay="100">
@@ -1076,7 +1174,7 @@
           <i class="fas fa-users"></i>
         </div>
         <h3>Expert Local Guides</h3>
-        <p>Silver and Gold-rated guides with deep knowledge of wildlife, culture, and hidden gems. Many are published photographers.</p>
+        <p>Silver and Gold-rated guides with deep knowledge of wildlife, culture, and hidden gems. Many are published photographers and Maasai community members.</p>
       </div>
       
       <div class="feature" data-aos="fade-up" data-aos-delay="200">
@@ -1098,7 +1196,7 @@
   </div>
 </section>
 
-<!-- GALLERY SECTION -->
+<!-- GALLERY SECTION - NEW PHOTOS -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1112,7 +1210,23 @@
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants">
+        <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants Amboseli">
+        <i class="fas fa-search-plus"></i>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/14041815/pexels-photo-14041815.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maasai Moran">
+        <i class="fas fa-search-plus"></i>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
+        <img src="https://images.pexels.com/photos/3785703/pexels-photo-3785703.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle">
+        <i class="fas fa-search-plus"></i>
+      </div>
+      <div class="gallery-item" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach">
+        <i class="fas fa-search-plus"></i>
+      </div>
+      <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
+        <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zebra">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
@@ -1120,23 +1234,7 @@
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beach">
-        <i class="fas fa-search-plus"></i>
-      </div>
-      <div class="gallery-item" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zebra">
-        <i class="fas fa-search-plus"></i>
-      </div>
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-        <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephant">
-        <i class="fas fa-search-plus"></i>
-      </div>
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cheetah">
-        <i class="fas fa-search-plus"></i>
-      </div>
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sunset">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sunset Safari">
         <i class="fas fa-search-plus"></i>
       </div>
     </div>
@@ -1224,6 +1322,68 @@
             <h4>Claudia Schmidt</h4>
             <p>Germany</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION - NEW -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <div class="section-subtitle">Your Questions</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    
+    <div class="faq-grid">
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <h3>What is included in your safari packages?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Our safari packages include private transportation in our luxury 4x4 safari vehicles (Kenyan registered, K-plate), services of professional English-speaking driver-guides, park entry fees, and game drives as per itinerary. Accommodation and meals are curated based on your budget preferences - we work with you to select lodges and camps that match your desired luxury level.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <h3>How does accommodation and food work?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Accommodation and meals are strictly based on the client's budget and preferences. We offer a range of options from luxury tented camps to premium lodges and beach resorts. All accommodation and food/drinks are customized on a quote basis - simply let us know your preferences, and we'll prepare a personalized proposal. We do not include accommodation in the base transport price to give you maximum flexibility.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <h3>Do you offer transportation only?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, absolutely. Jumba Heritage Voyages provides premium transportation services to all destination sites across Kenya. Whether you need airport transfers, multi-day safari transport, or point-to-point travel between parks, our luxury fleet and professional drivers are at your service. We can customize pure transport packages or full-service safari experiences.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <h3>What is your group size policy?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We specialize in small group luxury safaris with a maximum of 6-8 guests per vehicle, ensuring personalized attention and window seats for everyone. Private safaris can be arranged for solo travelers, couples, or families. Minimum group size for our published packages is 4 guests, but we're happy to customize for smaller groups at adjusted rates.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item" onclick="toggleFAQ(this)">
+        <div class="faq-question">
+          <h3>How do I book and what payment methods do you accept?</h3>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>Booking is easy - simply click the "Inquire Now" button on any package, call us directly, or send a WhatsApp message. We accept M-PESA (Safaricom: 0710 731 785), Airtel Money (0789 514 678), bank transfers, and cryptocurrency (BTC/USDT) upon request. A deposit secures your booking, with balance payable before safari commencement.</p>
         </div>
       </div>
     </div>
@@ -1322,13 +1482,75 @@
   </div>
 </section>
 
+<!-- TERMS & CONDITIONS SECTION - NEW -->
+<section class="terms-section" id="terms">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <div class="section-subtitle">Policies</div>
+      <h2>Terms & Conditions</h2>
+    </div>
+    
+    <div class="terms-content" data-aos="fade-up">
+      <h3>1. Booking and Confirmation</h3>
+      <p>All bookings are confirmed upon receipt of a 30% deposit of the total safari cost. The remaining balance is due 30 days prior to safari commencement. For bookings made within 30 days of travel, full payment is required at the time of booking. Deposits can be made via M-PESA, Airtel Money, bank transfer, or cryptocurrency.</p>
+      
+      <h3>2. Cancellation Policy</h3>
+      <p>Cancellations made more than 60 days before departure: 90% refund of deposit. Cancellations between 30-60 days: 50% refund of deposit. Cancellations less than 30 days: no refund. However, you may transfer your booking to another person or future date subject to availability.</p>
+      
+      <h3>3. Accommodation and Meals</h3>
+      <p>Jumba Heritage Voyages provides transportation and safari guiding services. Accommodation and meals are arranged based on client preferences and budget. We act as an intermediary between clients and accommodation providers. All accommodation and food expenses are quoted separately and are the responsibility of the client. We can customize all accommodation and dining on a quote basis upon request.</p>
+      
+      <h3>4. Transportation Services</h3>
+      <p>Our luxury safari vehicles are Kenyan registered (K-plate), fully insured, and equipped with all necessary safety features. Professional driver-guides are licensed by the Kenya Tourism Board. Vehicle breakdowns, while rare, are covered by our 24/7 support network with replacement vehicles dispatched promptly.</p>
+      
+      <h3>5. Client Responsibilities</h3>
+      <p>Clients are responsible for obtaining valid passports, visas, and any required vaccinations. Travel insurance is strongly recommended and should cover cancellation, medical expenses, and personal belongings. Jumba Heritage Voyages cannot be held liable for any injury, loss, or damage sustained during the safari.</p>
+      
+      <h3>6. Pricing Guarantee</h3>
+      <p>All prices quoted are per person in USD and include government taxes and park fees where applicable. Prices are subject to change only in the event of government tax increases or significant currency fluctuations. We guarantee prices once deposit is received.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY POLICY SECTION - NEW -->
+<section class="privacy-section" id="privacy">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <div class="section-subtitle">Your Data</div>
+      <h2>Privacy Policy</h2>
+    </div>
+    
+    <div class="privacy-content" data-aos="fade-up">
+      <h3>Information We Collect</h3>
+      <p>Jumba Heritage Voyages collects personal information including names, contact details, passport information, and payment details solely for the purpose of booking and delivering your safari experience. We may also collect dietary preferences, medical requirements, and special requests to ensure your comfort and safety.</p>
+      
+      <h3>How We Use Your Information</h3>
+      <p>Your information is used to: process bookings and payments, communicate with you about your safari, arrange accommodations and activities, comply with legal requirements (such as park entry registrations), and improve our services. We may send you promotional offers only with your explicit consent.</p>
+      
+      <h3>Data Protection</h3>
+      <p>We implement industry-standard security measures to protect your personal information. All payment transactions are encrypted. Your data is never sold to third parties. We only share necessary information with accommodation providers, park authorities, and other service providers essential to your safari experience.</p>
+      
+      <h3>Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal information held by us. You may withdraw consent for marketing communications at any time. To exercise these rights, contact us at jumbaheritagevoyages@gmail.com.</p>
+      
+      <h3>Cookies</h3>
+      <p>Our website uses cookies to enhance user experience and analyze site traffic. By continuing to browse, you consent to our use of cookies. You may disable cookies through your browser settings.</p>
+      
+      <h3>Updates to Policy</h3>
+      <p>We may update this privacy policy periodically. The latest version will always be available on our website. Continued use of our services constitutes acceptance of any changes.</p>
+      
+      <p style="margin-top: 40px;"><strong>Last Updated:</strong> January 2025</p>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Jumba Heritage <span>Voyages</span></div>
-        <p>Luxury Kenyan safaris crafted with heritage, expertise, and an unwavering commitment to excellence.</p>
+        <p>Luxury Kenyan safaris crafted with heritage, expertise, and an unwavering commitment to excellence. Transport services to all destination sites across Kenya.</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1344,7 +1566,7 @@
           <li><a href="#destinations">Destinations</a></li>
           <li><a href="#experiences">Experiences</a></li>
           <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
       
@@ -1356,23 +1578,23 @@
           <li><a href="#destinations">Diani Beach</a></li>
           <li><a href="#destinations">Tsavo</a></li>
           <li><a href="#destinations">Laikipia</a></li>
+          <li><a href="#destinations">Samburu</a></li>
         </ul>
       </div>
       
       <div class="footer-links">
-        <h4>Support</h4>
+        <h4>Legal</h4>
         <ul>
+          <li><a href="#terms">Terms & Conditions</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
           <li><a href="#contact">Contact Us</a></li>
           <li><a href="#booking">Book Safari</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
     
     <div class="copyright">
-      <p>&copy; 2025 Jumba Heritage Voyages. All Rights Reserved. Luxury Kenyan Safaris.</p>
+      <p>&copy; 2025 Jumba Heritage Voyages. All Rights Reserved. Luxury Kenyan Safaris. Transport services to all Kenyan destinations.</p>
     </div>
   </div>
 </footer>
@@ -1409,13 +1631,13 @@
   // Hero Slideshow
   const heroSlideshow = document.getElementById('heroSlideshow');
   
-  // Array of stunning safari images (you can replace these with your own Unsplash URLs)
+  // Array of stunning safari images
   const slides = [
     'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Lion
-    'https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Elephants
-    'https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Giraffe
+    'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Elephants
+    'https://images.pexels.com/photos/14041815/pexels-photo-14041815.jpeg?auto=compress&cs=tinysrgb&w=1920', // Maasai Moran
     'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Beach
-    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'  // Zebra
+    'https://images.pexels.com/photos/3785703/pexels-photo-3785703.jpeg?auto=compress&cs=tinysrgb&w=1920'  // Kenyan vehicle
   ];
 
   // Create slides
@@ -1441,8 +1663,7 @@
 
   // Book Now function
   function bookNow(destination) {
-    // You can customize this to open WhatsApp or email
-    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari. Please send me more information.`;
+    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari. Please send me more information including accommodation options and availability.`;
     window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
   }
 
@@ -1460,12 +1681,25 @@
     });
   });
 
-  // Gallery item click to open image (simple lightbox simulation)
+  // Gallery item click to open image
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', function() {
       const img = this.querySelector('img').src;
       window.open(img, '_blank');
     });
+  });
+
+  // FAQ Toggle Function
+  window.toggleFAQ = function(element) {
+    element.classList.toggle('active');
+  };
+
+  // Open first FAQ by default
+  window.addEventListener('load', function() {
+    const firstFaq = document.querySelector('.faq-item');
+    if (firstFaq) {
+      firstFaq.classList.add('active');
+    }
   });
 </script>
 
