@@ -6,25 +6,130 @@
   <title>Jumba Heritage Voyages</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; }
+    body { font-family: Arial, sans-serif; background: #f5f5f5; }
     .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-    h1 { color: #0A2F1F; text-align: center; margin: 40px 0; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    h1 { color: #0A2F1F; text-align: center; margin: 40px 0; font-size: 3rem; }
+    h2 { color: #0A2F1F; margin: 40px 0 20px; text-align: center; }
+    .hero { height: 500px; background: #0A2F1F; color: white; display: flex; align-items: center; justify-content: center; text-align: center; margin-bottom: 40px; }
+    .hero h2 { font-size: 2.5rem; color: white; }
+    .destinations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 40px 0; }
+    .destination-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .card-image { height: 200px; }
+    .card-image img { width: 100%; height: 100%; object-fit: cover; }
+    .card-content { padding: 20px; }
+    .card-content h3 { margin-bottom: 10px; }
+    .btn-card { width: 100%; padding: 10px; background: #C9A24D; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
     .gallery-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+    .faq-item { background: white; margin: 10px 0; padding: 15px; border-radius: 5px; cursor: pointer; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .faq-item.active .faq-answer { max-height: 300px; margin-top: 15px; }
+    .collapsible-section { background: white; margin: 10px 0; padding: 15px; border-radius: 5px; cursor: pointer; }
+    .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .collapsible-section.active .collapsible-content { max-height: 1000px; margin-top: 15px; }
+    .booking-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+    .booking-card { background: #0A2F1F; color: white; padding: 20px; border-radius: 10px; text-align: center; }
+    .booking-link { display: inline-block; padding: 10px 20px; background: #C9A24D; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; }
+    footer { background: #333; color: white; padding: 40px 0; margin-top: 40px; }
+    .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .footer-links a { color: #999; text-decoration: none; display: block; margin: 5px 0; }
+    @media (max-width: 768px) { 
+      .destinations-grid, .gallery-grid, .booking-options, .footer-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <h1>Jumba Heritage Voyages</h1>
-  <div class="container">
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800" alt="Lion"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Giraffe"></div>
-      <div class="gallery-item"><img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Safari Vehicle"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800" alt="Zebra"></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Elephants"></div>
-      <!-- LAST IMAGE REMOVED COMPLETELY -->
-    </div>
+
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/254789514678" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Hero Section -->
+<div class="hero">
+  <div>
+    <h1>Jumba Heritage Voyages</h1>
+    <h2>Experience Kenya In Its Purest Form</h2>
   </div>
+</div>
+
+<div class="container">
+
+  <!-- Destinations Section -->
+  <h2>Curated Safari Destinations</h2>
+  <div class="destinations-grid">
+    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Maasai Mara"></div><div class="card-content"><h3>Maasai Mara</h3><p>4 Days - Max 6 guests</p><p>$1,000 per person</p><button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button></div></div>
+    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Amboseli"></div><div class="card-content"><h3>Amboseli</h3><p>4 Days - Max 8 guests</p><p>$800 per person</p><button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button></div></div>
+    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div><div class="card-content"><h3>Diani Beach</h3><p>5 Days - Private</p><p>$900 per person</p><button class="btn-card" onclick="bookNow('Diani')">Inquire Now</button></div></div>
+    <div class="destination-card"><div class="card-image"><img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tsavo"></div><div class="card-content"><h3>Tsavo</h3><p>4 Days - Max 6 guests</p><p>$800 per person</p><button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button></div></div>
+    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800" alt="Laikipia"></div><div class="card-content"><h3>Laikipia</h3><p>4 Days - Exclusive</p><p>$1,000 per person</p><button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button></div></div>
+    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Samburu"></div><div class="card-content"><h3>Samburu</h3><p>3 Days - Max 6 guests</p><p>$600 per person</p><button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button></div></div>
+  </div>
+
+  <!-- Gallery Section - ONLY 4 IMAGES, NO WHITE LADY -->
+  <h2>Moments From Our Safaris</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800" alt="Lion"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Giraffe"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Elephants"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div>
+  </div>
+
+  <!-- FAQ Section - Collapsible -->
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <div><strong>What is included in your safari packages?</strong> <span style="float:right;">▼</span></div>
+    <div class="faq-answer">Private transportation, driver-guides, park fees, and game drives. Accommodation is customized to your budget.</div>
+  </div>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <div><strong>Do you offer transportation only?</strong> <span style="float:right;">▼</span></div>
+    <div class="faq-answer">Yes, we provide premium transportation services to all Kenyan destinations.</div>
+  </div>
+
+  <!-- Booking Section -->
+  <h2>Book Your Safari</h2>
+  <div class="booking-options">
+    <div class="booking-card"><i class="fas fa-phone-alt"></i><h3>Call Us</h3><p>0710 731 785</p><a href="tel:+254789514678" class="booking-link">Call Now</a></div>
+    <div class="booking-card"><i class="fab fa-whatsapp"></i><h3>WhatsApp</h3><p>0789 514 678</p><a href="https://wa.me/254789514678" class="booking-link" target="_blank">Chat Now</a></div>
+    <div class="booking-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>jumbaheritagevoyages@gmail.com</p><a href="mailto:jumbaheritagevoyages@gmail.com" class="booking-link">Email Now</a></div>
+  </div>
+
+  <!-- Terms & Privacy - Collapsible -->
+  <h2>Terms & Conditions</h2>
+  <div class="collapsible-section" onclick="this.classList.toggle('active')">
+    <div><strong>View Terms & Conditions</strong> <span style="float:right;">▼</span></div>
+    <div class="collapsible-content"><p>All bookings require 30% deposit. Cancellations: 90% refund >60 days, 50% 30-60 days, no refund <30 days.</p></div>
+  </div>
+
+  <h2>Privacy Policy</h2>
+  <div class="collapsible-section" onclick="this.classList.toggle('active')">
+    <div><strong>View Privacy Policy</strong> <span style="float:right;">▼</span></div>
+    <div class="collapsible-content"><p>We collect personal information only for booking purposes. Your data is never sold to third parties.</p></div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3>Jumba Heritage Voyages</h3><p>Luxury Kenyan safaris</p></div>
+      <div class="footer-links"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Destinations</a><a href="#">Contact</a></div>
+      <div class="footer-links"><h4>Destinations</h4><a href="#">Maasai Mara</a><a href="#">Amboseli</a><a href="#">Diani Beach</a></div>
+      <div class="footer-links"><h4>Legal</h4><a href="#">Terms</a><a href="#">Privacy</a></div>
+    </div>
+    <p style="text-align:center; margin-top:30px;">&copy; 2025 Jumba Heritage Voyages</p>
+  </div>
+</footer>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<script>
+  function bookNow(destination) {
+    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari.`;
+    window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
+  }
+</script>
+
 </body>
 </html>
