@@ -913,40 +913,6 @@
       padding: 80px 0;
     }
 
-    .terms-content, .privacy-content {
-      max-width: 900px;
-      margin: 0 auto;
-      background: var(--cream);
-      padding: 60px;
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .terms-content h3, .privacy-content h3 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin: 40px 0 20px;
-    }
-
-    .terms-content h3:first-child, .privacy-content h3:first-child {
-      margin-top: 0;
-    }
-
-    .terms-content p, .privacy-content p {
-      margin-bottom: 20px;
-      color: var(--charcoal);
-      line-height: 1.8;
-    }
-
-    .terms-content ul, .privacy-content ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
-    }
-
-    .terms-content li, .privacy-content li {
-      margin-bottom: 10px;
-    }
-
     /* ===== FOOTER ===== */
     footer {
       background: var(--charcoal);
@@ -1066,7 +1032,7 @@
   </div>
 </header>
 
-<!-- HERO SECTION WITH SLIDESHOW - ALL WILDLIFE, NO PEOPLE -->
+<!-- HERO SECTION WITH SLIDESHOW - NO WHITE LADY, REMOVED COMPLETELY -->
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow"></div>
   <div class="hero-content">
@@ -1107,7 +1073,7 @@
         </div>
       </div>
 
-      <!-- Amboseli - Elephants with Kilimanjaro (NO WHITE LADY) -->
+      <!-- Amboseli - Elephants with Kilimanjaro -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&auto=format" alt="Elephants in Amboseli with Mount Kilimanjaro">
@@ -1233,7 +1199,7 @@
   </div>
 </section>
 
-<!-- GALLERY SECTION - ALL WILDLIFE, NO PEOPLE -->
+<!-- GALLERY SECTION - NO WHITE PEOPLE, ONLY 6 WILDLIFE IMAGES -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1242,45 +1208,37 @@
     </div>
     
     <div class="gallery-grid">
+      <!-- Image 1: Lion -->
       <div class="gallery-item" data-aos="fade-up">
         <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&auto=format" alt="Lion in Maasai Mara">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Giraffe - NO WHITE LADY -->
+      <!-- Image 2: Giraffe -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
         <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&auto=format" alt="Giraffe in Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Safari Vehicle -->
+      <!-- Image 3: Safari Vehicle -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
         <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Diani Beach -->
+      <!-- Image 4: Diani Beach -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
         <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format" alt="Diani Beach Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Zebras -->
+      <!-- Image 5: Zebras -->
       <div class="gallery-item" data-aos="fade-up">
         <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&auto=format" alt="Zebra Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Lion -->
+      <!-- Image 6: Elephants -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format" alt="Lion in Maasai Mara">
-        <i class="fas fa-search-plus"></i>
-      </div>
-      <!-- Elephants -->
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
         <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800&auto=format" alt="Elephants Amboseli">
         <i class="fas fa-search-plus"></i>
       </div>
-      <!-- Cheetah -->
-      <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&auto=format" alt="Cheetah Kenya">
-        <i class="fas fa-search-plus"></i>
-      </div>
+      <!-- LAST TWO IMAGES (WHITE LADY AND MAN GRILLING) HAVE BEEN REMOVED COMPLETELY -->
     </div>
   </div>
 </section>
@@ -1347,7 +1305,7 @@
   </div>
 </section>
 
-<!-- FAQ SECTION - COLLAPSIBLE (ALL HIDDEN INITIALLY) -->
+<!-- FAQ SECTION - COLLAPSIBLE -->
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1659,13 +1617,12 @@
     }
   });
 
-  // Hero Slideshow - ALL WILDLIFE, NO PEOPLE
+  // Hero Slideshow - NO WHITE LADY, REMOVED COMPLETELY. NOW ONLY 4 SLIDES.
   const heroSlideshow = document.getElementById('heroSlideshow');
   
-  // Array of stunning Kenyan wildlife images - NO WHITE WOMAN
+  // Array of stunning Kenyan wildlife images - NO WHITE LADY
   const slides = [
     'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&auto=format', // Lion
-    'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=1600&auto=format', // Elephants (NO WHITE LADY)
     'https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=1600', // Safari vehicle
     'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&auto=format', // Zebras
     'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1600&auto=format' // Beach
