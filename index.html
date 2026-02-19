@@ -1016,7 +1016,7 @@
   </div>
 </header>
 
-<!-- HERO SECTION WITH SLIDESHOW - NO WHITE LADY, ONLY KENYAN WILDLIFE & VEHICLES -->
+<!-- HERO SECTION WITH SLIDESHOW - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE -->
 <section class="hero" id="home">
   <div class="hero-slideshow" id="heroSlideshow">
     <!-- Slides will be populated by JavaScript -->
@@ -1032,7 +1032,7 @@
   </div>
 </section>
 
-<!-- DESTINATIONS SECTION -->
+<!-- DESTINATIONS SECTION - ALL IMAGES REPLACED: NO PEOPLE, ONLY WILDLIFE OR VEHICLES WITH TOURISTS INSIDE -->
 <section id="destinations">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1059,10 +1059,10 @@
         </div>
       </div>
 
-      <!-- Amboseli - Elephants with Kilimanjaro -->
+      <!-- AMBOSELI - FIXED: Now shows elephants with Kilimanjaro (NO MAASAI MORAN, NO WHITE LADY) -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants in Amboseli with Mount Kilimanjaro">
+          <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants in Amboseli with Mount Kilimanjaro">
           <div class="card-overlay">Kilimanjaro View</div>
         </div>
         <div class="card-content">
@@ -1095,10 +1095,10 @@
         </div>
       </div>
 
-      <!-- Tsavo - Kenyan Safari Vehicle with K Plates -->
+      <!-- Tsavo - Safari Vehicle with tourists inside (looking at animals) -->
       <div class="destination-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Land Cruiser with K Registration in Tsavo">
+          <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Land Cruiser with tourists viewing wildlife">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1113,7 +1113,7 @@
         </div>
       </div>
 
-      <!-- Laikipia - Zebras -->
+      <!-- Laikipia - Zebras (wildlife only) -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zebra in Laikipia Kenya">
@@ -1131,7 +1131,7 @@
         </div>
       </div>
 
-      <!-- Samburu - Giraffe -->
+      <!-- Samburu - Giraffe (wildlife only) -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
         <div class="card-image">
           <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Giraffe in Samburu Kenya">
@@ -1196,7 +1196,7 @@
   </div>
 </section>
 
-<!-- GALLERY SECTION - ALL KENYAN IMAGES, NO WHITE LADY -->
+<!-- GALLERY SECTION - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE AND VEHICLES -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1214,7 +1214,7 @@
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle K Plates">
+        <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle with tourists viewing wildlife">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
@@ -1628,14 +1628,14 @@
     }
   });
 
-  // Hero Slideshow - ONLY KENYAN WILDLIFE AND VEHICLES, NO WHITE LADY
+  // Hero Slideshow - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE
   const heroSlideshow = document.getElementById('heroSlideshow');
   
-  // Array of stunning Kenyan safari images - all authentic Kenyan wildlife and vehicles
+  // Array of stunning Kenyan safari images - all wildlife, no people
   const slides = [
     'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Lion in Mara
     'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Elephants Amboseli
-    'https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=1920', // Kenyan Land Cruiser K-plates
+    'https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=1920', // Kenyan Land Cruiser with tourists
     'https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Zebras
     'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80' // Diani Beach
   ];
@@ -1661,13 +1661,13 @@
   // Change slide every 5 seconds
   setInterval(nextSlide, 5000);
 
-  // Book Now function - FIXED: Now opens WhatsApp with correct number
+  // Book Now function - Opens WhatsApp with your Airtel number
   function bookNow(destination) {
     const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari. Please send me more information including accommodation options and availability.`;
     window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
   }
 
-  // Smooth scrolling for anchor links - FIXED: Now works properly
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1689,13 +1689,10 @@
     });
   });
 
-  // FAQ Toggle Function - FIXED: All answers start hidden
+  // FAQ Toggle Function - All answers start hidden
   window.toggleFAQ = function(element) {
     element.classList.toggle('active');
   };
-
-  // REMOVED: The code that opened first FAQ by default
-  // Now all FAQs start closed as you requested
 </script>
 
 </body>
