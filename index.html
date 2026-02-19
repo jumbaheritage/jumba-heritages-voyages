@@ -19,8 +19,7 @@
     .card-content { padding: 20px; }
     .card-content h3 { margin-bottom: 10px; }
     .btn-card { width: 100%; padding: 10px; background: #C9A24D; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
-    .gallery-item img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; }
+    .btn-card:hover { background: #b38f3d; }
     .faq-item { background: white; margin: 10px 0; padding: 15px; border-radius: 5px; cursor: pointer; }
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
     .faq-item.active .faq-answer { max-height: 300px; margin-top: 15px; }
@@ -30,94 +29,209 @@
     .booking-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
     .booking-card { background: #0A2F1F; color: white; padding: 20px; border-radius: 10px; text-align: center; }
     .booking-link { display: inline-block; padding: 10px 20px; background: #C9A24D; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; }
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; text-decoration: none; z-index: 100; }
     footer { background: #333; color: white; padding: 40px 0; margin-top: 40px; }
     .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .footer-links a { color: #999; text-decoration: none; display: block; margin: 5px 0; }
+    .footer-links a:hover { color: white; }
     @media (max-width: 768px) { 
-      .destinations-grid, .gallery-grid, .booking-options, .footer-grid { grid-template-columns: 1fr; }
+      .destinations-grid, .booking-options, .footer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
 <!-- WhatsApp Float Button -->
-<a href="https://wa.me/254789514678" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/254789514678?text=Hello%20Jumba%20Heritage%20Voyages!%20I'm%20interested%20in%20a%20safari." class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
-<!-- Hero Section -->
+<!-- HERO SECTION - SOLID COLOR, NO SLIDESHOW, NO WHITE LADY -->
 <div class="hero">
   <div>
     <h1>Jumba Heritage Voyages</h1>
     <h2>Experience Kenya In Its Purest Form</h2>
+    <p style="margin-top: 20px;">Luxury safaris, cultural journeys, and unforgettable wildlife encounters.</p>
+    <a href="#destinations" style="display: inline-block; padding: 12px 30px; background: #C9A24D; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px;">Explore Safaris</a>
   </div>
 </div>
 
 <div class="container">
 
-  <!-- Destinations Section -->
-  <h2>Curated Safari Destinations</h2>
+  <!-- DESTINATIONS SECTION - ALL 6 SAFARIS -->
+  <h2 id="destinations">Curated Safari Destinations</h2>
   <div class="destinations-grid">
-    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Maasai Mara"></div><div class="card-content"><h3>Maasai Mara</h3><p>4 Days - Max 6 guests</p><p>$1,000 per person</p><button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button></div></div>
-    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Amboseli"></div><div class="card-content"><h3>Amboseli</h3><p>4 Days - Max 8 guests</p><p>$800 per person</p><button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button></div></div>
-    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div><div class="card-content"><h3>Diani Beach</h3><p>5 Days - Private</p><p>$900 per person</p><button class="btn-card" onclick="bookNow('Diani')">Inquire Now</button></div></div>
-    <div class="destination-card"><div class="card-image"><img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tsavo"></div><div class="card-content"><h3>Tsavo</h3><p>4 Days - Max 6 guests</p><p>$800 per person</p><button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button></div></div>
-    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800" alt="Laikipia"></div><div class="card-content"><h3>Laikipia</h3><p>4 Days - Exclusive</p><p>$1,000 per person</p><button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button></div></div>
-    <div class="destination-card"><div class="card-image"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Samburu"></div><div class="card-content"><h3>Samburu</h3><p>3 Days - Max 6 guests</p><p>$600 per person</p><button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button></div></div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Maasai Mara"></div>
+      <div class="card-content">
+        <h3>Maasai Mara</h3>
+        <p>4 Days · Max 6 guests</p>
+        <p>Witness the Great Migration and Big Cats.</p>
+        <p><strong>$1,000</strong> <span style="color: #666;">($250/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button>
+      </div>
+    </div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Amboseli"></div>
+      <div class="card-content">
+        <h3>Amboseli</h3>
+        <p>4 Days · Max 8 guests</p>
+        <p>Elephants beneath Mount Kilimanjaro.</p>
+        <p><strong>$800</strong> <span style="color: #666;">($200/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button>
+      </div>
+    </div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div>
+      <div class="card-content">
+        <h3>Diani Beach</h3>
+        <p>5 Days · Private</p>
+        <p>Crystal waters and luxury beachfront villas.</p>
+        <p><strong>$900</strong> <span style="color: #666;">($180/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Diani')">Inquire Now</button>
+      </div>
+    </div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tsavo"></div>
+      <div class="card-content">
+        <h3>Tsavo</h3>
+        <p>4 Days · Max 6 guests</p>
+        <p>Kenya's largest park with red elephants.</p>
+        <p><strong>$800</strong> <span style="color: #666;">($200/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button>
+      </div>
+    </div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800" alt="Laikipia"></div>
+      <div class="card-content">
+        <h3>Laikipia</h3>
+        <p>4 Days · Exclusive</p>
+        <p>Private ranches and walking safaris.</p>
+        <p><strong>$1,000</strong> <span style="color: #666;">($250/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button>
+      </div>
+    </div>
+    <div class="destination-card">
+      <div class="card-image"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Samburu"></div>
+      <div class="card-content">
+        <h3>Samburu</h3>
+        <p>3 Days · Max 6 guests</p>
+        <p>Unique northern species.</p>
+        <p><strong>$600</strong> <span style="color: #666;">($200/day)</span></p>
+        <button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button>
+      </div>
+    </div>
   </div>
 
-  <!-- Gallery Section - ONLY 4 IMAGES, NO WHITE LADY -->
+  <!-- GALLERY SECTION - COMPLETELY REMOVED FOR NOW -->
+  <!-- Gallery temporarily disabled to remove white lady -->
   <h2>Moments From Our Safaris</h2>
-  <div class="gallery-grid">
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800" alt="Lion"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Giraffe"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Elephants"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"></div>
-  </div>
+  <p style="text-align: center; padding: 40px; background: white; border-radius: 10px;">Gallery images coming soon...</p>
 
-  <!-- FAQ Section - Collapsible -->
+  <!-- FAQ SECTION - COLLAPSIBLE -->
   <h2>Frequently Asked Questions</h2>
   <div class="faq-item" onclick="this.classList.toggle('active')">
     <div><strong>What is included in your safari packages?</strong> <span style="float:right;">▼</span></div>
-    <div class="faq-answer">Private transportation, driver-guides, park fees, and game drives. Accommodation is customized to your budget.</div>
+    <div class="faq-answer">Private transportation in luxury 4x4 vehicles, professional driver-guides, park entry fees, and game drives. Accommodation is customized to your budget.</div>
   </div>
   <div class="faq-item" onclick="this.classList.toggle('active')">
     <div><strong>Do you offer transportation only?</strong> <span style="float:right;">▼</span></div>
     <div class="faq-answer">Yes, we provide premium transportation services to all Kenyan destinations.</div>
   </div>
-
-  <!-- Booking Section -->
-  <h2>Book Your Safari</h2>
-  <div class="booking-options">
-    <div class="booking-card"><i class="fas fa-phone-alt"></i><h3>Call Us</h3><p>0710 731 785</p><a href="tel:+254789514678" class="booking-link">Call Now</a></div>
-    <div class="booking-card"><i class="fab fa-whatsapp"></i><h3>WhatsApp</h3><p>0789 514 678</p><a href="https://wa.me/254789514678" class="booking-link" target="_blank">Chat Now</a></div>
-    <div class="booking-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>jumbaheritagevoyages@gmail.com</p><a href="mailto:jumbaheritagevoyages@gmail.com" class="booking-link">Email Now</a></div>
+  <div class="faq-item" onclick="this.classList.toggle('active')">
+    <div><strong>What vehicles do you use?</strong> <span style="float:right;">▼</span></div>
+    <div class="faq-answer">Custom-modified Toyota Land Cruisers with pop-up roofs, WiFi, and refreshments. All Kenyan registered (K-plates).</div>
   </div>
 
-  <!-- Terms & Privacy - Collapsible -->
+  <!-- BOOKING SECTION -->
+  <h2>Book Your Safari</h2>
+  <div class="booking-options">
+    <div class="booking-card">
+      <i class="fas fa-phone-alt" style="font-size: 2rem; color: #C9A24D;"></i>
+      <h3>Call Us</h3>
+      <p>Safaricom: 0710 731 785<br>Airtel: 0789 514 678</p>
+      <a href="tel:+254789514678" class="booking-link">Call Now</a>
+    </div>
+    <div class="booking-card">
+      <i class="fab fa-whatsapp" style="font-size: 2rem; color: #C9A24D;"></i>
+      <h3>WhatsApp</h3>
+      <p>Instant messaging with concierge</p>
+      <a href="https://wa.me/254789514678" class="booking-link" target="_blank">Chat Now</a>
+    </div>
+    <div class="booking-card">
+      <i class="fas fa-envelope" style="font-size: 2rem; color: #C9A24D;"></i>
+      <h3>Email</h3>
+      <p>jumbaheritagevoyages@gmail.com</p>
+      <a href="mailto:jumbaheritagevoyages@gmail.com" class="booking-link">Email Now</a>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS - COLLAPSIBLE -->
   <h2>Terms & Conditions</h2>
   <div class="collapsible-section" onclick="this.classList.toggle('active')">
     <div><strong>View Terms & Conditions</strong> <span style="float:right;">▼</span></div>
-    <div class="collapsible-content"><p>All bookings require 30% deposit. Cancellations: 90% refund >60 days, 50% 30-60 days, no refund <30 days.</p></div>
+    <div class="collapsible-content">
+      <p><strong>1. Booking:</strong> 30% deposit required. Balance due 30 days before safari.</p>
+      <p><strong>2. Cancellation:</strong> 90% refund >60 days, 50% 30-60 days, no refund <30 days.</p>
+      <p><strong>3. Transportation:</strong> Kenyan registered vehicles (K-plates).</p>
+    </div>
   </div>
 
+  <!-- PRIVACY POLICY - COLLAPSIBLE -->
   <h2>Privacy Policy</h2>
   <div class="collapsible-section" onclick="this.classList.toggle('active')">
     <div><strong>View Privacy Policy</strong> <span style="float:right;">▼</span></div>
-    <div class="collapsible-content"><p>We collect personal information only for booking purposes. Your data is never sold to third parties.</p></div>
+    <div class="collapsible-content">
+      <p>We collect personal information only for booking purposes. Your data is never sold to third parties. We use cookies to enhance user experience.</p>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <h2>Visit or Contact Us</h2>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0;">
+    <div style="background: #0A2F1F; color: white; padding: 30px; border-radius: 10px;">
+      <h3 style="color: white;">Jumba Heritage Voyages</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Ngong Business Arcade, Nairobi</p>
+      <p><i class="fas fa-phone"></i> 0710 731 785 | 0789 514 678</p>
+      <p><i class="fas fa-envelope"></i> jumbaheritagevoyages@gmail.com</p>
+      <p><i class="fas fa-clock"></i> Mon-Fri: 8am-6pm, Sat: 9am-2pm</p>
+    </div>
+    <div style="height: 300px; background: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+      <p>Map Location</p>
+    </div>
   </div>
 
 </div>
 
-<!-- Footer -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div><h3>Jumba Heritage Voyages</h3><p>Luxury Kenyan safaris</p></div>
-      <div class="footer-links"><h4>Quick Links</h4><a href="#">Home</a><a href="#">Destinations</a><a href="#">Contact</a></div>
-      <div class="footer-links"><h4>Destinations</h4><a href="#">Maasai Mara</a><a href="#">Amboseli</a><a href="#">Diani Beach</a></div>
-      <div class="footer-links"><h4>Legal</h4><a href="#">Terms</a><a href="#">Privacy</a></div>
+      <div>
+        <h3 style="color: white;">Jumba Heritage <span style="color: #C9A24D;">Voyages</span></h3>
+        <p>Luxury Kenyan safaris crafted with heritage and expertise.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Destinations</h4>
+        <a href="#">Maasai Mara</a>
+        <a href="#">Amboseli</a>
+        <a href="#">Diani Beach</a>
+        <a href="#">Tsavo</a>
+      </div>
+      <div class="footer-links">
+        <h4>Legal</h4>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
     </div>
-    <p style="text-align:center; margin-top:30px;">&copy; 2025 Jumba Heritage Voyages</p>
+    <p style="text-align:center; margin-top:30px; color: #999;">&copy; 2025 Jumba Heritage Voyages. All Rights Reserved.</p>
   </div>
 </footer>
 
@@ -126,7 +240,7 @@
 
 <script>
   function bookNow(destination) {
-    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari.`;
+    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari. Please send me more information.`;
     window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
   }
 </script>
