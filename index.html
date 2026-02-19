@@ -686,7 +686,7 @@
       font-size: 0.9rem;
     }
 
-    /* ===== FAQ SECTION - FIXED: All answers hidden initially ===== */
+    /* ===== FAQ SECTION - COLLAPSIBLE ===== */
     .faq-section {
       background: var(--cream);
     }
@@ -742,6 +742,64 @@
 
     .faq-item.active .faq-question i {
       transform: rotate(180deg);
+    }
+
+    /* ===== COLLAPSIBLE SECTIONS FOR TERMS & PRIVACY ===== */
+    .collapsible-section {
+      background: var(--cream);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      padding: 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .collapsible-section:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .collapsible-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 30px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .collapsible-header h3 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .collapsible-header i {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      transition: 0.3s;
+    }
+
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      background: white;
+      border-radius: 0 0 10px 10px;
+      padding: 0 30px;
+    }
+
+    .collapsible-section.active .collapsible-content {
+      max-height: 2000px;
+      padding: 0 30px 30px 30px;
+    }
+
+    .collapsible-section.active .collapsible-header i {
+      transform: rotate(180deg);
+    }
+
+    .collapsible-section.active .collapsible-header {
+      border-radius: 10px 10px 0 0;
     }
 
     /* ===== BOOKING SECTION ===== */
@@ -1016,11 +1074,9 @@
   </div>
 </header>
 
-<!-- HERO SECTION WITH SLIDESHOW - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE -->
+<!-- HERO SECTION WITH SLIDESHOW - ALL WILDLIFE, NO PEOPLE -->
 <section class="hero" id="home">
-  <div class="hero-slideshow" id="heroSlideshow">
-    <!-- Slides will be populated by JavaScript -->
-  </div>
+  <div class="hero-slideshow" id="heroSlideshow"></div>
   <div class="hero-content">
     <div class="hero-subtitle" data-aos="fade-up">Welcome to Jumba Heritage Voyages</div>
     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">Experience Kenya In Its Purest Form</h1>
@@ -1032,7 +1088,7 @@
   </div>
 </section>
 
-<!-- DESTINATIONS SECTION - ALL IMAGES REPLACED: NO PEOPLE, ONLY WILDLIFE OR VEHICLES WITH TOURISTS INSIDE -->
+<!-- DESTINATIONS SECTION -->
 <section id="destinations">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1041,10 +1097,10 @@
     </div>
     
     <div class="destinations-grid">
-      <!-- Maasai Mara - Lion in Savannah -->
+      <!-- Maasai Mara -->
       <div class="destination-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maasai Mara Safari - Lion in Savannah">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format" alt="Maasai Mara Safari - Lion in Savannah">
           <div class="card-overlay">Luxury Camp</div>
         </div>
         <div class="card-content">
@@ -1059,10 +1115,10 @@
         </div>
       </div>
 
-      <!-- AMBOSELI - FIXED: Now shows elephants with Kilimanjaro (NO MAASAI MORAN, NO WHITE LADY) -->
+      <!-- Amboseli - FIXED: Elephants with Kilimanjaro (NO WHITE LADY) -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants in Amboseli with Mount Kilimanjaro">
+          <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&auto=format" alt="Elephants in Amboseli with Mount Kilimanjaro">
           <div class="card-overlay">Kilimanjaro View</div>
         </div>
         <div class="card-content">
@@ -1080,7 +1136,7 @@
       <!-- Diani Beach -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach Kenya">
+          <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format" alt="Diani Beach Kenya">
           <div class="card-overlay">Coastal Paradise</div>
         </div>
         <div class="card-content">
@@ -1095,10 +1151,10 @@
         </div>
       </div>
 
-      <!-- Tsavo - Safari Vehicle with tourists inside (looking at animals) -->
+      <!-- Tsavo -->
       <div class="destination-card" data-aos="fade-up">
         <div class="card-image">
-          <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Land Cruiser with tourists viewing wildlife">
+          <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Land Cruiser">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1113,10 +1169,10 @@
         </div>
       </div>
 
-      <!-- Laikipia - Zebras (wildlife only) -->
+      <!-- Laikipia -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="100">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zebra in Laikipia Kenya">
+          <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&auto=format" alt="Zebra in Laikipia Kenya">
           <div class="card-overlay">Private Conservancy</div>
         </div>
         <div class="card-content">
@@ -1131,10 +1187,10 @@
         </div>
       </div>
 
-      <!-- Samburu - Giraffe (wildlife only) -->
+      <!-- Samburu -->
       <div class="destination-card" data-aos="fade-up" data-aos-delay="200">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Giraffe in Samburu Kenya">
+          <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&auto=format" alt="Giraffe in Samburu Kenya">
           <div class="card-overlay">Northern Kenya</div>
         </div>
         <div class="card-content">
@@ -1162,33 +1218,22 @@
     
     <div class="features-grid">
       <div class="feature" data-aos="fade-up">
-        <div class="feature-icon">
-          <i class="fas fa-car"></i>
-        </div>
+        <div class="feature-icon"><i class="fas fa-car"></i></div>
         <h3>Elite Safari Fleet</h3>
-        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments. All vehicles are Kenyan registered (K plates: Kxx, KAJ, KCB, KDL series) with expert drivers trained in luxury service.</p>
+        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments. All vehicles are Kenyan registered (K plates: Kxx, KAJ, KCB, KDL series) with expert drivers.</p>
       </div>
-      
       <div class="feature" data-aos="fade-up" data-aos-delay="100">
-        <div class="feature-icon">
-          <i class="fas fa-users"></i>
-        </div>
+        <div class="feature-icon"><i class="fas fa-users"></i></div>
         <h3>Expert Local Guides</h3>
-        <p>Silver and Gold-rated guides with deep knowledge of wildlife, culture, and hidden gems. Our team includes Maasai Moran guides who share authentic cultural insights.</p>
+        <p>Silver and Gold-rated guides with deep knowledge of wildlife, culture, and hidden gems. Our team includes Maasai guides who share authentic cultural insights.</p>
       </div>
-      
       <div class="feature" data-aos="fade-up" data-aos-delay="200">
-        <div class="feature-icon">
-          <i class="fas fa-gem"></i>
-        </div>
+        <div class="feature-icon"><i class="fas fa-gem"></i></div>
         <h3>Exclusive Access</h3>
         <p>Private conservancies, off-road privileges, and special access to community-owned lands unavailable to others.</p>
       </div>
-      
       <div class="feature" data-aos="fade-up" data-aos-delay="300">
-        <div class="feature-icon">
-          <i class="fas fa-concierge-bell"></i>
-        </div>
+        <div class="feature-icon"><i class="fas fa-concierge-bell"></i></div>
         <h3>24/7 Concierge</h3>
         <p>Dedicated personal assistant throughout your journey - from booking to departure and everything between.</p>
       </div>
@@ -1196,7 +1241,7 @@
   </div>
 </section>
 
-<!-- GALLERY SECTION - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE AND VEHICLES -->
+<!-- GALLERY SECTION - FIXED: NO WHITE LADY, ALL WILDLIFE -->
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1206,35 +1251,36 @@
     
     <div class="gallery-grid">
       <div class="gallery-item" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lion in Maasai Mara Kenya">
+        <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800&auto=format" alt="Lion in Maasai Mara">
         <i class="fas fa-search-plus"></i>
       </div>
+      <!-- FIXED: Second gallery image is now GIRAFFE (NO WHITE LADY) -->
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-        <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elephants Amboseli Kenya">
+        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800&auto=format" alt="Giraffe in Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle with tourists viewing wildlife">
+        <img src="https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kenyan Safari Vehicle">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diani Beach Kenya">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&auto=format" alt="Diani Beach Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up">
-        <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Zebra Kenya">
+        <img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800&auto=format" alt="Zebra Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="50">
-        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lion in Maasai Mara">
+        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&auto=format" alt="Lion in Maasai Mara">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Giraffe Kenya">
+        <img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800&auto=format" alt="Elephants Amboseli">
         <i class="fas fa-search-plus"></i>
       </div>
       <div class="gallery-item" data-aos="fade-up" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cheetah Kenya">
+        <img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800&auto=format" alt="Cheetah Kenya">
         <i class="fas fa-search-plus"></i>
       </div>
     </div>
@@ -1251,25 +1297,17 @@
     
     <div class="experiences-grid">
       <div class="experience-card" data-aos="fade-up">
-        <div class="experience-icon">
-          <i class="fas fa-camera"></i>
-        </div>
+        <div class="experience-icon"><i class="fas fa-camera"></i></div>
         <h3>Private Game Drives</h3>
         <p>Morning and sunset expeditions across Kenya's legendary landscapes with professional photography guidance.</p>
       </div>
-      
       <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="experience-icon">
-          <i class="fas fa-hiking"></i>
-        </div>
+        <div class="experience-icon"><i class="fas fa-hiking"></i></div>
         <h3>Walking Safaris</h3>
         <p>Explore the bush on foot with armed guides, learning tracking skills and discovering the small wonders.</p>
       </div>
-      
       <div class="experience-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="experience-icon">
-          <i class="fas fa-users"></i>
-        </div>
+        <div class="experience-icon"><i class="fas fa-users"></i></div>
         <h3>Cultural Encounters</h3>
         <p>Engage with Maasai, Samburu, and Swahili communities to experience living traditions and hospitality.</p>
       </div>
@@ -1289,46 +1327,29 @@
       <div class="testimonial-card" data-aos="fade-up">
         <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly - from the luxury tented camp in Mara to the private guide who knew exactly where to find the leopards."</p>
         <div class="testimonial-author">
-          <div class="author-image">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
-          </div>
-          <div class="author-info">
-            <h4>Sarah Johnson</h4>
-            <p>United Kingdom</p>
-          </div>
+          <div class="author-image"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah"></div>
+          <div class="author-info"><h4>Sarah Johnson</h4><p>United Kingdom</p></div>
         </div>
       </div>
-      
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
         <p class="testimonial-text">"The attention to detail was remarkable. From the moment we landed in Nairobi until our departure, everything was seamless. The Amboseli safari with Kilimanjaro views was beyond words."</p>
         <div class="testimonial-author">
-          <div class="author-image">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael">
-          </div>
-          <div class="author-info">
-            <h4>Michael Chen</h4>
-            <p>United States</p>
-          </div>
+          <div class="author-image"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael"></div>
+          <div class="author-info"><h4>Michael Chen</h4><p>United States</p></div>
         </div>
       </div>
-      
       <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
         <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect - wild adventures followed by pure luxury on the coast. Our concierge was available 24/7."</p>
         <div class="testimonial-author">
-          <div class="author-image">
-            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Claudia">
-          </div>
-          <div class="author-info">
-            <h4>Claudia Schmidt</h4>
-            <p>Germany</p>
-          </div>
+          <div class="author-image"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Claudia"></div>
+          <div class="author-info"><h4>Claudia Schmidt</h4><p>Germany</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ SECTION - FIXED: All answers now hidden initially -->
+<!-- FAQ SECTION - COLLAPSIBLE (ALL HIDDEN INITIALLY) -->
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1353,7 +1374,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Accommodation and meals are strictly based on the client's budget and preferences. We offer a range of options from luxury tented camps to premium lodges and beach resorts. All accommodation and food/drinks are customized on a quote basis - simply let us know your preferences, and we'll prepare a personalized proposal. We do not include accommodation in the base transport price to give you maximum flexibility.</p>
+          <p>Accommodation and meals are strictly based on the client's budget and preferences. We offer a range of options from luxury tented camps to premium lodges and beach resorts. All accommodation and food/drinks are customized on a quote basis - simply let us know your preferences, and we'll prepare a personalized proposal.</p>
         </div>
       </div>
       
@@ -1363,7 +1384,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Yes, absolutely. Jumba Heritage Voyages provides premium transportation services to all destination sites across Kenya. Whether you need airport transfers, multi-day safari transport, or point-to-point travel between parks, our luxury fleet and professional drivers are at your service. We can customize pure transport packages or full-service safari experiences.</p>
+          <p>Yes, absolutely. Jumba Heritage Voyages provides premium transportation services to all destination sites across Kenya. Whether you need airport transfers, multi-day safari transport, or point-to-point travel between parks, our luxury fleet and professional drivers are at your service.</p>
         </div>
       </div>
       
@@ -1373,7 +1394,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>We use a fleet of custom-modified Toyota Land Cruisers and Land Rovers, all Kenyan registered with official K-plate numbers (Kxx, KAJ, KCB, KDL series). Each vehicle features pop-up roofs for game viewing, refrigerator, charging ports, WiFi, and is maintained to the highest safety standards. Our drivers are experienced, licensed, and many come from local Maasai communities.</p>
+          <p>We use a fleet of custom-modified Toyota Land Cruisers and Land Rovers, all Kenyan registered with official K-plate numbers (Kxx, KAJ, KCB, KDL series). Each vehicle features pop-up roofs for game viewing, refrigerator, charging ports, WiFi, and is maintained to the highest safety standards.</p>
         </div>
       </div>
       
@@ -1383,7 +1404,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Booking is easy - simply click the "Inquire Now" button on any package, call us directly, or send a WhatsApp message. We accept M-PESA (Safaricom: 0710 731 785), Airtel Money (0789 514 678), bank transfers, and cryptocurrency (BTC/USDT) upon request. A deposit secures your booking, with balance payable before safari commencement.</p>
+          <p>Booking is easy - simply click the "Inquire Now" button on any package, call us directly, or send a WhatsApp message. We accept M-PESA (Safaricom: 0710 731 785), Airtel Money (0789 514 678), bank transfers, and cryptocurrency (BTC/USDT) upon request.</p>
         </div>
       </div>
     </div>
@@ -1482,7 +1503,7 @@
   </div>
 </section>
 
-<!-- TERMS & CONDITIONS SECTION -->
+<!-- TERMS & CONDITIONS SECTION - COLLAPSIBLE -->
 <section class="terms-section" id="terms">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1490,29 +1511,35 @@
       <h2>Terms & Conditions</h2>
     </div>
     
-    <div class="terms-content" data-aos="fade-up">
-      <h3>1. Booking and Confirmation</h3>
-      <p>All bookings are confirmed upon receipt of a 30% deposit of the total safari cost. The remaining balance is due 30 days prior to safari commencement. For bookings made within 30 days of travel, full payment is required at the time of booking. Deposits can be made via M-PESA, Airtel Money, bank transfer, or cryptocurrency.</p>
-      
-      <h3>2. Cancellation Policy</h3>
-      <p>Cancellations made more than 60 days before departure: 90% refund of deposit. Cancellations between 30-60 days: 50% refund of deposit. Cancellations less than 30 days: no refund. However, you may transfer your booking to another person or future date subject to availability.</p>
-      
-      <h3>3. Accommodation and Meals</h3>
-      <p>Jumba Heritage Voyages provides transportation and safari guiding services. Accommodation and meals are arranged based on client preferences and budget. We act as an intermediary between clients and accommodation providers. All accommodation and food expenses are quoted separately and are the responsibility of the client. We can customize all accommodation and dining on a quote basis upon request.</p>
-      
-      <h3>4. Transportation Services</h3>
-      <p>Our luxury safari vehicles are Kenyan registered (K-plate series: Kxx, KAJ, KCB, KDL), fully insured, and equipped with all necessary safety features. Professional driver-guides are licensed by the Kenya Tourism Board. Vehicle breakdowns, while rare, are covered by our 24/7 support network with replacement vehicles dispatched promptly.</p>
-      
-      <h3>5. Client Responsibilities</h3>
-      <p>Clients are responsible for obtaining valid passports, visas, and any required vaccinations. Travel insurance is strongly recommended and should cover cancellation, medical expenses, and personal belongings. Jumba Heritage Voyages cannot be held liable for any injury, loss, or damage sustained during the safari.</p>
-      
-      <h3>6. Pricing Guarantee</h3>
-      <p>All prices quoted are per person in USD and include government taxes and park fees where applicable. Prices are subject to change only in the event of government tax increases or significant currency fluctuations. We guarantee prices once deposit is received.</p>
+    <div class="collapsible-section" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">
+        <h3>View Terms & Conditions</h3>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="collapsible-content">
+        <h3>1. Booking and Confirmation</h3>
+        <p>All bookings are confirmed upon receipt of a 30% deposit of the total safari cost. The remaining balance is due 30 days prior to safari commencement. For bookings made within 30 days of travel, full payment is required at the time of booking. Deposits can be made via M-PESA, Airtel Money, bank transfer, or cryptocurrency.</p>
+        
+        <h3>2. Cancellation Policy</h3>
+        <p>Cancellations made more than 60 days before departure: 90% refund of deposit. Cancellations between 30-60 days: 50% refund of deposit. Cancellations less than 30 days: no refund. However, you may transfer your booking to another person or future date subject to availability.</p>
+        
+        <h3>3. Accommodation and Meals</h3>
+        <p>Jumba Heritage Voyages provides transportation and safari guiding services. Accommodation and meals are arranged based on client preferences and budget. We act as an intermediary between clients and accommodation providers. All accommodation and food expenses are quoted separately and are the responsibility of the client.</p>
+        
+        <h3>4. Transportation Services</h3>
+        <p>Our luxury safari vehicles are Kenyan registered (K-plate series: Kxx, KAJ, KCB, KDL), fully insured, and equipped with all necessary safety features. Professional driver-guides are licensed by the Kenya Tourism Board.</p>
+        
+        <h3>5. Client Responsibilities</h3>
+        <p>Clients are responsible for obtaining valid passports, visas, and any required vaccinations. Travel insurance is strongly recommended and should cover cancellation, medical expenses, and personal belongings.</p>
+        
+        <h3>6. Pricing Guarantee</h3>
+        <p>All prices quoted are per person in USD and include government taxes and park fees where applicable. Prices are subject to change only in the event of government tax increases or significant currency fluctuations.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PRIVACY POLICY SECTION -->
+<!-- PRIVACY POLICY SECTION - COLLAPSIBLE -->
 <section class="privacy-section" id="privacy">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
@@ -1520,26 +1547,32 @@
       <h2>Privacy Policy</h2>
     </div>
     
-    <div class="privacy-content" data-aos="fade-up">
-      <h3>Information We Collect</h3>
-      <p>Jumba Heritage Voyages collects personal information including names, contact details, passport information, and payment details solely for the purpose of booking and delivering your safari experience. We may also collect dietary preferences, medical requirements, and special requests to ensure your comfort and safety.</p>
-      
-      <h3>How We Use Your Information</h3>
-      <p>Your information is used to: process bookings and payments, communicate with you about your safari, arrange accommodations and activities, comply with legal requirements (such as park entry registrations), and improve our services. We may send you promotional offers only with your explicit consent.</p>
-      
-      <h3>Data Protection</h3>
-      <p>We implement industry-standard security measures to protect your personal information. All payment transactions are encrypted. Your data is never sold to third parties. We only share necessary information with accommodation providers, park authorities, and other service providers essential to your safari experience.</p>
-      
-      <h3>Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal information held by us. You may withdraw consent for marketing communications at any time. To exercise these rights, contact us at jumbaheritagevoyages@gmail.com.</p>
-      
-      <h3>Cookies</h3>
-      <p>Our website uses cookies to enhance user experience and analyze site traffic. By continuing to browse, you consent to our use of cookies. You may disable cookies through your browser settings.</p>
-      
-      <h3>Updates to Policy</h3>
-      <p>We may update this privacy policy periodically. The latest version will always be available on our website. Continued use of our services constitutes acceptance of any changes.</p>
-      
-      <p style="margin-top: 40px;"><strong>Last Updated:</strong> January 2025</p>
+    <div class="collapsible-section" onclick="toggleCollapsible(this)">
+      <div class="collapsible-header">
+        <h3>View Privacy Policy</h3>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="collapsible-content">
+        <h3>Information We Collect</h3>
+        <p>Jumba Heritage Voyages collects personal information including names, contact details, passport information, and payment details solely for the purpose of booking and delivering your safari experience. We may also collect dietary preferences, medical requirements, and special requests to ensure your comfort and safety.</p>
+        
+        <h3>How We Use Your Information</h3>
+        <p>Your information is used to: process bookings and payments, communicate with you about your safari, arrange accommodations and activities, comply with legal requirements (such as park entry registrations), and improve our services.</p>
+        
+        <h3>Data Protection</h3>
+        <p>We implement industry-standard security measures to protect your personal information. All payment transactions are encrypted. Your data is never sold to third parties. We only share necessary information with accommodation providers, park authorities, and other service providers essential to your safari experience.</p>
+        
+        <h3>Your Rights</h3>
+        <p>You have the right to access, correct, or delete your personal information held by us. You may withdraw consent for marketing communications at any time. To exercise these rights, contact us at jumbaheritagevoyages@gmail.com.</p>
+        
+        <h3>Cookies</h3>
+        <p>Our website uses cookies to enhance user experience and analyze site traffic. By continuing to browse, you consent to our use of cookies. You may disable cookies through your browser settings.</p>
+        
+        <h3>Updates to Policy</h3>
+        <p>We may update this privacy policy periodically. The latest version will always be available on our website. Continued use of our services constitutes acceptance of any changes.</p>
+        
+        <p style="margin-top: 40px;"><strong>Last Updated:</strong> January 2025</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1628,16 +1661,16 @@
     }
   });
 
-  // Hero Slideshow - COMPLETELY FIXED: NO PEOPLE AT ALL, ONLY WILDLIFE
+  // Hero Slideshow - ALL WILDLIFE, NO PEOPLE
   const heroSlideshow = document.getElementById('heroSlideshow');
   
-  // Array of stunning Kenyan safari images - all wildlife, no people
+  // Array of stunning Kenyan wildlife images - NO WHITE WOMAN
   const slides = [
-    'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Lion in Mara
-    'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Elephants Amboseli
-    'https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=1920', // Kenyan Land Cruiser with tourists
-    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80', // Zebras
-    'https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80' // Diani Beach
+    'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1600&auto=format', // Lion
+    'https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=1600&auto=format', // Elephants (FIXED - replaces white woman)
+    'https://images.pexels.com/photos/4622062/pexels-photo-4622062.jpeg?auto=compress&cs=tinysrgb&w=1600', // Safari vehicle
+    'https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=1600&auto=format', // Zebras
+    'https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1600&auto=format' // Beach
   ];
 
   // Create slides
@@ -1658,16 +1691,15 @@
     heroSlides[currentSlide].classList.add('active');
   }
 
-  // Change slide every 5 seconds
   setInterval(nextSlide, 5000);
 
-  // Book Now function - Opens WhatsApp with your Airtel number
+  // Book Now function
   function bookNow(destination) {
     const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} safari. Please send me more information including accommodation options and availability.`;
     window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
   }
 
-  // Smooth scrolling for anchor links
+  // Smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1681,7 +1713,7 @@
     });
   });
 
-  // Gallery item click to open image
+  // Gallery click
   document.querySelectorAll('.gallery-item').forEach(item => {
     item.addEventListener('click', function() {
       const img = this.querySelector('img').src;
@@ -1689,8 +1721,13 @@
     });
   });
 
-  // FAQ Toggle Function - All answers start hidden
+  // FAQ Toggle
   window.toggleFAQ = function(element) {
+    element.classList.toggle('active');
+  };
+
+  // Collapsible sections toggle for Terms & Privacy
+  window.toggleCollapsible = function(element) {
     element.classList.toggle('active');
   };
 </script>
