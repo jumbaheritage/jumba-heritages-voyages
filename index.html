@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jumba Heritage Voyages | Asili Travels Collective</title>
-  <meta name="description" content="Experience Kenya's finest wildlife and landscapes through exclusive private safaris. Maasai Mara, Amboseli, Laikipia & coastal luxury escapes.">
+  <title>Jumba Heritage Voyages | Asili Travels</title>
+  <meta name="description" content="Experience Kenya's finest wildlife and landscapes through exclusive private safaris. Maasai Mara, Amboseli, Tsavo, Samburu & coastal luxury escapes.">
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -225,38 +225,60 @@
       color: var(--white) !important;
     }
 
-    /* ===== HERO SECTION ===== */
+    /* ===== HERO SLIDESHOW ===== */
     .hero {
       height: 100vh;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920');
+      background-color: var(--primary);
+    }
+
+    .slide-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      color: var(--white);
     }
 
-    .hero::after {
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(10,47,31,0.5) 0%, rgba(0,0,0,0.3) 100%);
+      background: linear-gradient(135deg, rgba(10,47,31,0.5) 0%, rgba(0,0,0,0.4) 100%);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
-      z-index: 2;
+      z-index: 3;
       max-width: 900px;
       padding: 0 20px;
+      text-align: center;
+      color: var(--white);
       animation: fadeInUp 1.5s ease;
     }
 
@@ -333,7 +355,7 @@
       bottom: 40px;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10;
+      z-index: 20;
       color: var(--white);
       font-size: 1.5rem;
       animation: bounce 2s infinite;
@@ -1138,7 +1160,7 @@
   <div class="container nav">
     <div class="logo-group">
       <a href="#home" class="logo-primary">Jumba Heritage <span>Voyages</span></a>
-      <div class="logo-secondary">in partnership with <strong>ASILI TRAVELS</strong></div>
+      <div class="logo-secondary"><strong>ASILI TRAVELS</strong></div>
     </div>
     <ul class="nav-menu">
       <li><a href="#home">Home</a></li>
@@ -1152,8 +1174,22 @@
   </div>
 </header>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION WITH SLIDESHOW (KENYAN LANDSCAPES/WILDLIFE) -->
 <section class="hero" id="home">
+  <div class="slide-container">
+    <!-- Slide 1: Samburu (reticulated giraffe / landscape) -->
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=1920&q=80');"></div>
+    <!-- Slide 2: Tsavo (elephants, red dust) -->
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/356807/pexels-photo-356807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+    <!-- Slide 3: Amboseli (Kilimanjaro & elephants) -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=1920&q=80');"></div>
+    <!-- Slide 4: Maasai Mara (savannah & acacia) -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80');"></div>
+    <!-- Slide 5: Giraffe Centre / Nairobi (Rothschild giraffe) -->
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/3722495/pexels-photo-3722495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');"></div>
+    <!-- Slide 6: Plateau / Laikipia (wilderness) -->
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1920&q=80');"></div>
+  </div>
   <div class="hero-content">
     <div class="hero-subtitle">Welcome to Jumba Heritage Voyages</div>
     <h1 class="hero-title">Experience Kenya In Its Purest Form</h1>
@@ -1232,10 +1268,10 @@
         </div>
       </div>
 
-      <!-- Tsavo -->
+      <!-- Tsavo (Corrected Image: authentic Kenyan landscape) -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1582962534019-1e1f4f3b1f3c?w=800" alt="Tsavo">
+          <img src="https://images.pexels.com/photos/356807/pexels-photo-356807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Tsavo Elephants">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1323,7 +1359,7 @@
   </div>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (Updated with Kenyan-specific imagery) -->
 <section id="gallery">
   <div class="container">
     <div class="section-title">
@@ -1335,12 +1371,12 @@
     <div class="gallery-grid">
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1549366021-9f761d450615?w=800" alt="Lion"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=800" alt="Giraffe"><i class="fas fa-search-plus"></i></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1557053910-d9eadeed1c58?w=800" alt="Elephants"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/3722495/pexels-photo-3722495.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Giraffe Centre"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1547970810-dc1eac37d174?w=800" alt="Zebra"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800" alt="Leopard"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800" alt="Diani Beach"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=800" alt="Cheetah"><i class="fas fa-search-plus"></i></div>
-      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800" alt="Safari Sunset"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/356807/pexels-photo-356807.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Tsavo Elephants"><i class="fas fa-search-plus"></i></div>
     </div>
   </div>
 </section>
@@ -1565,13 +1601,13 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (updated to remove "in partnership with" and just show Asili Travels) -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
         <div class="footer-logo">Jumba Heritage <span>Voyages</span></div>
-        <p>In partnership with Asili Travels Collective. Luxury Kenyan safaris crafted with heritage, expertise, and an unwavering commitment to excellence.</p>
+        <p>Asili Travels Collective. Luxury Kenyan safaris crafted with heritage, expertise, and an unwavering commitment to excellence.</p>
         <div class="social-links">
           <a href="#"><i class="fab fa-facebook-f"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1609,7 +1645,7 @@
       </div>
     </div>
     <div class="copyright">
-      <p>&copy; 2025 Jumba Heritage Voyages & Asili Travels Collective. All Rights Reserved.</p>
+      <p>&copy; 2025 Jumba Heritage Voyages & Asili Travels. All Rights Reserved.</p>
     </div>
   </div>
 </footer>
@@ -1632,6 +1668,17 @@
       header.classList.remove('scrolled');
     }
   });
+
+  // Hero Slideshow
+  let slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+  setInterval(nextSlide, 5000); // Change every 5 seconds
 
   // Book Now function
   function bookNow(destination) {
