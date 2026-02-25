@@ -233,6 +233,16 @@
       background-color: var(--primary);
     }
 
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
     .slide-container {
       position: absolute;
       top: 0;
@@ -728,11 +738,22 @@
     }
 
     /* ===== TESTIMONIALS ===== */
+    .testimonial-carousel {
+      overflow: hidden;
+      width: 100%;
+    }
+
     .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
       gap: 40px;
       margin-top: 40px;
+      animation: slideTestimonials 15s infinite;
+    }
+
+    @keyframes slideTestimonials {
+      0%, 30% { transform: translateX(0); }
+      35%, 65% { transform: translateX(-105%); }
+      70%, 100% { transform: translateX(-210%); }
     }
 
     .testimonial-card {
@@ -742,6 +763,8 @@
       box-shadow: var(--shadow-md);
       position: relative;
       transition: var(--transition);
+      min-width: 300px;
+      flex: 1;
     }
 
     .testimonial-card:hover {
@@ -788,61 +811,56 @@
       font-size: 0.9rem;
     }
 
-    /* ===== FAQ SECTION ===== */
-    .faq-grid {
-      max-width: 900px;
-      margin: 0 auto;
+    /* ===== FEATURED PACKAGES ===== */
+    .featured-packages {
+      background: linear-gradient(135deg, #f5f0e8, #fff);
     }
 
-    .faq-item {
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .package-card {
       background: white;
+      padding: 40px 30px;
       border-radius: 15px;
-      margin-bottom: 20px;
-      padding: 25px 30px;
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
-      transition: var(--transition);
-      border-left: 4px solid transparent;
-    }
-
-    .faq-item:hover {
+      text-align: center;
       box-shadow: var(--shadow-md);
-      border-left-color: var(--secondary);
+      transition: var(--transition);
+      position: relative;
     }
 
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .faq-question h3 {
-      font-size: 1.3rem;
+    .best-seller {
+      position: absolute;
+      top: -10px;
+      right: 20px;
+      background: var(--secondary);
       color: var(--primary);
-      margin: 0;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
       font-weight: 600;
     }
 
-    .faq-question i {
-      color: var(--secondary);
-      font-size: 1.2rem;
-      transition: transform 0.3s ease;
+    .package-card h3 {
+      font-size: 1.8rem;
+      margin: 30px 0 15px;
+      color: var(--primary);
     }
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      margin-top: 0;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-      margin-top: 20px;
-    }
-
-    .faq-item.active .faq-question i {
-      transform: rotate(180deg);
+    .package-price {
+      font-size: 2.2rem;
+      color: var(--primary);
+      font-weight: 700;
+      margin: 20px 0;
     }
 
     /* ===== BOOKING SECTION ===== */
@@ -922,6 +940,224 @@
     .booking-link:hover {
       background: white;
       transform: scale(1.05);
+    }
+
+    /* ===== CONFIDENCE BADGES ===== */
+    .confidence-badges {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      min-width: 180px;
+    }
+
+    .badge i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .badge p {
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /* ===== CURRENCY SELECTOR ===== */
+    .currency-selector {
+      position: fixed;
+      top: 100px;
+      right: 20px;
+      z-index: 999;
+      background: var(--primary);
+      padding: 8px 15px;
+      border-radius: 30px;
+      border: 1px solid var(--secondary);
+      color: white;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .currency-selector:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    /* ===== SOCIAL FEED ===== */
+    .social-feed {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .social-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      height: 250px;
+      cursor: pointer;
+    }
+
+    .social-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .social-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .social-item::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(10,47,31,0.8), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .social-item:hover::after {
+      opacity: 1;
+    }
+
+    .social-item i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2rem;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .social-item:hover i {
+      opacity: 1;
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter {
+      background: var(--primary);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .newsletter p {
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 15px 20px;
+      border-radius: 30px 0 0 30px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .newsletter-button {
+      padding: 15px 30px;
+      background: var(--secondary);
+      color: var(--primary);
+      border: none;
+      border-radius: 0 30px 30px 0;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .newsletter-button:hover {
+      background: #B8923D;
+      color: white;
+    }
+
+    /* ===== FAQ SECTION ===== */
+    .faq-grid {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      padding: 25px 30px;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: var(--transition);
+      border-left: 4px solid transparent;
+    }
+
+    .faq-item:hover {
+      box-shadow: var(--shadow-md);
+      border-left-color: var(--secondary);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-question h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .faq-question i {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      margin-top: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      margin-top: 20px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
     }
 
     /* ===== CONTACT SECTION ===== */
@@ -1114,7 +1350,8 @@
       .gallery-item:nth-child(3) { grid-column: auto; height: 280px; }
       .gallery-item:nth-child(5) { grid-row: auto; height: 280px; }
       .experiences-grid { grid-template-columns: repeat(2, 1fr); }
-      .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+      .packages-grid { grid-template-columns: repeat(2, 1fr); }
+      .social-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -1135,10 +1372,12 @@
       .features-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
       .experiences-grid { grid-template-columns: 1fr; }
-      .testimonial-grid { grid-template-columns: 1fr; }
+      .packages-grid { grid-template-columns: 1fr; }
+      .social-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
+      .currency-selector { top: auto; bottom: 100px; right: 20px; }
     }
   </style>
 </head>
@@ -1149,6 +1388,14 @@
   <div class="preloader-logo">Jumba Heritage <span>Voyages</span></div>
   <div class="preloader-bar"></div>
 </div>
+
+<!-- CURRENCY SELECTOR -->
+<select class="currency-selector" onchange="convertCurrency(this.value)">
+  <option value="USD">USD $</option>
+  <option value="EUR">EUR €</option>
+  <option value="GBP">GBP £</option>
+  <option value="KES">KES KSh</option>
+</select>
 
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/254789514678?text=Hello%20Jumba%20Heritage%20Voyages!%20I'm%20interested%20in%20a%20luxury%20safari." class="whatsapp-float" target="_blank">
@@ -1174,8 +1421,14 @@
   </div>
 </header>
 
-<!-- HERO SECTION WITH SLIDESHOW - ALL VERIFIED WORKING IMAGES -->
+<!-- HERO SECTION WITH VIDEO BACKGROUND -->
 <section class="hero" id="home">
+  <!-- Video Background (UPGRADE 5) -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://player.vimeo.com/external/371937003.sd.mp4?s=0e5f0b7a1e7b9a1b5e0f1b7a1e7b9a1b5e0f1b7a&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
+    <!-- Fallback to slideshow if video doesn't load -->
+  </video>
+  
   <div class="slide-container">
     <!-- Photo 1: Samburu Giraffe (Verified) -->
     <div class="slide active" style="background-image: url('https://loremflickr.com/1920/1080/samburu,giraffe,kenya,wildlife?random=1');"></div>
@@ -1227,7 +1480,7 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Witness the Great Migration, Big Cats, and golden savannahs from exclusive private conservancies.</p>
-          <div class="price">$1,000 <span>per person</span></div>
+          <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button>
         </div>
       </div>
@@ -1245,7 +1498,7 @@
             <span><i class="fas fa-user-friends"></i> Max 8 guests</span>
           </div>
           <p>Iconic elephants roaming beneath Africa's highest peak. Experience authentic Maasai culture.</p>
-          <div class="price">$800 <span>per person</span></div>
+          <div class="price" data-usd="800">$800 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button>
         </div>
       </div>
@@ -1263,7 +1516,7 @@
             <span><i class="fas fa-user-friends"></i> Private</span>
           </div>
           <p>Crystal waters, white sands, and luxury beachfront villas. Combine with safari for ultimate escape.</p>
-          <div class="price">$900 <span>per person</span></div>
+          <div class="price" data-usd="900">$900 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Diani Beach')">Inquire Now</button>
         </div>
       </div>
@@ -1281,7 +1534,7 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos. Explore in custom safari vehicles.</p>
-          <div class="price">$800 <span>per person</span></div>
+          <div class="price" data-usd="800">$800 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button>
         </div>
       </div>
@@ -1299,7 +1552,7 @@
             <span><i class="fas fa-user-friends"></i> Exclusive</span>
           </div>
           <p>Exclusive private ranches, wild dog packs, and walking safaris with Samburu warriors.</p>
-          <div class="price">$1,000 <span>per person</span></div>
+          <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button>
         </div>
       </div>
@@ -1317,9 +1570,50 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Unique northern species: Grevy's zebra, reticulated giraffe, and Somali ostrich.</p>
-          <div class="price">$600 <span>per person</span></div>
+          <div class="price" data-usd="600">$600 <span>per person</span></div>
           <button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PACKAGES SECTION (UPGRADE 3) -->
+<section class="featured-packages">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-subtitle">Most Popular</div>
+      <h2>Featured Safari Packages</h2>
+      <div class="title-divider"></div>
+    </div>
+    
+    <div class="packages-grid">
+      <div class="package-card">
+        <span class="best-seller">BEST SELLER</span>
+        <i class="fas fa-crown" style="font-size: 2.5rem; color: var(--secondary);"></i>
+        <h3>5-Day Mara & Amboseli</h3>
+        <p>Experience the best of Kenya's wildlife</p>
+        <div class="package-price" data-usd="1500">$1,500</div>
+        <p style="margin: 15px 0;">✓ 2 Nights Mara<br>✓ 2 Nights Amboseli<br>✓ All meals included</p>
+        <button class="btn-card" onclick="bookNow('Mara Amboseli Combo')">Book Now</button>
+      </div>
+      
+      <div class="package-card">
+        <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--secondary);"></i>
+        <h3>7-Day Safari & Beach</h3>
+        <p>Wildlife + Diani relaxation</p>
+        <div class="package-price" data-usd="2100">$2,100</div>
+        <p style="margin: 15px 0;">✓ 4 Days Safari<br>✓ 3 Days Diani Beach<br>✓ All transfers</p>
+        <button class="btn-card" onclick="bookNow('Safari Beach Combo')">Book Now</button>
+      </div>
+      
+      <div class="package-card">
+        <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--secondary);"></i>
+        <h3>4-Day Luxury Tsavo</h3>
+        <p>Private conservancy experience</p>
+        <div class="package-price" data-usd="1200">$1,200</div>
+        <p style="margin: 15px 0;">✓ Private guide<br>✓ Luxury lodge<br>✓ Game drives</p>
+        <button class="btn-card" onclick="bookNow('Luxury Tsavo')">Book Now</button>
       </div>
     </div>
   </div>
@@ -1418,7 +1712,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS (No images) -->
+<!-- TESTIMONIALS CAROUSEL (UPGRADE 2) -->
 <section id="testimonials">
   <div class="container">
     <div class="section-title">
@@ -1427,35 +1721,39 @@
       <div class="title-divider"></div>
     </div>
     
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly - from the luxury tented camp in Mara to the private guide who knew exactly where to find the leopards."</p>
-        <div class="testimonial-author">
-          <h4>Sarah Johnson</h4>
-          <p>United Kingdom</p>
+    <div class="testimonial-carousel">
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly - from the luxury tented camp in Mara to the private guide who knew exactly where to find the leopards."</p>
+          <div class="testimonial-author">
+            <h4>Sarah Johnson</h4>
+            <p>United Kingdom</p>
+          </div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
         </div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The attention to detail was remarkable. From the moment we landed in Nairobi until our departure, everything was seamless. The Amboseli safari with Kilimanjaro views was beyond words."</p>
+          <div class="testimonial-author">
+            <h4>Michael Chen</h4>
+            <p>United States</p>
+          </div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-text">"The attention to detail was remarkable. From the moment we landed in Nairobi until our departure, everything was seamless. The Amboseli safari with Kilimanjaro views was beyond words."</p>
-        <div class="testimonial-author">
-          <h4>Michael Chen</h4>
-          <p>United States</p>
-        </div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect - wild adventures followed by pure luxury on the coast. Our concierge was available 24/7."</p>
-        <div class="testimonial-author">
-          <h4>Claudia Schmidt</h4>
-          <p>Germany</p>
-        </div>
-        <div class="stars">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect - wild adventures followed by pure luxury on the coast. Our concierge was available 24/7."</p>
+          <div class="testimonial-author">
+            <h4>Claudia Schmidt</h4>
+            <p>Germany</p>
+          </div>
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -1525,7 +1823,7 @@
   </div>
 </section>
 
-<!-- BOOKING SECTION (No images) -->
+<!-- BOOKING SECTION (UPGRADE 7 - Confidence Badges) -->
 <section class="booking-section" id="booking">
   <div class="container">
     <div class="section-title">
@@ -1555,6 +1853,64 @@
         <a href="mailto:jumbaheritagevoyages@gmail.com" class="booking-link">Email Now</a>
       </div>
     </div>
+    
+    <!-- Confidence Badges -->
+    <div class="confidence-badges">
+      <div class="badge">
+        <i class="fas fa-shield-alt"></i>
+        <p>Secure Payment</p>
+      </div>
+      <div class="badge">
+        <i class="fas fa-clock"></i>
+        <p>24/7 Support</p>
+      </div>
+      <div class="badge">
+        <i class="fas fa-calendar-check"></i>
+        <p>Free Cancellation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA FEED (UPGRADE 6) -->
+<section class="social-feed">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-subtitle">Follow Our Adventures</div>
+      <h2>#JumbaHeritageVoyages</h2>
+      <div class="title-divider"></div>
+    </div>
+    
+    <div class="social-grid">
+      <div class="social-item">
+        <img src="https://loremflickr.com/400/400/lion,kenya,wildlife?random=21" alt="Safari moment">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="social-item">
+        <img src="https://loremflickr.com/400/400/elephant,kenya,wildlife?random=22" alt="Safari moment">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="social-item">
+        <img src="https://loremflickr.com/400/400/giraffe,kenya,wildlife?random=23" alt="Safari moment">
+        <i class="fab fa-instagram"></i>
+      </div>
+      <div class="social-item">
+        <img src="https://loremflickr.com/400/400/zebra,kenya,wildlife?random=24" alt="Safari moment">
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER SIGNUP (UPGRADE 8) -->
+<section class="newsletter">
+  <div class="container">
+    <h3>Get Safari Deals</h3>
+    <p>Subscribe for exclusive offers, travel tips, and inspiration</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+      <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
+      <button type="submit" class="newsletter-button">Subscribe</button>
+    </form>
   </div>
 </section>
 
@@ -1661,8 +2017,8 @@
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[7].scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[7].classList.add('active'); return false;">Terms & Conditions</a></li>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[8].scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[8].classList.add('active'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[7]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[7]?.classList.add('active'); return false;">Terms & Conditions</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[8]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[8]?.classList.add('active'); return false;">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -1671,6 +2027,10 @@
     </div>
   </div>
 </footer>
+
+<!-- LIVE CHAT WIDGET (UPGRADE 1) -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<div class="elfsight-app-1b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b" data-elfsight-app-lazy></div>
 
 <!-- JavaScript -->
 <script>
@@ -1734,6 +2094,23 @@
     });
   });
 
+  // Currency Converter (UPGRADE 4)
+  window.convertCurrency = function(currency) {
+    const rates = { USD: 1, EUR: 0.92, GBP: 0.79, KES: 130 };
+    const symbols = { USD: '$', EUR: '€', GBP: '£', KES: 'KSh ' };
+    
+    document.querySelectorAll('[data-usd]').forEach(el => {
+      let usdAmount = parseFloat(el.getAttribute('data-usd'));
+      let converted = usdAmount * rates[currency];
+      if (el.classList.contains('package-price')) {
+        el.innerHTML = symbols[currency] + converted.toFixed(0);
+      } else {
+        let priceText = el.innerHTML;
+        el.innerHTML = symbols[currency] + converted.toFixed(0) + ' <span>per person</span>';
+      }
+    });
+  };
+
   // Animate on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1743,9 +2120,35 @@
     });
   });
 
-  document.querySelectorAll('.destination-card, .feature, .experience-card, .testimonial-card').forEach(el => {
+  document.querySelectorAll('.destination-card, .feature, .experience-card, .testimonial-card, .package-card, .badge').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
+  });
+
+  // Newsletter form
+  document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for subscribing to our newsletter!');
+    this.reset();
+  });
+</script>
+
+<!-- Fallback for Terms links if FAQ items count changes -->
+<script>
+  // Ensure Terms & Privacy links work even if FAQ count changes
+  document.querySelectorAll('.footer-links a[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const text = this.textContent;
+      const faqItems = document.querySelectorAll('.faq-item');
+      if (text.includes('Terms')) {
+        faqItems[faqItems.length - 2]?.scrollIntoView({behavior: 'smooth'});
+        faqItems[faqItems.length - 2]?.classList.add('active');
+      } else if (text.includes('Privacy')) {
+        faqItems[faqItems.length - 1]?.scrollIntoView({behavior: 'smooth'});
+        faqItems[faqItems.length - 1]?.classList.add('active');
+      }
+    });
   });
 </script>
 
