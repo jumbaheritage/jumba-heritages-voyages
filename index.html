@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jumba Heritage Voyages | Asili Travels</title>
+  <title>Jumba Heritage Voyages | Asili Travels - Luxury Kenyan Safaris</title>
   <meta name="description" content="Experience Kenya's finest wildlife and landscapes through exclusive private safaris. Maasai Mara, Amboseli, Tsavo, Samburu & coastal luxury escapes.">
   
   <!-- Fonts -->
@@ -22,16 +22,24 @@
 
     :root {
       --primary: #0A2F1F;      /* Deep Safari Green */
-      --secondary: #C9A24D;     /* Warm Gold */
+      --primary-dark: #051A12;  /* Darker Forest */
+      --secondary: #D4AF37;     /* RICH GOLD */
+      --secondary-light: #F5D742; /* Warm Gold Glow */
       --terracotta: #B75D3A;    /* Rich Earth */
+      --burgundy: #800020;      /* Deep Wine */
+      --safari-sunset: #E67E22; /* Sunset Orange */
+      --savannah: #C49A6C;      /* Warm Savannah */
       --cream: #FAF7F2;         /* Soft Background */
-      --charcoal: #2C2C2C;      /* Text */
+      --charcoal: #1C1C1C;      /* Dark Text */
       --white: #FFFFFF;
-      --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.1);
-      --shadow-md: 0 20px 40px -10px rgba(0,0,0,0.2);
-      --shadow-lg: 0 30px 60px -10px rgba(10,47,31,0.3);
-      --shadow-hover: 0 40px 70px -10px rgba(10,47,31,0.4);
-      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.15);
+      --shadow-md: 0 20px 40px -10px rgba(0,0,0,0.25);
+      --shadow-lg: 0 30px 60px -10px rgba(10,47,31,0.4);
+      --shadow-hover: 0 40px 70px -10px rgba(212,175,55,0.3);
+      --shadow-luxury: 0 50px 100px -20px rgba(0,0,0,0.5);
+      --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      --gradient-gold: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+      --gradient-sunset: linear-gradient(135deg, var(--safari-sunset) 0%, var(--terracotta) 100%);
     }
 
     html {
@@ -49,14 +57,38 @@
 
     h1, h2, h3, h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      letter-spacing: 0.03em;
     }
 
     .container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 0 40px;
+    }
+
+    /* ===== SPECIAL OFFER BANNER ===== */
+    .offer-banner {
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      text-align: center;
+      padding: 12px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1001;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      animation: slideDown 0.8s ease;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    .offer-banner i {
+      margin: 0 10px;
+      color: var(--primary-dark);
     }
 
     /* ===== PRELOADER ===== */
@@ -66,7 +98,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: var(--primary);
+      background: var(--primary-dark);
       z-index: 9999;
       display: flex;
       justify-content: center;
@@ -83,17 +115,23 @@
     .preloader-logo {
       color: var(--secondary);
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 20px;
       animation: pulseGold 2s infinite;
+      text-shadow: 0 0 30px rgba(212,175,55,0.3);
+    }
+
+    .preloader-logo span {
+      color: var(--white);
     }
 
     .preloader-bar {
-      width: 200px;
-      height: 2px;
-      background: rgba(201, 162, 77, 0.2);
+      width: 300px;
+      height: 3px;
+      background: rgba(212, 175, 55, 0.2);
       position: relative;
       overflow: hidden;
+      border-radius: 3px;
     }
 
     .preloader-bar::after {
@@ -101,19 +139,20 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 50%;
+      width: 40%;
       height: 100%;
-      background: var(--secondary);
+      background: var(--gradient-gold);
       animation: loading 1.5s infinite;
+      border-radius: 3px;
     }
 
     @keyframes pulseGold {
-      0%, 100% { opacity: 1; text-shadow: 0 0 20px rgba(201,162,77,0.3); }
-      50% { opacity: 0.8; text-shadow: 0 0 40px rgba(201,162,77,0.6); }
+      0%, 100% { opacity: 1; text-shadow: 0 0 30px rgba(212,175,55,0.5); }
+      50% { opacity: 0.9; text-shadow: 0 0 50px rgba(212,175,55,0.8); }
     }
 
     @keyframes loading {
-      0% { left: -50%; }
+      0% { left: -40%; }
       100% { left: 100%; }
     }
 
@@ -124,16 +163,18 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      padding: 20px 0;
+      padding: 25px 0;
       transition: var(--transition);
-      background: rgba(10, 47, 31, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(201, 162, 77, 0.2);
+      background: linear-gradient(180deg, rgba(5,26,18,0.95) 0%, rgba(10,47,31,0.9) 100%);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     header.scrolled {
       padding: 15px 0;
-      background: rgba(10, 47, 31, 0.98);
+      background: rgba(5,26,18,0.98);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.5);
     }
 
     .nav {
@@ -145,18 +186,19 @@
     .logo-group {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 25px;
     }
 
     .logo-primary {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--white);
       text-decoration: none;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       border-right: 2px solid var(--secondary);
-      padding-right: 20px;
+      padding-right: 25px;
+      text-shadow: 0 2px 10px rgba(212,175,55,0.3);
     }
 
     .logo-primary span {
@@ -166,19 +208,20 @@
     .logo-secondary {
       color: var(--white);
       font-size: 1rem;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
     }
 
     .logo-secondary strong {
       color: var(--secondary);
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       display: block;
       font-family: 'Cormorant Garamond', serif;
+      text-transform: uppercase;
     }
 
     .nav-menu {
       display: flex;
-      gap: 40px;
+      gap: 45px;
       list-style: none;
     }
 
@@ -188,7 +231,7 @@
       font-weight: 400;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       transition: 0.3s;
       position: relative;
     }
@@ -199,9 +242,10 @@
       bottom: -5px;
       left: 0;
       width: 0;
-      height: 1px;
-      background: var(--secondary);
-      transition: 0.3s;
+      height: 2px;
+      background: var(--gradient-gold);
+      transition: 0.4s;
+      border-radius: 2px;
     }
 
     .nav-menu a:hover::before {
@@ -209,20 +253,42 @@
     }
 
     .nav-menu a:hover {
-      color: var(--secondary);
+      color: var(--secondary-light);
     }
 
     .nav-cta {
-      background: var(--secondary);
-      color: var(--primary) !important;
-      padding: 12px 30px;
-      border-radius: 40px;
+      background: var(--gradient-gold);
+      color: var(--primary-dark) !important;
+      padding: 12px 35px;
+      border-radius: 50px;
       font-weight: 600;
+      box-shadow: 0 5px 20px rgba(212,175,55,0.3);
     }
 
     .nav-cta:hover {
-      background: #B8923D;
-      color: var(--white) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.5);
+      color: var(--primary-dark) !important;
+    }
+
+    .nav-cta::before {
+      display: none;
+    }
+
+    /* ===== MOBILE MENU BUTTON ===== */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--secondary);
+      font-size: 2rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--secondary-light);
+      transform: scale(1.1);
     }
 
     /* ===== HERO SLIDESHOW ===== */
@@ -230,7 +296,7 @@
       height: 100vh;
       position: relative;
       overflow: hidden;
-      background-color: var(--primary);
+      background-color: var(--primary-dark);
     }
 
     .video-background {
@@ -260,7 +326,7 @@
       background-size: cover;
       background-position: center;
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      transition: opacity 2.5s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -278,14 +344,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, rgba(10,47,31,0.5) 0%, rgba(0,0,0,0.4) 100%);
+      background: linear-gradient(135deg, rgba(5,26,18,0.6) 0%, rgba(0,0,0,0.5) 100%);
       z-index: 1;
     }
 
     .hero-content {
       position: relative;
       z-index: 3;
-      max-width: 900px;
+      max-width: 1000px;
       padding: 0 20px;
       text-align: center;
       color: var(--white);
@@ -299,65 +365,79 @@
 
     .hero-subtitle {
       font-size: 1rem;
-      letter-spacing: 8px;
+      letter-spacing: 10px;
       text-transform: uppercase;
       color: var(--secondary);
       margin-bottom: 20px;
       font-weight: 300;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .hero-title {
-      font-size: 5.5rem;
+      font-size: 6rem;
       line-height: 1.1;
       margin-bottom: 30px;
-      font-weight: 600;
+      font-weight: 700;
+      text-shadow: 0 5px 30px rgba(0,0,0,0.5);
+    }
+
+    .hero-title span {
+      color: var(--secondary);
+      font-style: italic;
     }
 
     .hero-description {
-      font-size: 1.2rem;
-      max-width: 600px;
+      font-size: 1.3rem;
+      max-width: 700px;
       margin: 0 auto 40px;
-      opacity: 0.9;
+      opacity: 0.95;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .hero-buttons {
       display: flex;
-      gap: 20px;
+      gap: 25px;
       justify-content: center;
     }
 
     .btn-primary, .btn-outline {
       display: inline-block;
-      padding: 16px 40px;
+      padding: 18px 45px;
       text-decoration: none;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      border-radius: 50px;
+      border-radius: 60px;
       transition: var(--transition);
       font-size: 0.9rem;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary {
-      background: var(--secondary);
-      color: var(--primary);
-      border: 2px solid var(--secondary);
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      border: none;
+      box-shadow: 0 5px 25px rgba(212,175,55,0.4);
     }
 
     .btn-primary:hover {
-      background: transparent;
-      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(212,175,55,0.6);
     }
 
     .btn-outline {
       background: transparent;
       color: var(--white);
-      border: 2px solid var(--white);
+      border: 2px solid var(--secondary);
+      backdrop-filter: blur(5px);
     }
 
     .btn-outline:hover {
-      background: var(--white);
-      color: var(--primary);
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.3);
     }
 
     .scroll-indicator {
@@ -366,9 +446,10 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 20;
-      color: var(--white);
-      font-size: 1.5rem;
+      color: var(--secondary);
+      font-size: 1.8rem;
       animation: bounce 2s infinite;
+      text-shadow: 0 0 20px rgba(212,175,55,0.5);
     }
 
     @keyframes bounce {
@@ -391,17 +472,18 @@
 
     .section-subtitle {
       color: var(--secondary);
-      font-size: 0.9rem;
+      font-size: 1rem;
       text-transform: uppercase;
-      letter-spacing: 6px;
+      letter-spacing: 8px;
       margin-bottom: 15px;
       font-weight: 400;
+      text-shadow: 0 2px 10px rgba(212,175,55,0.2);
     }
 
     .section-title h2 {
-      font-size: 4rem;
-      color: var(--primary);
-      max-width: 800px;
+      font-size: 4.5rem;
+      color: var(--primary-dark);
+      max-width: 900px;
       margin: 0 auto;
       position: relative;
       display: inline-block;
@@ -411,16 +493,17 @@
     .section-title h2::after {
       content: '✦';
       color: var(--secondary);
-      font-size: 1.5rem;
+      font-size: 2rem;
       margin: 0 20px;
-      opacity: 0.5;
+      opacity: 0.7;
     }
 
     .title-divider {
-      width: 100px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--secondary), transparent);
-      margin: 20px auto 0;
+      width: 150px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--secondary), var(--secondary-light), var(--secondary), transparent);
+      margin: 25px auto 0;
+      border-radius: 3px;
     }
 
     /* ===== DESTINATIONS GRID ===== */
@@ -433,20 +516,22 @@
 
     .destination-card {
       background: var(--white);
-      border-radius: 20px;
+      border-radius: 25px;
       overflow: hidden;
       box-shadow: var(--shadow-md);
       transition: var(--transition);
       position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.1);
     }
 
     .destination-card:hover {
-      transform: translateY(-15px);
+      transform: translateY(-20px);
       box-shadow: var(--shadow-hover);
+      border-color: var(--secondary);
     }
 
     .card-image {
-      height: 300px;
+      height: 320px;
       overflow: hidden;
       position: relative;
     }
@@ -455,43 +540,43 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 1.2s ease;
+      transition: transform 1.5s ease;
     }
 
     .destination-card:hover .card-image img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .card-overlay {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 8px 20px;
-      border-radius: 30px;
+      top: 25px;
+      right: 25px;
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      padding: 8px 25px;
+      border-radius: 40px;
       font-weight: 600;
       font-size: 0.9rem;
       z-index: 2;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
     .card-content {
-      padding: 30px;
+      padding: 35px;
     }
 
     .card-content h3 {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .card-details {
       display: flex;
-      gap: 20px;
+      gap: 25px;
       margin: 20px 0;
       color: #666;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     .card-details i {
@@ -505,16 +590,16 @@
     }
 
     .price {
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      color: var(--primary);
-      margin: 20px 0;
-      border-top: 1px solid #eee;
-      padding-top: 20px;
+      color: var(--primary-dark);
+      margin: 25px 0;
+      border-top: 2px solid rgba(212,175,55,0.2);
+      padding-top: 25px;
     }
 
     .price span {
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #999;
       font-weight: 400;
       margin-left: 10px;
@@ -525,24 +610,30 @@
       padding: 15px;
       background: transparent;
       border: 2px solid var(--secondary);
-      color: var(--primary);
+      color: var(--primary-dark);
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 40px;
+      letter-spacing: 2px;
+      border-radius: 50px;
       cursor: pointer;
       transition: var(--transition);
       font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
     }
 
     .btn-card:hover {
-      background: var(--secondary);
-      color: var(--white);
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      border-color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212,175,55,0.3);
     }
 
     /* ===== WHY CHOOSE US ===== */
     .why-us {
-      background: var(--primary);
+      background: var(--primary-dark);
       color: var(--white);
       position: relative;
       overflow: hidden;
@@ -555,8 +646,18 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(201,162,77,0.1) 0%, transparent 70%);
-      animation: rotate 30s linear infinite;
+      background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+      animation: rotate 40s linear infinite;
+    }
+
+    .why-us::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient-gold);
     }
 
     @keyframes rotate {
@@ -577,42 +678,48 @@
       text-align: center;
       padding: 40px 30px;
       background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      backdrop-filter: blur(5px);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
       transition: var(--transition);
+      border: 1px solid rgba(212,175,55,0.1);
     }
 
     .feature:hover {
-      background: rgba(255,255,255,0.1);
-      transform: translateY(-10px);
+      background: rgba(212,175,55,0.1);
+      transform: translateY(-15px);
+      border-color: var(--secondary);
     }
 
     .feature-icon {
-      width: 100px;
-      height: 100px;
-      background: rgba(201, 162, 77, 0.15);
+      width: 110px;
+      height: 110px;
+      background: rgba(212, 175, 55, 0.15);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 30px;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--secondary);
       transition: var(--transition);
+      border: 2px solid transparent;
     }
 
     .feature:hover .feature-icon {
       transform: rotateY(180deg);
+      background: var(--secondary);
+      color: var(--primary-dark);
+      border-color: var(--white);
     }
 
     .feature h3 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       color: var(--white);
     }
 
     .feature p {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.9);
       line-height: 1.8;
     }
 
@@ -620,17 +727,19 @@
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
       margin-top: 40px;
     }
 
     .gallery-item {
       position: relative;
       overflow: hidden;
-      border-radius: 15px;
+      border-radius: 20px;
       height: 280px;
       cursor: pointer;
       box-shadow: var(--shadow-sm);
+      border: 2px solid transparent;
+      transition: var(--transition);
     }
 
     .gallery-item:nth-child(3) {
@@ -647,11 +756,16 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 1.2s ease;
+      transition: transform 1.5s ease;
+    }
+
+    .gallery-item:hover {
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-lg);
     }
 
     .gallery-item:hover img {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
 
     .gallery-item::after {
@@ -661,9 +775,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(10,47,31,0.8), transparent);
+      background: linear-gradient(to top, rgba(5,26,18,0.9), transparent);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
     }
 
     .gallery-item:hover::after {
@@ -675,11 +789,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2.5rem;
+      color: var(--secondary);
+      font-size: 3rem;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
+      text-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     .gallery-item:hover i {
@@ -696,48 +811,55 @@
 
     .experience-card {
       background: white;
-      border-radius: 20px;
-      padding: 50px 40px;
+      border-radius: 25px;
+      padding: 60px 40px;
       text-align: center;
       box-shadow: var(--shadow-md);
       transition: var(--transition);
+      border: 1px solid rgba(212,175,55,0.1);
     }
 
     .experience-card:hover {
-      transform: translateY(-15px);
+      transform: translateY(-20px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
     }
 
     .experience-icon {
-      width: 100px;
-      height: 100px;
-      background: var(--secondary);
+      width: 120px;
+      height: 120px;
+      background: var(--gradient-gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 30px;
-      font-size: 2.5rem;
-      color: var(--primary);
+      font-size: 3rem;
+      color: var(--primary-dark);
       transition: var(--transition);
     }
 
     .experience-card:hover .experience-icon {
-      transform: scale(1.1) rotate(5deg);
+      transform: scale(1.15) rotate(5deg);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.4);
     }
 
     .experience-card h3 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .experience-card p {
-      color: #666;
+      color: #555;
       line-height: 1.8;
     }
 
     /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      background: linear-gradient(135deg, #faf7f2 0%, #fff 100%);
+    }
+
     .testimonial-carousel {
       overflow: hidden;
       width: 100%;
@@ -747,7 +869,7 @@
       display: flex;
       gap: 40px;
       margin-top: 40px;
-      animation: slideTestimonials 15s infinite;
+      animation: slideTestimonials 20s infinite;
     }
 
     @keyframes slideTestimonials {
@@ -758,26 +880,28 @@
 
     .testimonial-card {
       background: var(--white);
-      padding: 50px 40px;
-      border-radius: 20px;
+      padding: 60px 50px;
+      border-radius: 30px;
       box-shadow: var(--shadow-md);
       position: relative;
       transition: var(--transition);
       min-width: 300px;
       flex: 1;
+      border: 1px solid rgba(212,175,55,0.2);
     }
 
     .testimonial-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
     }
 
     .testimonial-card::before {
       content: '"';
       position: absolute;
       top: 20px;
-      left: 30px;
-      font-size: 8rem;
+      left: 40px;
+      font-size: 10rem;
       color: var(--secondary);
       opacity: 0.1;
       font-family: serif;
@@ -791,24 +915,25 @@
       z-index: 1;
       line-height: 1.8;
       color: #444;
+      font-size: 1.1rem;
     }
 
     .testimonial-author h4 {
-      font-size: 1.3rem;
-      color: var(--primary);
+      font-size: 1.5rem;
+      color: var(--primary-dark);
       margin-bottom: 5px;
     }
 
     .testimonial-author p {
       color: var(--secondary);
-      font-size: 0.9rem;
+      font-size: 1rem;
       letter-spacing: 2px;
     }
 
     .stars {
       color: var(--secondary);
-      margin-top: 15px;
-      font-size: 0.9rem;
+      margin-top: 20px;
+      font-size: 1.1rem;
     }
 
     /* ===== FEATURED PACKAGES ===== */
@@ -819,53 +944,215 @@
     .packages-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
+      gap: 35px;
       margin-top: 40px;
     }
 
     .package-card {
       background: white;
-      padding: 40px 30px;
-      border-radius: 15px;
+      padding: 50px 40px;
+      border-radius: 25px;
       text-align: center;
       box-shadow: var(--shadow-md);
       transition: var(--transition);
       position: relative;
+      border: 1px solid rgba(212,175,55,0.1);
     }
 
     .package-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-15px);
       box-shadow: var(--shadow-lg);
+      border-color: var(--secondary);
     }
 
     .best-seller {
       position: absolute;
-      top: -10px;
-      right: 20px;
-      background: var(--secondary);
-      color: var(--primary);
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      top: -15px;
+      right: 30px;
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      padding: 8px 25px;
+      border-radius: 30px;
+      font-size: 0.9rem;
       font-weight: 600;
+      box-shadow: 0 5px 20px rgba(212,175,55,0.3);
     }
 
     .package-card h3 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin: 30px 0 15px;
-      color: var(--primary);
+      color: var(--primary-dark);
     }
 
     .package-price {
-      font-size: 2.2rem;
-      color: var(--primary);
+      font-size: 2.5rem;
+      color: var(--primary-dark);
       font-weight: 700;
       margin: 20px 0;
     }
 
+    /* ===== BOOKING FORM ===== */
+    .booking-form-wrapper {
+      background: white;
+      padding: 50px;
+      border-radius: 30px;
+      margin: 40px 0;
+      box-shadow: var(--shadow-luxury);
+      border: 1px solid var(--secondary);
+    }
+
+    .booking-form-wrapper h3 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--primary-dark);
+      text-align: center;
+    }
+
+    .booking-form {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 18px 20px;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: var(--transition);
+      background: #f9f9f9;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--secondary);
+      outline: none;
+      background: white;
+      box-shadow: 0 5px 20px rgba(212,175,55,0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .submit-btn {
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      padding: 18px 40px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.4);
+    }
+
+    /* ===== TRUST BADGES ===== */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .trust-badge {
+      text-align: center;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: var(--shadow-sm);
+      min-width: 120px;
+    }
+
+    .trust-badge img {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .trust-badge i {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+
+    .trust-badge p {
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* ===== GOOGLE REVIEWS BADGE ===== */
+    .google-reviews {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .review-badge {
+      background: white;
+      padding: 25px 40px;
+      border-radius: 60px;
+      display: inline-block;
+      box-shadow: var(--shadow-md);
+      border: 2px solid var(--secondary);
+    }
+
+    .stars-gold {
+      color: #FFC107;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .rating-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .rating-text span {
+      color: var(--secondary);
+      font-size: 1rem;
+    }
+
+    /* ===== PAYMENT ICONS ===== */
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .payment-icon {
+      font-size: 2.5rem;
+      color: var(--primary-dark);
+      opacity: 0.8;
+      transition: var(--transition);
+    }
+
+    .payment-icon:hover {
+      opacity: 1;
+      transform: scale(1.1);
+      color: var(--secondary);
+    }
+
     /* ===== BOOKING SECTION ===== */
     .booking-section {
-      background: linear-gradient(135deg, var(--primary) 0%, #1A4A30 100%);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: white;
       position: relative;
       overflow: hidden;
@@ -878,14 +1165,14 @@
       right: -50%;
       width: 100%;
       height: 200%;
-      background: radial-gradient(circle, rgba(201,162,77,0.1) 0%, transparent 70%);
-      animation: rotate 20s linear infinite;
+      background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+      animation: rotate 25s linear infinite;
     }
 
     .booking-options {
       display: flex;
       justify-content: center;
-      gap: 30px;
+      gap: 40px;
       flex-wrap: wrap;
       margin-top: 50px;
       position: relative;
@@ -894,28 +1181,29 @@
 
     .booking-card {
       background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      padding: 50px 40px;
-      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      padding: 60px 50px;
+      border-radius: 30px;
       text-align: center;
-      min-width: 280px;
+      min-width: 300px;
       transition: var(--transition);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(212,175,55,0.2);
     }
 
     .booking-card:hover {
-      background: rgba(255,255,255,0.15);
-      transform: translateY(-15px);
+      background: rgba(212,175,55,0.15);
+      transform: translateY(-20px);
+      border-color: var(--secondary);
     }
 
     .booking-card i {
-      font-size: 3.5rem;
+      font-size: 4rem;
       color: var(--secondary);
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .booking-card h3 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       color: var(--white);
     }
@@ -927,96 +1215,117 @@
 
     .booking-link {
       display: inline-block;
-      padding: 12px 35px;
-      background: var(--secondary);
-      color: var(--primary);
+      padding: 15px 40px;
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
       text-decoration: none;
-      border-radius: 40px;
+      border-radius: 50px;
       font-weight: 600;
       transition: var(--transition);
-      margin-top: 15px;
+      margin-top: 20px;
+      border: none;
     }
 
     .booking-link:hover {
-      background: white;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.4);
     }
 
     /* ===== CONFIDENCE BADGES ===== */
     .confidence-badges {
       display: flex;
       justify-content: center;
-      gap: 50px;
-      margin-top: 50px;
+      gap: 60px;
+      margin-top: 60px;
       flex-wrap: wrap;
     }
 
     .badge {
       text-align: center;
-      background: rgba(255,255,255,0.1);
-      padding: 30px;
-      border-radius: 15px;
-      min-width: 180px;
+      background: rgba(255,255,255,0.08);
+      padding: 35px;
+      border-radius: 20px;
+      min-width: 200px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212,175,55,0.2);
+      transition: var(--transition);
+    }
+
+    .badge:hover {
+      transform: translateY(-10px);
+      background: rgba(212,175,55,0.1);
+      border-color: var(--secondary);
     }
 
     .badge i {
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: var(--secondary);
       margin-bottom: 15px;
     }
 
     .badge p {
       color: white;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 600;
     }
 
     /* ===== CURRENCY SELECTOR ===== */
     .currency-selector {
       position: fixed;
-      top: 100px;
-      right: 20px;
+      top: 120px;
+      right: 30px;
       z-index: 999;
-      background: var(--primary);
-      padding: 8px 15px;
-      border-radius: 30px;
-      border: 1px solid var(--secondary);
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      padding: 10px 20px;
+      border-radius: 40px;
+      border: 2px solid var(--secondary);
       color: white;
       cursor: pointer;
       font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
     }
 
     .currency-selector:hover {
       background: var(--secondary);
-      color: var(--primary);
+      color: var(--primary-dark);
+      border-color: var(--white);
     }
 
     /* ===== SOCIAL FEED ===== */
     .social-feed {
-      background: var(--cream);
+      background: linear-gradient(135deg, #faf7f2 0%, #fff 100%);
       padding: 80px 0;
     }
 
     .social-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 25px;
       margin-top: 40px;
     }
 
     .social-item {
       position: relative;
       overflow: hidden;
-      border-radius: 15px;
+      border-radius: 20px;
       height: 250px;
       cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
     }
 
     .social-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      transition: transform 0.8s ease;
+    }
+
+    .social-item:hover {
+      border-color: var(--secondary);
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
     }
 
     .social-item:hover img {
@@ -1030,9 +1339,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to top, rgba(10,47,31,0.8), transparent);
+      background: linear-gradient(to top, rgba(5,26,18,0.8), transparent);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
     }
 
     .social-item:hover::after {
@@ -1044,11 +1353,11 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2rem;
+      color: var(--secondary);
+      font-size: 2.5rem;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: opacity 0.5s ease;
     }
 
     .social-item:hover i {
@@ -1057,50 +1366,78 @@
 
     /* ===== NEWSLETTER ===== */
     .newsletter {
-      background: var(--primary);
+      background: var(--primary-dark);
       color: white;
       padding: 80px 0;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+      animation: rotate 30s linear infinite;
     }
 
     .newsletter h3 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .newsletter p {
       margin-bottom: 30px;
       opacity: 0.9;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 2;
     }
 
     .newsletter-form {
       display: flex;
-      max-width: 500px;
+      max-width: 600px;
       margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .newsletter-input {
       flex: 1;
-      padding: 15px 20px;
-      border-radius: 30px 0 0 30px;
+      padding: 18px 25px;
+      border-radius: 50px 0 0 50px;
       border: none;
       font-size: 1rem;
+      border: 2px solid transparent;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: var(--secondary);
     }
 
     .newsletter-button {
-      padding: 15px 30px;
-      background: var(--secondary);
-      color: var(--primary);
+      padding: 18px 35px;
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
       border: none;
-      border-radius: 0 30px 30px 0;
+      border-radius: 0 50px 50px 0;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transition);
+      font-size: 1rem;
+      letter-spacing: 1px;
     }
 
     .newsletter-button:hover {
-      background: #B8923D;
-      color: white;
+      background: var(--secondary-light);
+      transform: scale(1.05);
     }
 
     /* ===== FAQ SECTION ===== */
@@ -1111,13 +1448,13 @@
 
     .faq-item {
       background: white;
-      border-radius: 15px;
+      border-radius: 20px;
       margin-bottom: 20px;
-      padding: 25px 30px;
+      padding: 25px 35px;
       box-shadow: var(--shadow-sm);
       cursor: pointer;
       transition: var(--transition);
-      border-left: 4px solid transparent;
+      border-left: 5px solid transparent;
     }
 
     .faq-item:hover {
@@ -1133,7 +1470,7 @@
 
     .faq-question h3 {
       font-size: 1.3rem;
-      color: var(--primary);
+      color: var(--primary-dark);
       margin: 0;
       font-weight: 600;
     }
@@ -1169,10 +1506,10 @@
     }
 
     .contact-info {
-      background: var(--primary);
+      background: var(--primary-dark);
       color: white;
       padding: 60px;
-      border-radius: 20px;
+      border-radius: 30px;
       position: relative;
       overflow: hidden;
     }
@@ -1184,7 +1521,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, rgba(201,162,77,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
       animation: rotate 25s linear infinite;
     }
 
@@ -1205,22 +1542,30 @@
     }
 
     .contact-detail i {
-      width: 50px;
-      height: 50px;
-      background: rgba(201, 162, 77, 0.2);
+      width: 60px;
+      height: 60px;
+      background: rgba(212, 175, 55, 0.2);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--secondary);
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .contact-detail:hover i {
+      background: var(--secondary);
+      color: var(--primary-dark);
+      transform: scale(1.1);
     }
 
     .contact-map {
       height: 500px;
-      border-radius: 20px;
+      border-radius: 30px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
+      border: 3px solid var(--secondary);
     }
 
     .contact-map iframe {
@@ -1245,7 +1590,7 @@
 
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 20px;
     }
 
@@ -1275,7 +1620,7 @@
 
     .footer-links a:hover {
       color: var(--secondary);
-      padding-left: 5px;
+      padding-left: 8px;
     }
 
     .social-links {
@@ -1285,8 +1630,8 @@
     }
 
     .social-links a {
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
       display: flex;
@@ -1294,20 +1639,21 @@
       justify-content: center;
       color: white;
       transition: var(--transition);
+      font-size: 1.2rem;
     }
 
     .social-links a:hover {
-      background: var(--secondary);
-      color: var(--primary);
-      transform: translateY(-5px);
+      background: var(--gradient-gold);
+      color: var(--primary-dark);
+      transform: translateY(-5px) scale(1.1);
     }
 
     .copyright {
       text-align: center;
       padding-top: 30px;
-      border-top: 1px solid #444;
+      border-top: 2px solid #444;
       color: #999;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     /* ===== WHATSAPP FLOAT ===== */
@@ -1317,13 +1663,13 @@
       right: 40px;
       background: #25D366;
       color: white;
-      width: 70px;
-      height: 70px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
+      font-size: 3rem;
       box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
       z-index: 99;
       transition: var(--transition);
@@ -1339,11 +1685,12 @@
     .whatsapp-float:hover {
       transform: scale(1.2) rotate(5deg);
       color: white;
+      background: #20B859;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1200px) {
-      .hero-title { font-size: 4rem; }
+      .hero-title { font-size: 4.5rem; }
       .destinations-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1357,13 +1704,34 @@
 
     @media (max-width: 1024px) {
       .container { padding: 0 30px; }
+      .section-title h2 { font-size: 3.5rem; }
     }
 
     @media (max-width: 768px) {
-      .nav-menu { display: none; }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .nav-menu {
+        display: none;
+        position: fixed;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary) 100%);
+        padding: 40px 30px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        border-bottom: 2px solid var(--secondary);
+        box-shadow: var(--shadow-luxury);
+        z-index: 999;
+      }
+      .nav-menu.show {
+        display: flex;
+      }
       .logo-group { flex-direction: column; align-items: flex-start; gap: 5px; }
       .logo-primary { border-right: none; padding-right: 0; }
-      .hero-title { font-size: 2.5rem; }
+      .hero-title { font-size: 3rem; }
       .hero-buttons { flex-direction: column; gap: 15px; }
       .section-title h2 { font-size: 2.5rem; }
       .section-title h2::before,
@@ -1371,6 +1739,8 @@
       .destinations-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:nth-child(3),
+      .gallery-item:nth-child(5) { height: 280px; }
       .experiences-grid { grid-template-columns: 1fr; }
       .packages-grid { grid-template-columns: 1fr; }
       .social-grid { grid-template-columns: 1fr; }
@@ -1378,10 +1748,19 @@
       .footer-grid { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
       .currency-selector { top: auto; bottom: 100px; right: 20px; }
+      .newsletter-form { flex-direction: column; gap: 15px; }
+      .newsletter-input { border-radius: 50px; }
+      .newsletter-button { border-radius: 50px; }
+      .google-reviews .review-badge { padding: 20px; }
     }
   </style>
 </head>
 <body>
+
+<!-- SPECIAL OFFER BANNER -->
+<div class="offer-banner">
+  <i class="fas fa-star"></i> SPECIAL OFFER: Book by April 30th and get 10% off any 5+ day safari! <i class="fas fa-star"></i>
+</div>
 
 <!-- PRELOADER -->
 <div class="preloader" id="preloader">
@@ -1409,6 +1788,9 @@
       <a href="#home" class="logo-primary">Jumba Heritage <span>Voyages</span></a>
       <div class="logo-secondary"><strong>ASILI TRAVELS</strong></div>
     </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-menu').classList.toggle('show')">
+      <i class="fas fa-bars"></i>
+    </button>
     <ul class="nav-menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#destinations">Destinations</a></li>
@@ -1423,29 +1805,20 @@
 
 <!-- HERO SECTION WITH VIDEO BACKGROUND -->
 <section class="hero" id="home">
-  <!-- Video Background (UPGRADE 5) -->
+  <!-- Video Background - WORKING SAFARI VIDEO -->
   <video class="video-background" autoplay muted loop playsinline>
-    <source src="https://player.vimeo.com/external/371937003.sd.mp4?s=0e5f0b7a1e7b9a1b5e0f1b7a1e7b9a1b5e0f1b7a&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
-    <!-- Fallback to slideshow if video doesn't load -->
+    <source src="https://player.vimeo.com/external/458664234.sd.mp4?s=0d7f6a0c7c3b0e5f1b3d4e5f6a7b8c9d&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
   </video>
   
   <div class="slide-container">
-    <!-- Photo 1: Samburu Giraffe (Verified) -->
-    <div class="slide active" style="background-image: url('https://loremflickr.com/1920/1080/samburu,giraffe,kenya,wildlife?random=1');"></div>
-    <!-- Photo 2: Amboseli Elephants with Kilimanjaro (Verified) -->
-    <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/amboseli,elephant,kilimanjaro,kenya?random=2');"></div>
-    <!-- Photo 3: Maasai Mara Savannah (Verified) -->
-    <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/masai-mara,savanna,kenya,landscape?random=3');"></div>
-    <!-- Photo 4: Maasai Mara Sunset (Verified) -->
-    <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/masai-mara,sunset,kenya,savanna?random=4');"></div>
-    <!-- Photo 5: Leopard (Verified) -->
-    <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/leopard,kenya,wildlife,big-cat?random=5');"></div>
-    <!-- Photo 6: Lion (Verified) -->
-    <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/lion,kenya,wildlife,africa?random=6');"></div>
+    <div class="slide active" style="background-image: url('https://images.pexels.com/photos/672044/pexels-photo-672044.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/162204/elephant-africa-animals-safari-162204.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
   </div>
   <div class="hero-content">
     <div class="hero-subtitle">Welcome to Jumba Heritage Voyages</div>
-    <h1 class="hero-title">Experience Kenya In Its Purest Form</h1>
+    <h1 class="hero-title">Experience <span>Kenya</span> In Its Purest Form</h1>
     <p class="hero-description">Luxury safaris, cultural journeys, and unforgettable wildlife encounters curated by trusted local experts.</p>
     <div class="hero-buttons">
       <a href="#destinations" class="btn-primary">Explore Safaris</a>
@@ -1457,7 +1830,7 @@
   </div>
 </section>
 
-<!-- DESTINATIONS SECTION - ALL VERIFIED WORKING IMAGES -->
+<!-- DESTINATIONS SECTION -->
 <section id="destinations">
   <div class="container">
     <div class="section-title">
@@ -1467,10 +1840,10 @@
     </div>
     
     <div class="destinations-grid">
-      <!-- Maasai Mara (Verified) -->
+      <!-- Maasai Mara -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/masai-mara,kenya,savanna,landscape?random=7" alt="Maasai Mara">
+          <img src="https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Maasai Mara">
           <div class="card-overlay">Luxury Camp</div>
         </div>
         <div class="card-content">
@@ -1481,14 +1854,14 @@
           </div>
           <p>Witness the Great Migration, Big Cats, and golden savannahs from exclusive private conservancies.</p>
           <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Maasai%20Mara%20Safari" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
 
-      <!-- Amboseli (Verified) -->
+      <!-- Amboseli -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/amboseli,elephant,kenya,kilimanjaro?random=8" alt="Amboseli elephants with Kilimanjaro">
+          <img src="https://images.pexels.com/photos/162204/elephant-africa-animals-safari-162204.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Amboseli">
           <div class="card-overlay">Kilimanjaro View</div>
         </div>
         <div class="card-content">
@@ -1499,14 +1872,14 @@
           </div>
           <p>Iconic elephants roaming beneath Africa's highest peak. Experience authentic Maasai culture.</p>
           <div class="price" data-usd="800">$800 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Amboseli%20Safari" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
 
-      <!-- Diani Beach - FIRST LINK (Your chosen beach photo for destination card) -->
+      <!-- Diani Beach -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://www.kenya-experience.com/wp-content/uploads/2025/03/diani-beach-south-coast-kenya-mobile-.jpg" alt="Diani Beach">
+          <img src="https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Diani Beach">
           <div class="card-overlay">Coastal Paradise</div>
         </div>
         <div class="card-content">
@@ -1517,14 +1890,14 @@
           </div>
           <p>Crystal waters, white sands, and luxury beachfront villas. Combine with safari for ultimate escape.</p>
           <div class="price" data-usd="900">$900 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Diani Beach')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Diani%20Beach" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
 
-      <!-- Tsavo (Verified) -->
+      <!-- Tsavo -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/tsavo,elephant,kenya,wildlife?random=10" alt="Tsavo elephants">
+          <img src="https://images.pexels.com/photos/750562/pexels-photo-750562.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tsavo">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1533,16 +1906,16 @@
             <span><i class="far fa-clock"></i> 4 Days</span>
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
-          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos. Explore in custom safari vehicles.</p>
+          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos.</p>
           <div class="price" data-usd="800">$800 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Tsavo%20Safari" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
 
-      <!-- Laikipia (Verified) -->
+      <!-- Laikipia -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/impala,laikipia,kenya,antelope?random=11" alt="Laikipia Impala">
+          <img src="https://images.pexels.com/photos/259586/pexels-photo-259586.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Laikipia">
           <div class="card-overlay">Private Conservancy</div>
         </div>
         <div class="card-content">
@@ -1553,14 +1926,14 @@
           </div>
           <p>Exclusive private ranches, wild dog packs, and walking safaris with Samburu warriors.</p>
           <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Laikipia%20Safari" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
 
-      <!-- Samburu (Verified) -->
+      <!-- Samburu -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/samburu,zebra,kenya,wildlife?random=12" alt="Samburu Zebra">
+          <img src="https://images.pexels.com/photos/750562/pexels-photo-750562.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Samburu">
           <div class="card-overlay">Northern Kenya</div>
         </div>
         <div class="card-content">
@@ -1571,14 +1944,29 @@
           </div>
           <p>Unique northern species: Grevy's zebra, reticulated giraffe, and Somali ostrich.</p>
           <div class="price" data-usd="600">$600 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button>
+          <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Samburu%20Safari" class="btn-card" target="_blank">Book This Safari</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED PACKAGES SECTION (UPGRADE 3) -->
+<!-- GOOGLE REVIEWS BADGE -->
+<div class="container">
+  <div class="google-reviews">
+    <div class="review-badge">
+      <div class="stars-gold">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+      </div>
+      <div class="rating-text">
+        4.9 <span>/ 5.0</span>
+      </div>
+      <p>Based on 50+ Google Reviews</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PACKAGES SECTION -->
 <section class="featured-packages">
   <div class="container">
     <div class="section-title">
@@ -1595,7 +1983,7 @@
         <p>Experience the best of Kenya's wildlife</p>
         <div class="package-price" data-usd="1500">$1,500</div>
         <p style="margin: 15px 0;">✓ 2 Nights Mara<br>✓ 2 Nights Amboseli<br>✓ All meals included</p>
-        <button class="btn-card" onclick="bookNow('Mara Amboseli Combo')">Book Now</button>
+        <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Mara%20Amboseli%20Combo" class="btn-card" target="_blank">Book Now</a>
       </div>
       
       <div class="package-card">
@@ -1604,7 +1992,7 @@
         <p>Wildlife + Diani relaxation</p>
         <div class="package-price" data-usd="2100">$2,100</div>
         <p style="margin: 15px 0;">✓ 4 Days Safari<br>✓ 3 Days Diani Beach<br>✓ All transfers</p>
-        <button class="btn-card" onclick="bookNow('Safari Beach Combo')">Book Now</button>
+        <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Safari%20Beach%20Combo" class="btn-card" target="_blank">Book Now</a>
       </div>
       
       <div class="package-card">
@@ -1613,13 +2001,24 @@
         <p>Private conservancy experience</p>
         <div class="package-price" data-usd="1200">$1,200</div>
         <p style="margin: 15px 0;">✓ Private guide<br>✓ Luxury lodge<br>✓ Game drives</p>
-        <button class="btn-card" onclick="bookNow('Luxury Tsavo')">Book Now</button>
+        <a href="https://wa.me/254789514678?text=I'm%20interested%20in%20Luxury%20Tsavo" class="btn-card" target="_blank">Book Now</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US (No images) -->
+<!-- PAYMENT METHODS ACCEPTED -->
+<div class="container">
+  <div class="payment-methods">
+    <i class="fab fa-cc-visa payment-icon"></i>
+    <i class="fab fa-cc-mastercard payment-icon"></i>
+    <i class="fab fa-cc-amex payment-icon"></i>
+    <i class="fas fa-mobile-alt payment-icon"></i>
+    <i class="fab fa-bitcoin payment-icon"></i>
+  </div>
+</div>
+
+<!-- WHY CHOOSE US -->
 <section class="why-us">
   <div class="container">
     <div class="section-title">
@@ -1653,7 +2052,7 @@
   </div>
 </section>
 
-<!-- GALLERY - ALL VERIFIED WORKING IMAGES -->
+<!-- GALLERY -->
 <section id="gallery">
   <div class="container">
     <div class="section-title">
@@ -1663,27 +2062,19 @@
     </div>
     
     <div class="gallery-grid">
-      <!-- Gallery 1: Lion (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/lion,kenya,wildlife?random=13" alt="Lion in Maasai Mara"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 2: Giraffe (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/giraffe,kenya,wildlife?random=14" alt="Samburu Giraffe"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 3: Giraffe Centre (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/giraffe-centre,nairobi,kenya?random=15" alt="Giraffe Centre"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 4: Zebra (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/zebra,kenya,wildlife?random=16" alt="Plains Zebra"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 5: Leopard (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/leopard,kenya,wildlife?random=17" alt="Leopard"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 6: Diani Beach - SECOND LINK (Your chosen calm ocean photo for gallery) -->
-      <div class="gallery-item"><img src="https://www.kenya-experience.com/wp-content/uploads/2025/03/shallow-calm-ocean-water-1024x581.jpg" alt="Diani Beach"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 7: Cheetah (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/cheetah,kenya,wildlife?random=19" alt="Cheetah"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 8: Tsavo Elephants (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/tsavo,elephant,kenya?random=20" alt="Tsavo Elephants"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lion"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/750562/pexels-photo-750562.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Giraffe"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Mara Sunset"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/162204/elephant-africa-animals-safari-162204.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Elephants"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beach"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/672044/pexels-photo-672044.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Zebra"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/1643457/pexels-photo-1643457.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Cheetah"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://images.pexels.com/photos/259586/pexels-photo-259586.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Leopard"><i class="fas fa-search-plus"></i></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCES (No images) -->
+<!-- EXPERIENCES -->
 <section id="experiences">
   <div class="container">
     <div class="section-title">
@@ -1712,7 +2103,7 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS CAROUSEL (UPGRADE 2) -->
+<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="container">
     <div class="section-title">
@@ -1760,7 +2151,7 @@
   </div>
 </section>
 
-<!-- FAQ SECTION (No images) -->
+<!-- FAQ SECTION -->
 <section id="faq">
   <div class="container">
     <div class="section-title">
@@ -1816,15 +2207,64 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>Click "Inquire Now" on any package, call us, or send a WhatsApp. We accept M-PESA, Airtel Money, bank transfers, and cryptocurrency.</p>
+          <p>Click "Book Now" on any package, call us, or send a WhatsApp. We accept M-PESA, Airtel Money, bank transfers, and cryptocurrency.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BOOKING SECTION (UPGRADE 7 - Confidence Badges) -->
-<section class="booking-section" id="booking">
+<!-- BOOKING FORM SECTION -->
+<div class="container" id="booking">
+  <div class="booking-form-wrapper">
+    <h3>Quick Safari Inquiry</h3>
+    <form class="booking-form" onsubmit="event.preventDefault(); submitInquiry()">
+      <div class="form-group">
+        <input type="text" placeholder="Your Full Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Email Address" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" placeholder="Phone Number (with country code)" required>
+      </div>
+      <div class="form-group">
+        <select required>
+          <option value="">Select Safari Package</option>
+          <option>Maasai Mara - 4 Days ($1,000)</option>
+          <option>Amboseli - 4 Days ($800)</option>
+          <option>Diani Beach - 5 Days ($900)</option>
+          <option>Tsavo - 4 Days ($800)</option>
+          <option>Laikipia - 4 Days ($1,000)</option>
+          <option>Samburu - 3 Days ($600)</option>
+          <option>5-Day Mara & Amboseli ($1,500)</option>
+          <option>7-Day Safari & Beach ($2,100)</option>
+          <option>Custom Safari (Tell us your dream)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="date" placeholder="Preferred Travel Date" required>
+      </div>
+      <div class="form-group">
+        <select required>
+          <option value="">Number of Travelers</option>
+          <option>1 Person</option>
+          <option>2 People</option>
+          <option>3-4 People</option>
+          <option>5-6 People</option>
+          <option>7+ People (Group)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Tell us about your dream safari, special requests, or questions..."></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Inquiry <i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+</div>
+
+<!-- BOOKING SECTION -->
+<section class="booking-section">
   <div class="container">
     <div class="section-title">
       <div class="section-subtitle">Reserve Your Journey</div>
@@ -1854,6 +2294,26 @@
       </div>
     </div>
     
+    <!-- TRUST BADGES -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <i class="fas fa-shield-alt"></i>
+        <p>Secure Booking</p>
+      </div>
+      <div class="trust-badge">
+        <i class="fas fa-clock"></i>
+        <p>24/7 Support</p>
+      </div>
+      <div class="trust-badge">
+        <i class="fas fa-calendar-check"></i>
+        <p>Free Cancellation</p>
+      </div>
+      <div class="trust-badge">
+        <i class="fas fa-star"></i>
+        <p>Best Price Guarantee</p>
+      </div>
+    </div>
+    
     <!-- Confidence Badges -->
     <div class="confidence-badges">
       <div class="badge">
@@ -1872,7 +2332,7 @@
   </div>
 </section>
 
-<!-- SOCIAL MEDIA FEED (UPGRADE 6) -->
+<!-- SOCIAL MEDIA FEED -->
 <section class="social-feed">
   <div class="container">
     <div class="section-title">
@@ -1883,38 +2343,38 @@
     
     <div class="social-grid">
       <div class="social-item">
-        <img src="https://loremflickr.com/400/400/lion,kenya,wildlife?random=21" alt="Safari moment">
+        <img src="https://images.pexels.com/photos/247502/pexels-photo-247502.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Safari moment">
         <i class="fab fa-instagram"></i>
       </div>
       <div class="social-item">
-        <img src="https://loremflickr.com/400/400/elephant,kenya,wildlife?random=22" alt="Safari moment">
+        <img src="https://images.pexels.com/photos/750562/pexels-photo-750562.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Safari moment">
         <i class="fab fa-instagram"></i>
       </div>
       <div class="social-item">
-        <img src="https://loremflickr.com/400/400/giraffe,kenya,wildlife?random=23" alt="Safari moment">
+        <img src="https://images.pexels.com/photos/1645028/pexels-photo-1645028.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Safari moment">
         <i class="fab fa-instagram"></i>
       </div>
       <div class="social-item">
-        <img src="https://loremflickr.com/400/400/zebra,kenya,wildlife?random=24" alt="Safari moment">
+        <img src="https://images.pexels.com/photos/162204/elephant-africa-animals-safari-162204.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Safari moment">
         <i class="fab fa-instagram"></i>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWSLETTER SIGNUP (UPGRADE 8) -->
+<!-- NEWSLETTER SIGNUP -->
 <section class="newsletter">
   <div class="container">
-    <h3>Get Safari Deals</h3>
+    <h3>Get Exclusive Safari Deals</h3>
     <p>Subscribe for exclusive offers, travel tips, and inspiration</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! Check your email for your welcome gift.');">
       <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
       <button type="submit" class="newsletter-button">Subscribe</button>
     </form>
   </div>
 </section>
 
-<!-- CONTACT SECTION (No images) -->
+<!-- CONTACT SECTION -->
 <section id="contact">
   <div class="container">
     <div class="section-title">
@@ -1938,11 +2398,11 @@
   </div>
 </section>
 
-<!-- TERMS & PRIVACY - FIXED: Now starts CLOSED -->
+<!-- TERMS & PRIVACY SECTION -->
 <section style="padding:0 0 80px 0;">
   <div class="container">
-    <!-- Terms & Conditions - Starts closed -->
-    <div class="faq-item" onclick="toggleFAQ(this)">
+    <!-- Terms & Conditions -->
+    <div class="faq-item" id="terms" onclick="toggleFAQ(this)">
       <div class="faq-question">
         <h3>Terms & Conditions</h3>
         <i class="fas fa-chevron-down"></i>
@@ -1959,8 +2419,8 @@
       </div>
     </div>
     
-    <!-- Privacy Policy - Starts closed -->
-    <div class="faq-item" onclick="toggleFAQ(this)">
+    <!-- Privacy Policy -->
+    <div class="faq-item" id="privacy" onclick="toggleFAQ(this)">
       <div class="faq-question">
         <h3>Privacy Policy</h3>
         <i class="fas fa-chevron-down"></i>
@@ -1991,6 +2451,7 @@
           <a href="#"><i class="fab fa-instagram"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
       <div class="footer-links">
@@ -2017,8 +2478,8 @@
       <div class="footer-links">
         <h4>Legal</h4>
         <ul>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[7]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[7]?.classList.add('active'); return false;">Terms & Conditions</a></li>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[8]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[8]?.classList.add('active'); return false;">Privacy Policy</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.getElementById('terms').scrollIntoView({behavior: 'smooth'}); document.getElementById('terms').classList.add('active'); return false;">Terms & Conditions</a></li>
+          <li><a href="#" onclick="event.preventDefault(); document.getElementById('privacy').scrollIntoView({behavior: 'smooth'}); document.getElementById('privacy').classList.add('active'); return false;">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
@@ -2028,7 +2489,7 @@
   </div>
 </footer>
 
-<!-- LIVE CHAT WIDGET (UPGRADE 1) -->
+<!-- LIVE CHAT WIDGET -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-1b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b" data-elfsight-app-lazy></div>
 
@@ -2051,6 +2512,13 @@
     }
   });
 
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-menu').classList.remove('show');
+    });
+  });
+
   // Hero Slideshow
   let slides = document.querySelectorAll('.slide');
   let currentSlide = 0;
@@ -2064,7 +2532,7 @@
 
   // Book Now function
   window.bookNow = function(destination) {
-    const message = `Hello Jumba Heritage Voyages & Asili Travels! I'm interested in booking the ${destination} luxury safari experience. Please send me more information.`;
+    const message = `Hello Jumba Heritage Voyages! I'm interested in booking the ${destination} luxury safari experience. Please send me more information.`;
     window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
   };
 
@@ -2094,7 +2562,7 @@
     });
   });
 
-  // Currency Converter (UPGRADE 4)
+  // Currency Converter
   window.convertCurrency = function(currency) {
     const rates = { USD: 1, EUR: 0.92, GBP: 0.79, KES: 130 };
     const symbols = { USD: '$', EUR: '€', GBP: '£', KES: 'KSh ' };
@@ -2128,28 +2596,23 @@
   // Newsletter form
   document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Thank you for subscribing to our newsletter!');
+    alert('Thank you for subscribing to our newsletter! Check your email for your welcome gift.');
     this.reset();
   });
-</script>
 
-<!-- Fallback for Terms links if FAQ items count changes -->
-<script>
-  // Ensure Terms & Privacy links work even if FAQ count changes
-  document.querySelectorAll('.footer-links a[href="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const text = this.textContent;
-      const faqItems = document.querySelectorAll('.faq-item');
-      if (text.includes('Terms')) {
-        faqItems[faqItems.length - 2]?.scrollIntoView({behavior: 'smooth'});
-        faqItems[faqItems.length - 2]?.classList.add('active');
-      } else if (text.includes('Privacy')) {
-        faqItems[faqItems.length - 1]?.scrollIntoView({behavior: 'smooth'});
-        faqItems[faqItems.length - 1]?.classList.add('active');
-      }
-    });
-  });
+  // Booking form submission
+  window.submitInquiry = function() {
+    const form = document.querySelector('.booking-form');
+    const name = form.querySelector('input[type="text"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const phone = form.querySelector('input[type="tel"]').value;
+    const package_ = form.querySelector('select').value;
+    
+    const message = `New Safari Inquiry:%0A%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0APackage: ${package_}%0A%0APlease contact me about this safari.`;
+    
+    window.open(`https://wa.me/254789514678?text=${message}`, '_blank');
+    alert('Thank you! You will be redirected to WhatsApp to complete your inquiry.');
+  };
 </script>
 
 </body>
