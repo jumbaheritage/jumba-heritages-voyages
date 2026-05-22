@@ -1,17 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jumba Heritage Voyages | Asili Travels</title>
-  <meta name="description" content="Experience Kenya's finest wildlife and landscapes through exclusive private safaris. Maasai Mara, Amboseli, Tsavo, Samburu & coastal luxury escapes.">
+  <title>Jumba Heritage Voyages | Asili Travels - Royal Migration Safari</title>
+  <meta name="description" content="Experience Kenya's finest wildlife and landscapes through exclusive private safaris. Maasai Mara, Amboseli, Tsavo, Samburu & coastal luxury escapes. Group safaris available.">
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Formspree for Invoice Requests -->
+  <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
   
   <style>
     /* ===== RESET & VARIABLES ===== */
@@ -541,6 +543,155 @@
       color: var(--white);
     }
 
+    /* ===== ITINERARY SECTION (NEW) ===== */
+    .itinerary-section {
+      background: var(--primary);
+      color: var(--white);
+      padding: 80px 0;
+    }
+
+    .itinerary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .itinerary-day {
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 20px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .itinerary-day h3 {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .itinerary-day h4 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      color: var(--white);
+    }
+
+    .itinerary-day p {
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+    }
+
+    .included-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .included-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .included-list li i {
+      color: var(--secondary);
+      margin-right: 10px;
+    }
+
+    /* ===== MODAL FORM (NEW) ===== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 10000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--white);
+      max-width: 500px;
+      width: 90%;
+      border-radius: 20px;
+      padding: 40px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--charcoal);
+    }
+
+    .modal-content h3 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
     /* ===== WHY CHOOSE US ===== */
     .why-us {
       background: var(--primary);
@@ -819,7 +970,7 @@
 
     .packages-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 30px;
       margin-top: 40px;
     }
@@ -899,9 +1050,10 @@
       padding: 50px 40px;
       border-radius: 20px;
       text-align: center;
-      min-width: 280px;
+      min-width: 250px;
       transition: var(--transition);
       border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
     }
 
     .booking-card:hover {
@@ -970,138 +1122,6 @@
       color: white;
       font-size: 1.1rem;
       font-weight: 600;
-    }
-
-    /* ===== CURRENCY SELECTOR ===== */
-    .currency-selector {
-      position: fixed;
-      top: 100px;
-      right: 20px;
-      z-index: 999;
-      background: var(--primary);
-      padding: 8px 15px;
-      border-radius: 30px;
-      border: 1px solid var(--secondary);
-      color: white;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .currency-selector:hover {
-      background: var(--secondary);
-      color: var(--primary);
-    }
-
-    /* ===== SOCIAL FEED ===== */
-    .social-feed {
-      background: var(--cream);
-      padding: 80px 0;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .social-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 15px;
-      height: 250px;
-      cursor: pointer;
-    }
-
-    .social-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .social-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .social-item::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to top, rgba(10,47,31,0.8), transparent);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .social-item:hover::after {
-      opacity: 1;
-    }
-
-    .social-item i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 2rem;
-      z-index: 2;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .social-item:hover i {
-      opacity: 1;
-    }
-
-    /* ===== NEWSLETTER ===== */
-    .newsletter {
-      background: var(--primary);
-      color: white;
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .newsletter h3 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .newsletter p {
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-
-    .newsletter-form {
-      display: flex;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .newsletter-input {
-      flex: 1;
-      padding: 15px 20px;
-      border-radius: 30px 0 0 30px;
-      border: none;
-      font-size: 1rem;
-    }
-
-    .newsletter-button {
-      padding: 15px 30px;
-      background: var(--secondary);
-      color: var(--primary);
-      border: none;
-      border-radius: 0 30px 30px 0;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .newsletter-button:hover {
-      background: #B8923D;
-      color: white;
     }
 
     /* ===== FAQ SECTION ===== */
@@ -1348,22 +1368,12 @@
       .destinations-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-grid { grid-template-columns: repeat(3, 1fr); }
-      .gallery-item:nth-child(3) { grid-column: auto; height: 280px; }
-      .gallery-item:nth-child(5) { grid-row: auto; height: 280px; }
-      .experiences-grid { grid-template-columns: repeat(2, 1fr); }
       .packages-grid { grid-template-columns: repeat(2, 1fr); }
-      .social-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 1024px) {
-      .container { padding: 0 30px; }
+      .itinerary-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 768px) {
       .nav-menu { display: none; }
-      .logo-group { flex-direction: column; align-items: flex-start; gap: 5px; }
-      .logo-primary { border-right: none; padding-right: 0; }
       .hero-title { font-size: 2.5rem; }
       .hero-buttons { flex-direction: column; gap: 15px; }
       .section-title h2 { font-size: 2.5rem; }
@@ -1372,13 +1382,12 @@
       .destinations-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; }
-      .experiences-grid { grid-template-columns: 1fr; }
       .packages-grid { grid-template-columns: 1fr; }
-      .social-grid { grid-template-columns: 1fr; }
+      .itinerary-grid { grid-template-columns: 1fr; }
+      .experiences-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
       .container { padding: 0 20px; }
-      .currency-selector { top: auto; bottom: 100px; right: 20px; }
     }
   </style>
 </head>
@@ -1390,18 +1399,59 @@
   <div class="preloader-bar"></div>
 </div>
 
-<!-- CURRENCY SELECTOR -->
-<select class="currency-selector" onchange="convertCurrency(this.value)">
-  <option value="USD">USD $</option>
-  <option value="EUR">EUR €</option>
-  <option value="GBP">GBP £</option>
-  <option value="KES">KES KSh</option>
-</select>
-
 <!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/254789514678?text=Hello%20Jumba%20Heritage%20Voyages!%20I'm%20interested%20in%20a%20luxury%20safari." class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
+
+<!-- INVOICE REQUEST MODAL -->
+<div id="invoiceModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeInvoiceModal()">&times;</span>
+    <h3>Request an Invoice</h3>
+    <p>Fill out the form below and we will send you a Payoneer payment link via email.</p>
+    
+    <form id="invoiceForm" action="https://formspree.io/f/xgvapzrk" method="POST">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label>Package *</label>
+        <select name="package" id="packageSelect" required>
+          <option value="Royal Migration Safari (3 days, $1500/person)">Royal Migration Safari (3 days, $1,500/person)</option>
+          <option value="5-Day Mara & Amboseli">5-Day Mara & Amboseli</option>
+          <option value="7-Day Safari & Beach">7-Day Safari & Beach</option>
+          <option value="4-Day Luxury Tsavo">4-Day Luxury Tsavo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Number of People (Minimum 10 for group package) *</label>
+        <input type="number" name="people" id="peopleCount" min="1" required>
+      </div>
+      <div class="form-group">
+        <label>Preferred Travel Date</label>
+        <input type="date" name="travel_date">
+      </div>
+      <div class="form-group">
+        <label>Special Requests</label>
+        <textarea name="requests" rows="3"></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New Invoice Request - Jumba Heritage Voyages">
+      <input type="hidden" name="_replyto" value="jumbaheritagevoyages@gmail.com">
+      <button type="submit" class="btn-submit">Submit Request</button>
+    </form>
+    <p style="font-size: 0.8rem; margin-top: 15px; text-align: center;">* We will send a Payoneer payment link to your email within 24 hours. You can pay with credit card (no account needed).</p>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header id="header">
@@ -1424,24 +1474,16 @@
 
 <!-- HERO SECTION WITH VIDEO BACKGROUND -->
 <section class="hero" id="home">
-  <!-- Video Background (UPGRADE 5) -->
   <video class="video-background" autoplay muted loop playsinline>
     <source src="https://player.vimeo.com/external/371937003.sd.mp4?s=0e5f0b7a1e7b9a1b5e0f1b7a1e7b9a1b5e0f1b7a&profile_id=139&oauth2_token_id=57447761" type="video/mp4">
-    <!-- Fallback to slideshow if video doesn't load -->
   </video>
   
   <div class="slide-container">
-    <!-- Photo 1: Samburu Giraffe (Verified) -->
     <div class="slide active" style="background-image: url('https://loremflickr.com/1920/1080/samburu,giraffe,kenya,wildlife?random=1');"></div>
-    <!-- Photo 2: Amboseli Elephants with Kilimanjaro (Verified) -->
     <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/amboseli,elephant,kilimanjaro,kenya?random=2');"></div>
-    <!-- Photo 3: Maasai Mara Savannah (Verified) -->
     <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/masai-mara,savanna,kenya,landscape?random=3');"></div>
-    <!-- Photo 4: Maasai Mara Sunset (Verified) -->
     <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/masai-mara,sunset,kenya,savanna?random=4');"></div>
-    <!-- Photo 5: Leopard (Verified) -->
     <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/leopard,kenya,wildlife,big-cat?random=5');"></div>
-    <!-- Photo 6: Lion (Verified) -->
     <div class="slide" style="background-image: url('https://loremflickr.com/1920/1080/lion,kenya,wildlife,africa?random=6');"></div>
   </div>
   <div class="hero-content">
@@ -1458,7 +1500,7 @@
   </div>
 </section>
 
-<!-- DESTINATIONS SECTION - ALL VERIFIED WORKING IMAGES -->
+<!-- DESTINATIONS SECTION - INCLUDES NEW ROYAL MIGRATION PACKAGE -->
 <section id="destinations">
   <div class="container">
     <div class="section-title">
@@ -1468,7 +1510,7 @@
     </div>
     
     <div class="destinations-grid">
-      <!-- Maasai Mara (Verified) -->
+      <!-- Maasai Mara -->
       <div class="destination-card">
         <div class="card-image">
           <img src="https://loremflickr.com/800/600/masai-mara,kenya,savanna,landscape?random=7" alt="Maasai Mara">
@@ -1481,15 +1523,15 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Witness the Great Migration, Big Cats, and golden savannahs from exclusive private conservancies.</p>
-          <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Maasai Mara')">Inquire Now</button>
+          <div class="price">$1,000 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Maasai Mara', 1000, 1)">Request Invoice</button>
         </div>
       </div>
 
-      <!-- Amboseli (Verified) -->
+      <!-- Amboseli -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/amboseli,elephant,kenya,kilimanjaro?random=8" alt="Amboseli elephants with Kilimanjaro">
+          <img src="https://loremflickr.com/800/600/amboseli,elephant,kenya,kilimanjaro?random=8" alt="Amboseli">
           <div class="card-overlay">Kilimanjaro View</div>
         </div>
         <div class="card-content">
@@ -1499,12 +1541,12 @@
             <span><i class="fas fa-user-friends"></i> Max 8 guests</span>
           </div>
           <p>Iconic elephants roaming beneath Africa's highest peak. Experience authentic Maasai culture.</p>
-          <div class="price" data-usd="800">$800 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Amboseli')">Inquire Now</button>
+          <div class="price">$800 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Amboseli', 800, 1)">Request Invoice</button>
         </div>
       </div>
 
-      <!-- Diani Beach - FIRST LINK (Your chosen beach photo for destination card) -->
+      <!-- Diani Beach -->
       <div class="destination-card">
         <div class="card-image">
           <img src="https://www.kenya-experience.com/wp-content/uploads/2025/03/diani-beach-south-coast-kenya-mobile-.jpg" alt="Diani Beach">
@@ -1517,15 +1559,15 @@
             <span><i class="fas fa-user-friends"></i> Private</span>
           </div>
           <p>Crystal waters, white sands, and luxury beachfront villas. Combine with safari for ultimate escape.</p>
-          <div class="price" data-usd="900">$900 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Diani Beach')">Inquire Now</button>
+          <div class="price">$900 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Diani Beach', 900, 1)">Request Invoice</button>
         </div>
       </div>
 
-      <!-- Tsavo (Verified) -->
+      <!-- Tsavo -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/tsavo,elephant,kenya,wildlife?random=10" alt="Tsavo elephants">
+          <img src="https://loremflickr.com/800/600/tsavo,elephant,kenya,wildlife?random=10" alt="Tsavo">
           <div class="card-overlay">Wilderness</div>
         </div>
         <div class="card-content">
@@ -1534,16 +1576,16 @@
             <span><i class="far fa-clock"></i> 4 Days</span>
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
-          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos. Explore in custom safari vehicles.</p>
-          <div class="price" data-usd="800">$800 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Tsavo')">Inquire Now</button>
+          <p>Kenya's largest park - red elephants, lava fields, and Mzima Springs' hippos.</p>
+          <div class="price">$800 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Tsavo', 800, 1)">Request Invoice</button>
         </div>
       </div>
 
-      <!-- Laikipia (Verified) -->
+      <!-- Laikipia -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/impala,laikipia,kenya,antelope?random=11" alt="Laikipia Impala">
+          <img src="https://loremflickr.com/800/600/impala,laikipia,kenya,antelope?random=11" alt="Laikipia">
           <div class="card-overlay">Private Conservancy</div>
         </div>
         <div class="card-content">
@@ -1553,15 +1595,15 @@
             <span><i class="fas fa-user-friends"></i> Exclusive</span>
           </div>
           <p>Exclusive private ranches, wild dog packs, and walking safaris with Samburu warriors.</p>
-          <div class="price" data-usd="1000">$1,000 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Laikipia')">Inquire Now</button>
+          <div class="price">$1,000 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Laikipia', 1000, 1)">Request Invoice</button>
         </div>
       </div>
 
-      <!-- Samburu (Verified) -->
+      <!-- Samburu -->
       <div class="destination-card">
         <div class="card-image">
-          <img src="https://loremflickr.com/800/600/samburu,zebra,kenya,wildlife?random=12" alt="Samburu Zebra">
+          <img src="https://loremflickr.com/800/600/samburu,zebra,kenya,wildlife?random=12" alt="Samburu">
           <div class="card-overlay">Northern Kenya</div>
         </div>
         <div class="card-content">
@@ -1571,15 +1613,90 @@
             <span><i class="fas fa-user-friends"></i> Max 6 guests</span>
           </div>
           <p>Unique northern species: Grevy's zebra, reticulated giraffe, and Somali ostrich.</p>
-          <div class="price" data-usd="600">$600 <span>per person</span></div>
-          <button class="btn-card" onclick="bookNow('Samburu')">Inquire Now</button>
+          <div class="price">$600 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Samburu', 600, 1)">Request Invoice</button>
+        </div>
+      </div>
+
+      <!-- NEW: ROYAL MIGRATION SAFARI - GROUP EXCLUSIVE -->
+      <div class="destination-card">
+        <div class="card-image">
+          <img src="https://loremflickr.com/800/600/masai-mara,kenya,elephant,sunset?random=25" alt="Royal Migration Safari">
+          <div class="card-overlay" style="background: #B75D3A;">GROUP EXCLUSIVE</div>
+        </div>
+        <div class="card-content">
+          <h3>Royal Migration Safari</h3>
+          <div class="card-details">
+            <span><i class="far fa-clock"></i> 2 Nights / 3 Days</span>
+            <span><i class="fas fa-users"></i> Min 10 people</span>
+          </div>
+          <p>Airport pickup → Luxury Nairobi hotel → Maasai Mara safari. All-inclusive with premium accommodation.</p>
+          <div class="price">$1,500 <span>per person</span></div>
+          <button class="btn-card" onclick="openInvoiceForm('Royal Migration Safari (Group Package)', 1500, 10)">Request Invoice</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED PACKAGES SECTION (UPGRADE 3) -->
+<!-- NEW: DETAILED ITINERARY SECTION -->
+<section class="itinerary-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-subtitle">Group Safari Package</div>
+      <h2 style="color: white;">Royal Migration Safari - Detailed Itinerary</h2>
+      <div class="title-divider"></div>
+    </div>
+    
+    <div class="itinerary-grid">
+      <div class="itinerary-day">
+        <h3>Day 1</h3>
+        <h4>Arrival in Nairobi</h4>
+        <p>Pickup from Jomo Kenyatta International Airport (JKIA). Transfer to luxury hotel in Nairobi for overnight rest.</p>
+        <p><strong>Accommodation:</strong> Hemingways Nairobi or Villa Rosa Kempinski (5-star)</p>
+        <p><strong>Meals:</strong> Breakfast included</p>
+      </div>
+      <div class="itinerary-day">
+        <h3>Day 2</h3>
+        <h4>Maasai Mara Safari</h4>
+        <p>Early morning departure (5:00 AM) to Maasai Mara. Afternoon game drive spotting lions, elephants, and more.</p>
+        <p><strong>Accommodation:</strong> Angama Mara or Mahali Mzuri (luxury tented camp)</p>
+        <p><strong>Meals:</strong> Breakfast, Lunch, Dinner included</p>
+      </div>
+      <div class="itinerary-day">
+        <h3>Day 3</h3>
+        <h4>Departure</h4>
+        <p>Sunrise game drive (6:00 AM - 9:00 AM) to see predators. Return to Nairobi and airport drop-off.</p>
+        <p><strong>Meals:</strong> Breakfast included</p>
+        <p><strong>End of safari.</strong> Departure from JKIA.</p>
+      </div>
+    </div>
+    
+    <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 20px; margin-top: 40px;">
+      <h3 style="color: var(--secondary); margin-bottom: 20px;">What's Included in $1,500 per person</h3>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+        <ul class="included-list">
+          <li><i class="fas fa-check-circle"></i> Airport pickup and drop-off (JKIA)</li>
+          <li><i class="fas fa-check-circle"></i> 1 night luxury hotel in Nairobi (breakfast)</li>
+          <li><i class="fas fa-check-circle"></i> Premium 4x4 safari vehicle (pop-up roof)</li>
+          <li><i class="fas fa-check-circle"></i> 1 night luxury tented camp in Maasai Mara</li>
+          <li><i class="fas fa-check-circle"></i> All meals in Maasai Mara (breakfast, lunch, dinner)</li>
+        </ul>
+        <ul class="included-list">
+          <li><i class="fas fa-check-circle"></i> Two game drives (afternoon arrival + sunrise)</li>
+          <li><i class="fas fa-check-circle"></i> Maasai Mara National Reserve park entry fees</li>
+          <li><i class="fas fa-check-circle"></i> Bottled water throughout</li>
+          <li><i class="fas fa-check-circle"></i> Professional English-speaking driver-guide</li>
+          <li><i class="fas fa-check-circle"></i> Group minimum: 10 people</li>
+        </ul>
+      </div>
+      <p style="margin-top: 20px; font-size: 0.9rem;"><strong>Not included:</strong> International flights, Kenya visa ($50), travel insurance, tips, alcoholic drinks, personal expenses.</p>
+      <p style="margin-top: 15px; font-size: 0.9rem;"><strong>Minimum group size: 10 people.</strong> For smaller groups, please contact us for custom pricing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PACKAGES SECTION (UPDATED WITH NEW GROUP PACKAGE) -->
 <section class="featured-packages">
   <div class="container">
     <div class="section-title">
@@ -1594,33 +1711,44 @@
         <i class="fas fa-crown" style="font-size: 2.5rem; color: var(--secondary);"></i>
         <h3>5-Day Mara & Amboseli</h3>
         <p>Experience the best of Kenya's wildlife</p>
-        <div class="package-price" data-usd="1500">$1,500</div>
+        <div class="package-price">$1,500</div>
         <p style="margin: 15px 0;">✓ 2 Nights Mara<br>✓ 2 Nights Amboseli<br>✓ All meals included</p>
-        <button class="btn-card" onclick="bookNow('Mara Amboseli Combo')">Book Now</button>
+        <button class="btn-card" onclick="openInvoiceForm('5-Day Mara & Amboseli', 1500, 1)">Request Invoice</button>
       </div>
       
       <div class="package-card">
         <i class="fas fa-umbrella-beach" style="font-size: 2.5rem; color: var(--secondary);"></i>
         <h3>7-Day Safari & Beach</h3>
         <p>Wildlife + Diani relaxation</p>
-        <div class="package-price" data-usd="2100">$2,100</div>
+        <div class="package-price">$2,100</div>
         <p style="margin: 15px 0;">✓ 4 Days Safari<br>✓ 3 Days Diani Beach<br>✓ All transfers</p>
-        <button class="btn-card" onclick="bookNow('Safari Beach Combo')">Book Now</button>
+        <button class="btn-card" onclick="openInvoiceForm('7-Day Safari & Beach', 2100, 1)">Request Invoice</button>
       </div>
       
       <div class="package-card">
         <i class="fas fa-camera" style="font-size: 2.5rem; color: var(--secondary);"></i>
         <h3>4-Day Luxury Tsavo</h3>
         <p>Private conservancy experience</p>
-        <div class="package-price" data-usd="1200">$1,200</div>
+        <div class="package-price">$1,200</div>
         <p style="margin: 15px 0;">✓ Private guide<br>✓ Luxury lodge<br>✓ Game drives</p>
-        <button class="btn-card" onclick="bookNow('Luxury Tsavo')">Book Now</button>
+        <button class="btn-card" onclick="openInvoiceForm('4-Day Luxury Tsavo', 1200, 1)">Request Invoice</button>
+      </div>
+
+      <!-- NEW GROUP PACKAGE CARD -->
+      <div class="package-card">
+        <span class="best-seller" style="background: var(--terracotta); color: white;">GROUP SPECIAL</span>
+        <i class="fas fa-users" style="font-size: 2.5rem; color: var(--secondary);"></i>
+        <h3>Royal Migration (Group)</h3>
+        <p>Airport → Nairobi → Maasai Mara</p>
+        <div class="package-price">$1,500 <span style="font-size: 0.9rem;">/person</span></div>
+        <p style="margin: 15px 0;">✓ Min 10 people<br>✓ 2 Nights all-inclusive<br>✓ Luxury hotels & camps</p>
+        <button class="btn-card" onclick="openInvoiceForm('Royal Migration Safari (Group Package)', 1500, 10)">Request Invoice</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHY CHOOSE US (No images) -->
+<!-- WHY CHOOSE US -->
 <section class="why-us">
   <div class="container">
     <div class="section-title">
@@ -1633,28 +1761,28 @@
       <div class="feature">
         <div class="feature-icon"><i class="fas fa-car"></i></div>
         <h3>Elite Safari Fleet</h3>
-        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments. All Kenyan registered (K-plates).</p>
+        <p>Premium 4x4 Land Cruisers with pop-up roofs, WiFi, and refreshments.</p>
       </div>
       <div class="feature">
         <div class="feature-icon"><i class="fas fa-users"></i></div>
         <h3>Expert Local Guides</h3>
-        <p>Silver and Gold-rated guides with deep knowledge of wildlife, culture, and hidden gems.</p>
+        <p>Silver and Gold-rated guides with deep knowledge of wildlife and culture.</p>
       </div>
       <div class="feature">
         <div class="feature-icon"><i class="fas fa-gem"></i></div>
         <h3>Exclusive Access</h3>
-        <p>Private conservancies and special access to community-owned lands unavailable to others.</p>
+        <p>Private conservancies and special access to community-owned lands.</p>
       </div>
       <div class="feature">
         <div class="feature-icon"><i class="fas fa-concierge-bell"></i></div>
         <h3>24/7 Concierge</h3>
-        <p>Dedicated personal assistant throughout your journey - from booking to departure.</p>
+        <p>Dedicated personal assistant throughout your journey.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY - ALL VERIFIED WORKING IMAGES -->
+<!-- GALLERY -->
 <section id="gallery">
   <div class="container">
     <div class="section-title">
@@ -1664,27 +1792,19 @@
     </div>
     
     <div class="gallery-grid">
-      <!-- Gallery 1: Lion (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/lion,kenya,wildlife?random=13" alt="Lion in Maasai Mara"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 2: Giraffe (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/giraffe,kenya,wildlife?random=14" alt="Samburu Giraffe"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 3: Giraffe Centre (Verified) -->
+      <div class="gallery-item"><img src="https://loremflickr.com/800/600/lion,kenya,wildlife?random=13" alt="Lion"><i class="fas fa-search-plus"></i></div>
+      <div class="gallery-item"><img src="https://loremflickr.com/800/600/giraffe,kenya,wildlife?random=14" alt="Giraffe"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://loremflickr.com/800/600/giraffe-centre,nairobi,kenya?random=15" alt="Giraffe Centre"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 4: Zebra (Verified) -->
-      <div class="gallery-item"><img src="https://loremflickr.com/800/600/zebra,kenya,wildlife?random=16" alt="Plains Zebra"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 5: Leopard (Verified) -->
+      <div class="gallery-item"><img src="https://loremflickr.com/800/600/zebra,kenya,wildlife?random=16" alt="Zebra"><i class="fas fa-search-plus"></i></div>
       <div class="gallery-item"><img src="https://loremflickr.com/800/600/leopard,kenya,wildlife?random=17" alt="Leopard"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 6: Diani Beach - SECOND LINK (Your chosen calm ocean photo for gallery) -->
       <div class="gallery-item"><img src="https://www.kenya-experience.com/wp-content/uploads/2025/03/shallow-calm-ocean-water-1024x581.jpg" alt="Diani Beach"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 7: Cheetah (Verified) -->
       <div class="gallery-item"><img src="https://loremflickr.com/800/600/cheetah,kenya,wildlife?random=19" alt="Cheetah"><i class="fas fa-search-plus"></i></div>
-      <!-- Gallery 8: Tsavo Elephants (Verified) -->
       <div class="gallery-item"><img src="https://loremflickr.com/800/600/tsavo,elephant,kenya?random=20" alt="Tsavo Elephants"><i class="fas fa-search-plus"></i></div>
     </div>
   </div>
 </section>
 
-<!-- EXPERIENCES (No images) -->
+<!-- EXPERIENCES -->
 <section id="experiences">
   <div class="container">
     <div class="section-title">
@@ -1697,23 +1817,23 @@
       <div class="experience-card">
         <div class="experience-icon"><i class="fas fa-camera"></i></div>
         <h3>Private Game Drives</h3>
-        <p>Morning and sunset expeditions across Kenya's legendary landscapes with professional photography guidance.</p>
+        <p>Morning and sunset expeditions across Kenya's legendary landscapes.</p>
       </div>
       <div class="experience-card">
         <div class="experience-icon"><i class="fas fa-hiking"></i></div>
         <h3>Walking Safaris</h3>
-        <p>Explore the bush on foot with armed guides, learning tracking skills and discovering the small wonders.</p>
+        <p>Explore the bush on foot with armed guides, learning tracking skills.</p>
       </div>
       <div class="experience-card">
         <div class="experience-icon"><i class="fas fa-users"></i></div>
         <h3>Cultural Encounters</h3>
-        <p>Engage with Maasai, Samburu, and Swahili communities to experience living traditions and hospitality.</p>
+        <p>Engage with Maasai, Samburu, and Swahili communities.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS CAROUSEL (UPGRADE 2) -->
+<!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="container">
     <div class="section-title">
@@ -1725,106 +1845,37 @@
     <div class="testimonial-carousel">
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly - from the luxury tented camp in Mara to the private guide who knew exactly where to find the leopards."</p>
+          <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly."</p>
           <div class="testimonial-author">
             <h4>Sarah Johnson</h4>
             <p>United Kingdom</p>
           </div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         </div>
         
         <div class="testimonial-card">
-          <p class="testimonial-text">"The attention to detail was remarkable. From the moment we landed in Nairobi until our departure, everything was seamless. The Amboseli safari with Kilimanjaro views was beyond words."</p>
+          <p class="testimonial-text">"The attention to detail was remarkable. The Amboseli safari with Kilimanjaro views was beyond words."</p>
           <div class="testimonial-author">
             <h4>Michael Chen</h4>
             <p>United States</p>
           </div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         </div>
         
         <div class="testimonial-card">
-          <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect - wild adventures followed by pure luxury on the coast. Our concierge was available 24/7."</p>
+          <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect."</p>
           <div class="testimonial-author">
             <h4>Claudia Schmidt</h4>
             <p>Germany</p>
           </div>
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
+          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FAQ SECTION (No images) -->
-<section id="faq">
-  <div class="container">
-    <div class="section-title">
-      <div class="section-subtitle">Your Questions</div>
-      <h2>Frequently Asked Questions</h2>
-      <div class="title-divider"></div>
-    </div>
-    
-    <div class="faq-grid">
-      <div class="faq-item" onclick="toggleFAQ(this)">
-        <div class="faq-question">
-          <h3>What is included in your safari packages?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Private transportation in luxury 4x4 safari vehicles, professional driver-guides, park entry fees, and game drives. Accommodation is customized to your budget.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item" onclick="toggleFAQ(this)">
-        <div class="faq-question">
-          <h3>How does accommodation and food work?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Accommodation is based on your budget - from luxury tented camps to premium lodges. All accommodation is customized on a quote basis.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item" onclick="toggleFAQ(this)">
-        <div class="faq-question">
-          <h3>Do you offer transportation only?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Yes, we provide premium transportation services to all Kenyan destinations.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item" onclick="toggleFAQ(this)">
-        <div class="faq-question">
-          <h3>What vehicles do you use?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Custom-modified Toyota Land Cruisers with pop-up roofs, WiFi, and refreshments. All Kenyan registered (K-plates).</p>
-        </div>
-      </div>
-      
-      <div class="faq-item" onclick="toggleFAQ(this)">
-        <div class="faq-question">
-          <h3>How do I book and what payment methods do you accept?</h3>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>Click "Inquire Now" on any package, call us, or send a WhatsApp. We accept M-PESA, Airtel Money, bank transfers, and cryptocurrency.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING SECTION (UPGRADE 7 - Confidence Badges) -->
+<!-- BOOKING SECTION WITH REQUEST INVOICE BUTTON -->
 <section class="booking-section" id="booking">
   <div class="container">
     <div class="section-title">
@@ -1834,32 +1885,38 @@
     </div>
     
     <div class="booking-options">
-      <div class="booking-card">
+      <div class="booking-card" onclick="window.location.href='tel:+254789514678'">
         <i class="fas fa-phone-alt"></i>
         <h3>Call Us</h3>
         <p>Safaricom: 0710 731 785</p>
         <p>Airtel: 0789 514 678</p>
-        <a href="tel:+254789514678" class="booking-link">Call Now</a>
+        <div class="booking-link">Call Now</div>
       </div>
-      <div class="booking-card">
+      <div class="booking-card" onclick="window.open('https://wa.me/254789514678', '_blank')">
         <i class="fab fa-whatsapp"></i>
         <h3>WhatsApp</h3>
         <p>Instant messaging with concierge</p>
-        <a href="https://wa.me/254789514678" class="booking-link" target="_blank">Chat Now</a>
+        <div class="booking-link">Chat Now</div>
       </div>
-      <div class="booking-card">
+      <div class="booking-card" onclick="window.location.href='mailto:jumbaheritagevoyages@gmail.com'">
         <i class="fas fa-envelope"></i>
         <h3>Email</h3>
         <p>jumbaheritagevoyages@gmail.com</p>
-        <a href="mailto:jumbaheritagevoyages@gmail.com" class="booking-link">Email Now</a>
+        <div class="booking-link">Email Now</div>
+      </div>
+      <!-- NEW: REQUEST INVOICE BUTTON -->
+      <div class="booking-card" onclick="openInvoiceForm()">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h3>Request Invoice</h3>
+        <p>Get a Payoneer payment link via email</p>
+        <div class="booking-link">Request Now</div>
       </div>
     </div>
     
-    <!-- Confidence Badges -->
     <div class="confidence-badges">
       <div class="badge">
         <i class="fas fa-shield-alt"></i>
-        <p>Secure Payment</p>
+        <p>Secure Payment via Payoneer</p>
       </div>
       <div class="badge">
         <i class="fas fa-clock"></i>
@@ -1873,285 +1930,8 @@
   </div>
 </section>
 
-<!-- SOCIAL MEDIA FEED (UPGRADE 6) -->
-<section class="social-feed">
+<!-- FAQ SECTION -->
+<section id="faq">
   <div class="container">
     <div class="section-title">
-      <div class="section-subtitle">Follow Our Adventures</div>
-      <h2>#JumbaHeritageVoyages</h2>
-      <div class="title-divider"></div>
-    </div>
-    
-    <div class="social-grid">
-      <div class="social-item">
-        <img src="https://loremflickr.com/400/400/lion,kenya,wildlife?random=21" alt="Safari moment">
-        <i class="fab fa-instagram"></i>
-      </div>
-      <div class="social-item">
-        <img src="https://loremflickr.com/400/400/elephant,kenya,wildlife?random=22" alt="Safari moment">
-        <i class="fab fa-instagram"></i>
-      </div>
-      <div class="social-item">
-        <img src="https://loremflickr.com/400/400/giraffe,kenya,wildlife?random=23" alt="Safari moment">
-        <i class="fab fa-instagram"></i>
-      </div>
-      <div class="social-item">
-        <img src="https://loremflickr.com/400/400/zebra,kenya,wildlife?random=24" alt="Safari moment">
-        <i class="fab fa-instagram"></i>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER SIGNUP (UPGRADE 8) -->
-<section class="newsletter">
-  <div class="container">
-    <h3>Get Safari Deals</h3>
-    <p>Subscribe for exclusive offers, travel tips, and inspiration</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
-      <input type="email" class="newsletter-input" placeholder="Your Email Address" required>
-      <button type="submit" class="newsletter-button">Subscribe</button>
-    </form>
-  </div>
-</section>
-
-<!-- CONTACT SECTION (No images) -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">
-      <div class="section-subtitle">Get In Touch</div>
-      <h2>Visit or Contact Us</h2>
-      <div class="title-divider"></div>
-    </div>
-    
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Jumba Heritage Voyages</h3>
-        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div><strong>Office:</strong> Ngong Business Arcade, Nairobi</div></div>
-        <div class="contact-detail"><i class="fas fa-phone-alt"></i><div><strong>Safaricom:</strong> 0710 731 785<br><strong>Airtel:</strong> 0789 514 678</div></div>
-        <div class="contact-detail"><i class="fas fa-envelope"></i><div><strong>Email:</strong> jumbaheritagevoyages@gmail.com</div></div>
-        <div class="contact-detail"><i class="fas fa-clock"></i><div><strong>Hours:</strong> Mon-Fri 8am-6pm, Sat 9am-2pm</div></div>
-      </div>
-      <div class="contact-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.816216937268!2d36.81792831475394!3d-1.2832809990594537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4b2e1d4b7%3A0x8c9c3a6d8c5c6d4!2sNgong%20Business%20Arcade!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TERMS & PRIVACY - FIXED: Now starts CLOSED -->
-<section style="padding:0 0 80px 0;">
-  <div class="container">
-    <!-- Terms & Conditions - Starts closed -->
-    <div class="faq-item" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <h3>Terms & Conditions</h3>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="faq-answer">
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 10px;">
-          <p><strong>Booking:</strong> 30% deposit required. Balance due 30 days before safari.</p>
-          <p><strong>Cancellation:</strong> 90% refund >60 days, 50% 30-60 days, no refund <30 days.</p>
-          <p><strong>Transportation:</strong> Kenyan registered vehicles (K-plates).</p>
-          <p><strong>Insurance:</strong> Travel insurance strongly recommended.</p>
-          <p><strong>Health:</strong> Clients responsible for required vaccinations.</p>
-          <p><em>By booking, you agree to these terms.</em></p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Privacy Policy - Starts closed -->
-    <div class="faq-item" onclick="toggleFAQ(this)">
-      <div class="faq-question">
-        <h3>Privacy Policy</h3>
-        <i class="fas fa-chevron-down"></i>
-      </div>
-      <div class="faq-answer">
-        <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-top: 10px;">
-          <p><strong>Information We Collect:</strong> Name, email, phone, passport details for bookings.</p>
-          <p><strong>How We Use Your Information:</strong> To process bookings and communicate with you.</p>
-          <p><strong>Information Sharing:</strong> We do not sell your data. Shared only with trusted partners.</p>
-          <p><strong>Your Rights:</strong> Access, correct, or delete your data anytime.</p>
-          <p><strong>Contact:</strong> jumbaheritagevoyages@gmail.com</p>
-          <p><em>Last updated: March 2025</em></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">Jumba Heritage <span>Voyages</span></div>
-        <p>Asili Travels Collective. Luxury Kenyan safaris crafted with heritage, expertise, and an unwavering commitment to excellence.</p>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#experiences">Experiences</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Destinations</h4>
-        <ul>
-          <li><a href="#destinations">Maasai Mara</a></li>
-          <li><a href="#destinations">Amboseli</a></li>
-          <li><a href="#destinations">Diani Beach</a></li>
-          <li><a href="#destinations">Tsavo</a></li>
-          <li><a href="#destinations">Laikipia</a></li>
-          <li><a href="#destinations">Samburu</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[7]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[7]?.classList.add('active'); return false;">Terms & Conditions</a></li>
-          <li><a href="#" onclick="event.preventDefault(); document.querySelectorAll('.faq-item')[8]?.scrollIntoView({behavior: 'smooth'}); document.querySelectorAll('.faq-item')[8]?.classList.add('active'); return false;">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>&copy; 2025 Jumba Heritage Voyages & Asili Travels. All Rights Reserved.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- LIVE CHAT WIDGET (UPGRADE 1) -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
-<div class="elfsight-app-1b1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b" data-elfsight-app-lazy></div>
-
-<!-- JavaScript -->
-<script>
-  // Preloader
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('preloader').classList.add('fade-out');
-    }, 1000);
-  });
-
-  // Header scroll effect
-  window.addEventListener('scroll', function() {
-    const header = document.getElementById('header');
-    if (window.scrollY > 100) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // Hero Slideshow
-  let slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
-
-  function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  setInterval(nextSlide, 5000);
-
-  // Book Now function
-  window.bookNow = function(destination) {
-    const message = `Hello Jumba Heritage Voyages & Asili Travels! I'm interested in booking the ${destination} luxury safari experience. Please send me more information.`;
-    window.open(`https://wa.me/254789514678?text=${encodeURIComponent(message)}`, '_blank');
-  };
-
-  // FAQ Toggle
-  window.toggleFAQ = function(element) {
-    element.classList.toggle('active');
-  };
-
-  // Smooth scrolling
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  // Gallery click
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', function() {
-      const img = this.querySelector('img').src;
-      window.open(img, '_blank');
-    });
-  });
-
-  // Currency Converter (UPGRADE 4)
-  window.convertCurrency = function(currency) {
-    const rates = { USD: 1, EUR: 0.92, GBP: 0.79, KES: 130 };
-    const symbols = { USD: '$', EUR: '€', GBP: '£', KES: 'KSh ' };
-    
-    document.querySelectorAll('[data-usd]').forEach(el => {
-      let usdAmount = parseFloat(el.getAttribute('data-usd'));
-      let converted = usdAmount * rates[currency];
-      if (el.classList.contains('package-price')) {
-        el.innerHTML = symbols[currency] + converted.toFixed(0);
-      } else {
-        let priceText = el.innerHTML;
-        el.innerHTML = symbols[currency] + converted.toFixed(0) + ' <span>per person</span>';
-      }
-    });
-  };
-
-  // Animate on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.animation = 'fadeInUp 1s ease forwards';
-      }
-    });
-  });
-
-  document.querySelectorAll('.destination-card, .feature, .experience-card, .testimonial-card, .package-card, .badge').forEach(el => {
-    el.style.opacity = '0';
-    observer.observe(el);
-  });
-
-  // Newsletter form
-  document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you for subscribing to our newsletter!');
-    this.reset();
-  });
-</script>
-
-<!-- Fallback for Terms links if FAQ items count changes -->
-<script>
-  // Ensure Terms & Privacy links work even if FAQ count changes
-  document.querySelectorAll('.footer-links a[href="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const text = this.textContent;
-      const faqItems = document.querySelectorAll('.faq-item');
-      if (text.includes('Terms')) {
-        faqItems[faqItems.length - 2]?.scrollIntoView({behavior: 'smooth'});
-        faqItems[faqItems.length - 2]?.classList.add('active');
-      } else if (text.includes('Privacy')) {
-        faqItems[faqItems.length - 1]?.scrollIntoView({behavior: 'smooth'});
-        faqItems[faqItems.length - 1]?.classList.add('active');
-      }
-    });
-  });
-</script>
-
-</body>
-</html>
+      <div class="section-subtitle
