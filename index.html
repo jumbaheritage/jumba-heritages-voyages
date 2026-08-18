@@ -35,6 +35,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+  <!--
+    Google Analytics 4 (optional): to enable visitor tracking, get a Measurement ID
+    from analytics.google.com (looks like "G-XXXXXXXXXX"), then uncomment the two
+    script tags below and replace G-XXXXXXXXXX with your real ID in both places.
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+  -->
+
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -94,6 +108,33 @@
       --shadow-hover: 0 40px 70px -10px rgba(10,47,31,0.4);
       --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
+    html[data-theme="dark"] {
+      --primary: #0A2F1F;
+      --secondary: #D4AF61;
+      --terracotta: #C46A44;
+      --cream: #14201A;
+      --charcoal: #EDE8DF;
+    }
+    html[data-theme="dark"] body { background: var(--cream); }
+    html[data-theme="dark"] .group-package-card,
+    html[data-theme="dark"] .testimonial-card,
+    html[data-theme="dark"] .modal-content,
+    html[data-theme="dark"] .journal-card,
+    html[data-theme="dark"] .newsletter-box { background: #1E2E25; color: #EDE8DF; }
+    html[data-theme="dark"] .group-package-card .card-content h3,
+    html[data-theme="dark"] .group-package-price,
+    html[data-theme="dark"] .testimonial-author h4,
+    html[data-theme="dark"] .modal-content h3,
+    html[data-theme="dark"] .section-title h2,
+    html[data-theme="dark"] .journal-card h3 { color: #F4EFE5; }
+    html[data-theme="dark"] .testimonial-text,
+    html[data-theme="dark"] .modal-content p { color: #C9C3B6; }
+    html[data-theme="dark"] .form-group input,
+    html[data-theme="dark"] .form-group select,
+    html[data-theme="dark"] .form-group textarea {
+      background: #14201A; color: #EDE8DF; border-color: #3A4A40;
+    }
+    html[data-theme="dark"] .form-group label { color: #D4AF61; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: 'Montserrat', sans-serif;
@@ -101,9 +142,52 @@
       background: var(--cream);
       line-height: 1.7;
       overflow-x: hidden;
+      position: relative;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    /* Subtle luxury grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
     h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.02em; }
     .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+    /* Gold shimmer sweep on primary buttons */
+    .btn-primary, .btn-group, .btn-submit, .btn-group-toggle {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary::after, .btn-group::after, .btn-submit::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -75%;
+      width: 50%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.7s ease;
+    }
+    .btn-primary:hover::after, .btn-group:hover::after, .btn-submit:hover::after { left: 130%; }
+    .theme-toggle, .currency-toggle {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      font-size: 0.85rem;
+    }
+    .theme-toggle:hover, .currency-toggle:hover { background: var(--secondary); color: var(--primary); border-color: var(--secondary); }
+    .currency-toggle { width: auto; padding: 0 12px; font-weight: 600; letter-spacing: 1px; }
+    .header-tools { display: flex; align-items: center; gap: 12px; }
 
     .skip-link {
       position: absolute;
@@ -249,8 +333,8 @@
     }
     .slide {
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: -6%; left: 0;
+      width: 100%; height: 112%;
       background-size: cover;
       background-position: center;
       opacity: 0;
@@ -258,6 +342,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      will-change: transform;
     }
     .slide.active { opacity: 1; z-index: 1; }
     .slide::after {
@@ -382,6 +467,18 @@
       flex-direction: column;
     }
     .group-package-card:hover { transform: translateY(-15px); box-shadow: var(--shadow-hover); }
+    .group-package-card, .journal-card { position: relative; }
+    .group-package-card::before, .journal-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(201,162,77,0.18), transparent 70%);
+    }
+    .group-package-card:hover::before, .journal-card:hover::before { opacity: 1; }
     .group-package-card .card-image { height: 250px; overflow: hidden; position: relative; }
     .group-package-card .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s ease; }
     .group-package-card:hover .card-image img { transform: scale(1.1); }
@@ -400,7 +497,7 @@
     .group-package-card .card-content { padding: 30px; flex: 1; display: flex; flex-direction: column; }
     .group-package-card .card-content h3 { font-size: 2rem; margin-bottom: 10px; color: var(--primary); }
     .group-package-price { font-size: 2.5rem; font-weight: 700; color: var(--primary); margin: 15px 0; }
-    .group-package-price span { font-size: 1rem; color: #999; font-weight: 400; }
+    .group-package-price .price-unit { font-size: 1rem; color: #999; font-weight: 400; }
     .package-features { list-style: none; margin: 20px 0; flex: 1; }
     .package-features li { padding: 8px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
     .package-features li:last-child { border-bottom: none; }
@@ -493,6 +590,19 @@
     }
     .btn-submit:hover { background: var(--secondary); color: var(--primary); }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .estimate-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--cream);
+      border: 1px solid rgba(201,162,77,0.3);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+    .estimate-box strong { font-size: 1.3rem; color: var(--secondary); }
 
     .why-us {
       background: var(--primary);
@@ -546,6 +656,52 @@
     .feature h3 { font-size: 2rem; margin-bottom: 15px; color: var(--white); }
     .feature p { color: rgba(255,255,255,0.8); line-height: 1.8; }
 
+    .trust-strip { padding: 50px 0; background: var(--white); }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 20px;
+      color: var(--primary);
+    }
+    .trust-item i { font-size: 1.8rem; color: var(--secondary); }
+    .trust-item span { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.3px; line-height: 1.4; }
+
+    .bespoke-section { padding: 100px 0; background: var(--cream); }
+    .bespoke-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .bespoke-image { border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-md); }
+    .bespoke-image img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 380px; }
+    .bespoke-content .section-subtitle { text-align: left; }
+    .bespoke-content h2 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+    .bespoke-content p { margin: 25px 0 30px; color: #555; font-size: 1.05rem; }
+    .btn-outline-dark {
+      display: inline-block;
+      padding: 16px 36px;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    .btn-outline-dark:hover { background: var(--primary); color: var(--white); }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -586,19 +742,108 @@
     }
     .gallery-item:hover i { opacity: 1; }
 
-    .testimonial-carousel { overflow: hidden; width: 100%; }
-    .testimonial-grid {
-      display: flex;
+    .journal-section { background: var(--white); }
+    .journal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       margin-top: 40px;
-      animation: slideTestimonials 20s infinite;
     }
-    @keyframes slideTestimonials {
-      0%, 28% { transform: translateX(0); }
-      33%, 61% { transform: translateX(-105%); }
-      66%, 94% { transform: translateX(-210%); }
-      100% { transform: translateX(0); }
+    .journal-card {
+      background: var(--cream);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
     }
+    .journal-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-md); }
+    .journal-image { height: 220px; overflow: hidden; }
+    .journal-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s ease; }
+    .journal-card:hover .journal-image img { transform: scale(1.08); }
+    .journal-content { padding: 28px; }
+    .journal-tag {
+      color: var(--secondary);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+    .journal-content h3 { font-size: 1.5rem; margin: 12px 0 10px; color: var(--primary); }
+    .journal-content p { color: #666; font-size: 0.95rem; }
+    .journal-note { text-align: center; margin-top: 35px; color: #999; font-size: 0.85rem; font-style: italic; }
+
+    .insta-strip { background: var(--cream); }
+    .insta-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      margin-top: 40px;
+    }
+    .insta-tile {
+      position: relative;
+      display: block;
+      aspect-ratio: 1;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .insta-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .insta-tile i {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.6rem;
+      background: rgba(10,47,31,0);
+      transition: var(--transition);
+    }
+    .insta-tile:hover img { transform: scale(1.1); }
+    .insta-tile:hover i { background: rgba(10,47,31,0.5); }
+
+    .testimonial-carousel { overflow: hidden; width: 100%; position: relative; }
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .testimonial-slide {
+      min-width: 100%;
+      display: flex;
+      gap: 40px;
+      padding: 10px 4px 30px;
+    }
+    .testimonial-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin-top: 30px;
+    }
+    .testimonial-arrow {
+      background: var(--white);
+      border: 1px solid rgba(10,47,31,0.15);
+      color: var(--primary);
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 1rem;
+    }
+    .testimonial-arrow:hover { background: var(--secondary); color: var(--white); border-color: var(--secondary); }
+    .testimonial-dots { display: flex; gap: 10px; }
+    .testimonial-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: rgba(10,47,31,0.2);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 0;
+    }
+    .testimonial-dot.active { background: var(--secondary); width: 26px; border-radius: 5px; }
     .testimonial-card {
       background: var(--white);
       padding: 50px 40px;
@@ -717,6 +962,44 @@
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, margin-top 0.5s ease; margin-top: 0; }
     .faq-item.active .faq-answer { max-height: 300px; margin-top: 20px; }
     .faq-item.active .faq-question i { transform: rotate(180deg); }
+
+    .newsletter-section { background: var(--primary); padding: 90px 0; }
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .newsletter-grid h2 { color: white; font-size: 2.6rem; margin: 10px 0 15px; }
+    .newsletter-grid > div > p { color: rgba(255,255,255,0.75); font-size: 1rem; max-width: 480px; }
+    .newsletter-form { display: flex; gap: 12px; flex-wrap: wrap; }
+    .newsletter-form input {
+      flex: 1;
+      min-width: 220px;
+      padding: 16px 22px;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.6); }
+    .newsletter-form input:focus { outline: none; border-color: var(--secondary); }
+    .newsletter-form button {
+      padding: 16px 32px;
+      border-radius: 40px;
+      border: none;
+      background: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .newsletter-form button:hover { background: white; }
 
     .contact-grid {
       display: grid;
@@ -930,6 +1213,15 @@
       .whatsapp-float { width: 60px; height: 60px; font-size: 2rem; bottom: 20px; right: 20px; }
       .contact-info { padding: 40px 30px; }
       .contact-map { height: 350px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .bespoke-grid { grid-template-columns: 1fr; gap: 35px; }
+      .bespoke-content h2 { font-size: 2.2rem; }
+      .bespoke-content .section-subtitle, .bespoke-content h2 { text-align: center; }
+      .bespoke-content { text-align: center; }
+      .header-tools { flex-direction: row; margin: 10px 0; }
+      .journal-grid { grid-template-columns: 1fr; }
+      .newsletter-grid { grid-template-columns: 1fr; text-align: center; }
+      .insta-strip-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -941,7 +1233,6 @@
       html { scroll-behavior: auto; }
     }
   </style>
-<base target="_blank">
 </head>
 <body>
 
@@ -996,8 +1287,12 @@
       </div>
       <div class="form-group">
         <label for="peopleCount">Number of People *</label>
-        <input type="number" id="peopleCount" name="people" min="1" required placeholder="10">
+        <input type="number" id="peopleCount" name="people" min="10" required placeholder="10">
         <span class="form-error">Minimum 10 people required for group packages</span>
+      </div>
+      <div id="estimateBox" class="estimate-box" style="display:none;">
+        <span>Estimated total</span>
+        <strong id="estimateValue">$0</strong>
       </div>
       <div class="form-group">
         <label for="travelDate">Preferred Travel Date</label>
@@ -1045,6 +1340,10 @@
       <li><a href="#testimonials">Reviews</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="header-tools">
+        <button class="currency-toggle" id="currencyToggle" onclick="toggleCurrency()" aria-label="Toggle currency">USD</button>
+        <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+      </li>
       <li><a href="#booking" class="nav-cta">Book Safari</a></li>
     </ul>
   </div>
@@ -1092,7 +1391,7 @@
         </div>
         <div class="card-content">
           <h3>Royal Migration Safari</h3>
-          <div class="group-package-price">$1,500 <span>per person</span></div>
+          <div class="group-package-price"><span class="price-amount" data-usd="1500">$1,500</span> <span class="price-unit">per person</span></div>
           <ul class="package-features">
             <li><i class="fas fa-check-circle"></i> 3 Days / 2 Nights</li>
             <li><i class="fas fa-check-circle"></i> Airport pickup/drop-off (JKIA)</li>
@@ -1112,7 +1411,7 @@
         </div>
         <div class="card-content">
           <h3>Samburu Group Safari</h3>
-          <div class="group-package-price">$2,400 <span>per person</span></div>
+          <div class="group-package-price"><span class="price-amount" data-usd="2400">$2,400</span> <span class="price-unit">per person</span></div>
           <ul class="package-features">
             <li><i class="fas fa-check-circle"></i> 3 Days / 2 Nights</li>
             <li><i class="fas fa-check-circle"></i> Airport pickup/drop-off (JKIA)</li>
@@ -1132,7 +1431,7 @@
         </div>
         <div class="card-content">
           <h3>Tsavo Group Safari</h3>
-          <div class="group-package-price">$2,500 <span>per person</span></div>
+          <div class="group-package-price"><span class="price-amount" data-usd="2500">$2,500</span> <span class="price-unit">per person</span></div>
           <ul class="package-features">
             <li><i class="fas fa-check-circle"></i> 4 Days / 3 Nights</li>
             <li><i class="fas fa-check-circle"></i> Airport pickup/drop-off (JKIA)</li>
@@ -1152,7 +1451,7 @@
         </div>
         <div class="card-content">
           <h3>Laikipia Group Safari</h3>
-          <div class="group-package-price">$2,800 <span>per person</span></div>
+          <div class="group-package-price"><span class="price-amount" data-usd="2800">$2,800</span> <span class="price-unit">per person</span></div>
           <ul class="package-features">
             <li><i class="fas fa-check-circle"></i> 4 Days / 3 Nights</li>
             <li><i class="fas fa-check-circle"></i> Airport pickup/drop-off (JKIA)</li>
@@ -1172,7 +1471,7 @@
         </div>
         <div class="card-content">
           <h3>Naivasha & Hell's Gate</h3>
-          <div class="group-package-price">$3,000 <span>per person</span></div>
+          <div class="group-package-price"><span class="price-amount" data-usd="3000">$3,000</span> <span class="price-unit">per person</span></div>
           <ul class="package-features">
             <li><i class="fas fa-check-circle"></i> 3 Days / 2 Nights</li>
             <li><i class="fas fa-check-circle"></i> Airport pickup/drop-off (JKIA)</li>
@@ -1217,6 +1516,32 @@
         <h3>24/7 Concierge</h3>
         <p>Dedicated personal assistant throughout your journey.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item"><i class="fas fa-map-marked-alt"></i><span>Locally Owned &amp; Operated in Kenya</span></div>
+      <div class="trust-item"><i class="fas fa-hotel"></i><span>Handpicked Lodges &amp; Camps</span></div>
+      <div class="trust-item"><i class="fas fa-headset"></i><span>Direct Concierge Support</span></div>
+      <div class="trust-item"><i class="fas fa-hand-holding-heart"></i><span>Community &amp; Conservancy Partnerships</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bespoke-section">
+  <div class="container bespoke-grid">
+    <div class="bespoke-image">
+      <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1000&q=80" alt="Private luxury safari vehicle overlooking Samburu at golden hour" loading="lazy">
+    </div>
+    <div class="bespoke-content">
+      <div class="section-subtitle">Beyond The Set Packages</div>
+      <h2>Bespoke Private Safaris</h2>
+      <div class="title-divider" style="margin-left:0;"></div>
+      <p>Prefer a journey built entirely around you? We design fully private itineraries — your own vehicle, guide, and pace, tailored to the destinations, dates, and level of luxury you have in mind. No fixed group, no fixed price — just a proposal shaped around your travel style.</p>
+      <a href="#contact" class="btn-outline-dark">Enquire About A Private Safari</a>
     </div>
   </div>
 </section>
@@ -1266,6 +1591,68 @@
   </div>
 </section>
 
+<section class="journal-section">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-subtitle">Stories & Guides</div>
+      <h2>From The Field</h2>
+      <div class="title-divider"></div>
+    </div>
+    <div class="journal-grid">
+      <div class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1534177616072-ef7dc90fbd6a?w=700&q=80" alt="Great Migration herds crossing the Masai Mara" loading="lazy">
+        </div>
+        <div class="journal-content">
+          <span class="journal-tag">Wildlife</span>
+          <h3>When To See The Great Migration</h3>
+          <p>A season-by-season guide to timing your Masai Mara safari around the wildebeest crossings.</p>
+        </div>
+      </div>
+      <div class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=700&q=80" alt="Elephants with Mount Kilimanjaro in the background at Amboseli" loading="lazy">
+        </div>
+        <div class="journal-content">
+          <span class="journal-tag">Destinations</span>
+          <h3>Amboseli: Elephants In The Shadow Of Kilimanjaro</h3>
+          <p>Why this park delivers some of the most photographed wildlife scenery in East Africa.</p>
+        </div>
+      </div>
+      <div class="journal-card">
+        <div class="journal-image">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80" alt="Diani Beach coastline in Kenya" loading="lazy">
+        </div>
+        <div class="journal-content">
+          <span class="journal-tag">Trip Planning</span>
+          <h3>Pairing A Safari With A Coastal Escape</h3>
+          <p>How travelers combine the Mara or Tsavo with a few days unwinding on Diani Beach.</p>
+        </div>
+      </div>
+    </div>
+    <p class="journal-note">More stories and destination guides coming soon.</p>
+  </div>
+</section>
+
+<section class="insta-strip">
+  <div class="container">
+    <div class="section-title">
+      <div class="section-subtitle">@JumbaHeritageVoyages</div>
+      <h2>Follow The Journey</h2>
+      <div class="title-divider"></div>
+    </div>
+    <div class="insta-strip-grid">
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1551969014-7d2c4cddf0b6?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="insta-tile" aria-label="Visit our Instagram"><img src="https://images.unsplash.com/photo-1504173010664-32509aee2236?w=400&q=80" alt="Safari moment" loading="lazy"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p class="journal-note">Placeholder gallery — link the tiles above to your real Instagram profile and posts.</p>
+  </div>
+</section>
+
 <section id="testimonials">
   <div class="container">
     <div class="section-title">
@@ -1275,33 +1662,38 @@
     </div>
 
     <div class="testimonial-carousel">
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly. From the moment we landed at JKIA to our final sunset in the Mara, everything was flawless."</p>
-          <div class="testimonial-author">
-            <h4>Sarah Johnson</h4>
-            <p>United Kingdom</p>
+      <div class="testimonial-track" id="testimonialTrack">
+        <div class="testimonial-slide">
+          <div class="testimonial-card">
+            <p class="testimonial-text">"An absolutely life-changing experience. Jumba Heritage arranged every detail perfectly. From the moment we landed at JKIA to our final sunset in the Mara, everything was flawless."</p>
+            <div class="testimonial-author">
+              <h4>Sarah Johnson</h4>
+              <p>United Kingdom</p>
+            </div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">"The attention to detail was remarkable. The Amboseli safari with Kilimanjaro views was beyond words. Our guide knew exactly where to find the elephants at sunrise."</p>
-          <div class="testimonial-author">
-            <h4>Michael Chen</h4>
-            <p>United States</p>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"The attention to detail was remarkable. The Amboseli safari with Kilimanjaro views was beyond words. Our guide knew exactly where to find the elephants at sunrise."</p>
+            <div class="testimonial-author">
+              <h4>Michael Chen</h4>
+              <p>United States</p>
+            </div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        </div>
-
-        <div class="testimonial-card">
-          <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect — raw wilderness followed by pure bliss. Already planning our return trip!"</p>
-          <div class="testimonial-author">
-            <h4>Claudia Schmidt</h4>
-            <p>Germany</p>
+          <div class="testimonial-card">
+            <p class="testimonial-text">"We combined a Maasai Mara safari with Diani Beach relaxation. The contrast was perfect — raw wilderness followed by pure bliss. Already planning our return trip!"</p>
+            <div class="testimonial-author">
+              <h4>Claudia Schmidt</h4>
+              <p>Germany</p>
+            </div>
+            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
           </div>
-          <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
         </div>
+      </div>
+      <div class="testimonial-nav">
+        <button class="testimonial-arrow" onclick="moveTestimonial(-1)" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+        <div class="testimonial-dots" id="testimonialDots"></div>
+        <button class="testimonial-arrow" onclick="moveTestimonial(1)" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </div>
@@ -1319,8 +1711,7 @@
       <div class="booking-card" onclick="window.location.href='tel:+254789514678'">
         <i class="fas fa-phone-alt"></i>
         <h3>Call Us</h3>
-        <p>Safaricom: 0710 731 785</p>
-        <p>Airtel: 0789 514 678</p>
+        <p>0789 514 678</p>
         <div class="booking-link">Call Now</div>
       </div>
       <div class="booking-card" onclick="window.open('https://wa.me/254789514678', '_blank')">
@@ -1340,6 +1731,13 @@
         <h3>Request Invoice</h3>
         <p>Get a Payoneer payment link via email</p>
         <div class="booking-link">Request Now</div>
+      </div>
+      <div class="booking-card" onclick="window.open('assets/jumba-heritage-brochure.pdf', '_blank')">
+        <!-- Upload your actual brochure PDF to an "assets" folder in your repo and confirm this filename matches it -->
+        <i class="fas fa-book-open"></i>
+        <h3>Download Brochure</h3>
+        <p>Full package details, PDF</p>
+        <div class="booking-link">Download</div>
       </div>
     </div>
 
@@ -1456,8 +1854,7 @@
         <div class="contact-detail">
           <i class="fas fa-phone-alt"></i>
           <div>
-            <strong>Safaricom:</strong> <a href="tel:+254710731785">0710 731 785</a><br>
-            <strong>Airtel:</strong> <a href="tel:+254789514678">0789 514 678</a>
+            <strong>Phone:</strong> <a href="tel:+254789514678">0789 514 678</a>
           </div>
         </div>
         <div class="contact-detail">
@@ -1473,6 +1870,21 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.816216937268!2d36.81792831475394!3d-1.2832809990594537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d4b2e1d4b7%3A0x8c9c3a6d8c5c6d4!2sNgong%20Business%20Arcade!5e0!3m2!1sen!2ske!4v1620000000000!5m2!1sen!2ske" allowfullscreen="" loading="lazy" title="Office Location Map"></iframe>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="newsletter-section">
+  <div class="container newsletter-grid">
+    <div>
+      <div class="section-subtitle" style="text-align:left;">Stay In Touch</div>
+      <h2>Join Our Safari Newsletter</h2>
+      <p>Seasonal migration updates, new group departures, and travel tips from Kenya — sent occasionally, never spammy.</p>
+    </div>
+    <form class="newsletter-form" action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST">
+      <!-- Replace YOUR_NEWSLETTER_FORM_ID above with your own Formspree endpoint (or another email provider's form action) before going live -->
+      <input type="email" name="email" required placeholder="Your email address" aria-label="Email address">
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
 </section>
 
@@ -1580,10 +1992,27 @@
   });
 
   // Modal functions
+  let currentPackagePrice = 0;
+
+  function updateEstimate() {
+    const peopleCount = document.getElementById('peopleCount');
+    const box = document.getElementById('estimateBox');
+    const value = document.getElementById('estimateValue');
+    const people = parseInt(peopleCount.value, 10);
+    if (currentPackagePrice > 0 && people > 0) {
+      box.style.display = 'flex';
+      value.textContent = '$' + (currentPackagePrice * people).toLocaleString();
+    } else {
+      box.style.display = 'none';
+    }
+  }
+
   function openInvoiceForm(packageName = '', price = 0, minPeople = 1) {
     const modal = document.getElementById('invoiceModal');
     const packageSelect = document.getElementById('packageSelect');
     const peopleCount = document.getElementById('peopleCount');
+
+    currentPackagePrice = price;
 
     if (packageName && packageSelect) {
       for(let i = 0; i < packageSelect.options.length; i++) {
@@ -1599,14 +2028,23 @@
       peopleCount.min = minPeople;
     }
 
+    updateEstimate();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     document.getElementById('name').focus();
   }
 
+  document.getElementById('peopleCount').addEventListener('input', updateEstimate);
+  document.getElementById('packageSelect').addEventListener('change', function() {
+    const match = this.value.match(/\$([\d,]+)/);
+    currentPackagePrice = match ? parseInt(match[1].replace(/,/g, ''), 10) : 0;
+    updateEstimate();
+  });
+
   function closeInvoiceModal() {
     document.getElementById('invoiceModal').classList.remove('active');
     document.body.style.overflow = '';
+    currentPackagePrice = 0;
   }
 
   window.onclick = function(event) {
@@ -1718,6 +2156,15 @@
     });
   }
 
+  // Newsletter form - shows confirmation toast, Formspree handles delivery
+  const newsletterForm = document.querySelector('.newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', function() {
+      showToast("Thanks for subscribing! We'll be in touch.");
+      setTimeout(() => newsletterForm.reset(), 1500);
+    });
+  }
+
   // Cookie consent
   function acceptCookies() {
     document.getElementById('cookieConsent').classList.add('hidden');
@@ -1750,6 +2197,108 @@
   // Expose first section immediately
   document.querySelector('.hero').style.opacity = '1';
   document.querySelector('.hero').style.transform = 'translateY(0)';
+
+  // ---------- Dark / "Night Safari" theme toggle ----------
+  const themeToggleBtn = document.getElementById('themeToggle');
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    themeToggleBtn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    localStorage.setItem('theme', theme);
+  }
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(current);
+  }
+  applyTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+
+  // ---------- Currency toggle (USD / KES, approximate) ----------
+  // Note: this is a fixed approximate rate for display only, not a live exchange rate.
+  const USD_TO_KES = 129;
+  let currentCurrency = localStorage.getItem('currency') || 'USD';
+  function renderCurrency() {
+    document.querySelectorAll('.price-amount').forEach(el => {
+      const usd = parseFloat(el.getAttribute('data-usd'));
+      if (currentCurrency === 'KES') {
+        el.textContent = 'KSh ' + Math.round(usd * USD_TO_KES).toLocaleString();
+      } else {
+        el.textContent = '$' + usd.toLocaleString();
+      }
+    });
+    document.getElementById('currencyToggle').textContent = currentCurrency;
+  }
+  function toggleCurrency() {
+    currentCurrency = currentCurrency === 'USD' ? 'KES' : 'USD';
+    localStorage.setItem('currency', currentCurrency);
+    renderCurrency();
+  }
+  renderCurrency();
+
+  // ---------- Testimonial carousel ----------
+  const testimonialTrack = document.getElementById('testimonialTrack');
+  const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+  const testimonialDotsWrap = document.getElementById('testimonialDots');
+  let testimonialIndex = 0;
+  let testimonialTimer;
+
+  if (testimonialSlides.length > 1) {
+    testimonialSlides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+      dot.onclick = () => { testimonialIndex = i; renderTestimonial(); resetTestimonialTimer(); };
+      testimonialDotsWrap.appendChild(dot);
+    });
+  } else {
+    document.querySelector('.testimonial-nav').style.display = 'none';
+  }
+
+  function renderTestimonial() {
+    testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+    testimonialDotsWrap.querySelectorAll('.testimonial-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === testimonialIndex);
+    });
+  }
+
+  window.moveTestimonial = function(direction) {
+    testimonialIndex = (testimonialIndex + direction + testimonialSlides.length) % testimonialSlides.length;
+    renderTestimonial();
+    resetTestimonialTimer();
+  };
+
+  function resetTestimonialTimer() {
+    clearInterval(testimonialTimer);
+    if (testimonialSlides.length > 1) {
+      testimonialTimer = setInterval(() => window.moveTestimonial(1), 6000);
+    }
+  }
+  const carouselEl = document.querySelector('.testimonial-carousel');
+  if (carouselEl) {
+    carouselEl.addEventListener('mouseenter', () => clearInterval(testimonialTimer));
+    carouselEl.addEventListener('mouseleave', resetTestimonialTimer);
+  }
+  resetTestimonialTimer();
+
+  // ---------- Subtle hero parallax (respects reduced motion) ----------
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReducedMotion) {
+    const activeSlideLayer = () => document.querySelector('.slide.active');
+    window.addEventListener('scroll', function() {
+      const y = window.scrollY;
+      if (y < window.innerHeight) {
+        const slide = activeSlideLayer();
+        if (slide) slide.style.transform = `translateY(${y * 0.25}px)`;
+      }
+    }, { passive: true });
+
+    // ---------- Soft cursor glow on package cards ----------
+    document.querySelectorAll('.group-package-card, .journal-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+      });
+    });
+  }
 </script>
 
 </body>
